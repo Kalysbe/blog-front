@@ -1,6 +1,7 @@
 import { Routes ,Route} from 'react-router-dom'
 import { useDispatch , useSelector} from 'react-redux';
 import Container from "@mui/material/Container";
+import Box from '@mui/material/Box';
 
 import { Header } from "./components";
 import { Home, FullPost, Registration, AddPost, Login } from "./pages";
@@ -18,7 +19,8 @@ function App() {
   return (
     <>
       <Header />
-      <Container maxWidth="lg">
+      {/* <Container maxWidth="lg"> */}
+      <Box sx={{ pt: 8 }}>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/posts/:id' element={<FullPost />} />
@@ -27,7 +29,8 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Registration />} />
         </Routes>
-      </Container>
+        </Box>
+      {/* </Container> */}
     </>
   );
 }

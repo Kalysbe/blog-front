@@ -6,11 +6,12 @@ import Grid from '@mui/material/Grid';
 
 import axios from '../axios';
 
-
+import { HomeComponent } from '../components/HomeComponent';
 import { Post } from '../components/Post';
 import { TagsBlock } from '../components/TagsBlock';
 import { CommentsBlock } from '../components/CommentsBlock';
 import { fetchPosts ,fetchTags } from '../redux/slices/post';
+import { Container } from '@mui/material';
 
 export const Home = () => {
   const dispatch = useDispatch()
@@ -30,12 +31,15 @@ export const Home = () => {
 
   return (
     <>
+      <HomeComponent/>
+      <Container>
       <Tabs style={{ marginBottom: 15 }} value={0} aria-label="basic tabs example">
-        <Tab label="Новые" />
-        <Tab label="Популярные" />
+        <Tab label="Новости компаний" />
+        <Tab label="Новости налоговой" />
       </Tabs>
+      </Container>
       <Grid container spacing={4}>
-        <Grid xs={8} item>
+        <Grid xs={12} item>
           {(isPostsLoading ?  [...Array(5)] : posts.items).map((obj, index) =>  
           isPostsLoading ? (
           <Post key={index} isLoading={true} /> 
@@ -54,9 +58,13 @@ export const Home = () => {
             />
           ))}
         </Grid>
-        <Grid xs={4} item>
-          <TagsBlock items={tags.items} isLoading={isTagsLoading} />
-          <CommentsBlock
+
+        <div>
+
+        </div>
+        {/* <Grid xs={4} item> */}
+          {/* <TagsBlock items={tags.items} isLoading={isTagsLoading} /> */}
+          {/* <CommentsBlock
             items={[
               {
                 user: {
@@ -74,8 +82,8 @@ export const Home = () => {
               },
             ]}
             isLoading={false}
-          />
-        </Grid>
+          /> */}
+        {/* </Grid> */}
       </Grid>
     </>
   );

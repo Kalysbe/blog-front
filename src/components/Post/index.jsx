@@ -12,6 +12,7 @@ import styles from './Post.module.scss';
 import { UserInfo } from '../UserInfo';
 import { PostSkeleton } from './Skeleton';
 import { fetchRemovePost } from '../../redux/slices/post';
+import { Container } from '@mui/material';
 
 export const Post = ({
   _id,
@@ -41,6 +42,7 @@ export const Post = ({
   };
 
   return (
+    <Container>
     <div className={clsx(styles.root, { [styles.rootFull]: isFullPost })}>
       {isEditable && (
         <div className={styles.editButtons}>
@@ -60,7 +62,9 @@ export const Post = ({
           src={imageUrl}
           alt={title}
         />
+       
       )}
+   
       <div className={styles.wrapper}>
         <UserInfo {...user} additionalText={createdAt} />
         <div className={styles.indention}>
@@ -88,5 +92,6 @@ export const Post = ({
         </div>
       </div>
     </div>
+    </Container>
   );
 };
