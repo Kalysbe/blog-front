@@ -35,23 +35,24 @@ const navItems = [
 
 export const Header = (props) => {
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const isAuth = useSelector(selectIsAuth);
-  const { window } = props;
+  const { windowProps } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
-
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
-  };
-
   const onClickLogout = () => {
+
     if (window.confirm('Вы правда хотите выйти?')) {
-      dispatch(logout())
+      dispatch(logout());
       window.localStorage.removeItem('token')
     }
-
   };
+
+  const handleDrawerToggle = () => {
+    setMobileOpen((prevState) => !prevState)
+  };
+
+  
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
@@ -67,11 +68,31 @@ export const Header = (props) => {
             </ListItemButton>
           </ListItem>
         ))}
+
       </List>
+      {isAuth ? (
+              <>
+                <Link to="/add-post">
+                  <Button variant="contained">Написать статью</Button>
+                </Link>
+                <Button onClick={onClickLogout} variant="contained"  color="error">
+                  Выйти
+                </Button>
+              </>
+            ) : (
+              <>
+                <Link to="/login">
+                  <Button variant="outlined" color="primary">Войти</Button>
+                </Link>
+                {/* <Link to="/register">
+                  <Button variant="contained">Создать аккаунт</Button>
+                </Link> */}
+              </>
+            )}
     </Box>
   );
 
-  const container = window !== undefined ? () => window().document.body : undefined;
+  const container = windowProps !== undefined ? () => windowProps().document.body : undefined;
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -98,7 +119,7 @@ export const Header = (props) => {
                 <Link to="/add-post">
                   <Button variant="contained">Написать статью</Button>
                 </Link>
-                <Button onClick={onClickLogout} variant="contained"  color="error">
+                <Button  sx={{ml:2,mr:2}}  onClick={onClickLogout} variant="contained"  color="error">
                   Выйти
                 </Button>
               </>
@@ -145,11 +166,5 @@ export const Header = (props) => {
   );
 };
 
-Header.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window: PropTypes.func,
-};
+
 

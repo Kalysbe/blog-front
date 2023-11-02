@@ -27,12 +27,12 @@ export const Post = ({
   isFullPost,
   isLoading,
   isEditable,
+  first
 }) => {
   const dispatch = useDispatch()
   if (isLoading) {
     return <PostSkeleton />;
   }
-  console.log(user,'post')
 
   const onClickRemove = () => {
     
@@ -41,9 +41,13 @@ export const Post = ({
     }
   };
 
+  const utcDate = new Date(createdAt)
+  const options = { month: 'long', day: 'numeric' };
+  const localDate = utcDate.toLocaleDateString('ru-RU', options);
+
   return (
-    <Container>
-    <div className={clsx(styles.root, { [styles.rootFull]: isFullPost })}>
+    // <Container maxWidth={false}>
+    <div className={clsx(styles.root, { [styles.rootFull]: isFullPost },first ? styles.firts_post : '')}>
       {isEditable && (
         <div className={styles.editButtons}>
           <Link to={`/posts/${_id}/edit`}>
@@ -56,25 +60,28 @@ export const Post = ({
           </IconButton>
         </div>
       )}
-      {imageUrl && (
+      {/* {imageUrl && (
         <img
           className={clsx(styles.image, { [styles.imageFull]: isFullPost })}
           src={imageUrl}
           alt={title}
         />
        
-      )}
+      )} */}
    
       <div className={styles.wrapper}>
-        <UserInfo {...user} additionalText={createdAt} />
+        {/* <UserInfo {...user} additionalText={createdAt} /> */}
         <div className={styles.indention}>
-          <h2 className={clsx(styles.title, { [styles.titleFull]: isFullPost })}>
+          <span>{localDate}</span>
+          <h3 className={clsx(styles.title, { [styles.titleFull]: isFullPost })}>
             {isFullPost ? title : <Link to={`/posts/${_id}`}>{title}</Link>}
-          </h2>
+          </h3>
           <ul className={styles.tags}>
+           
             {tags.map((name) => (
+
               <li key={name}>
-                <Link to={`/tag/${name}`}>#{name}</Link>
+                <Link to={`/tag/${name.length ? name : 'Другие'}`}>{name.length ? name : 'Другие'}</Link>
               </li>
             ))}
           </ul>
@@ -84,14 +91,14 @@ export const Post = ({
               <EyeIcon />
               <span>{viewsCount}</span>
             </li>
-            <li>
+            {/* <li>
               <CommentIcon />
               <span>{commentsCount}</span>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
     </div>
-    </Container>
+    // </Container>
   );
 };

@@ -12,28 +12,29 @@ import { SideBlock } from "./SideBlock";
 
 export const TagsBlock = ({ items, isLoading = true }) => {
   return (
-    <SideBlock title="Тэги">
-      <List>
-        {(isLoading ? [...Array(5)] : items).map((name, i) => (
-          <a
-            style={{ textDecoration: "none", color: "black" }}
-            href={`/tags/${name}`}
-          >
-            <ListItem key={i} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <TagIcon />
-                </ListItemIcon>
-                {isLoading ? (
-                  <Skeleton width={100} />
-                ) : (
-                  <ListItemText primary={name} />
-                )}
-              </ListItemButton>
-            </ListItem>
-          </a>
-        ))}
-      </List>
-    </SideBlock>
+
+    <List sx={{ display: 'flex' }}>
+      {(isLoading ? [...Array(5)] : items).map((name, i) => (
+        <li key={i}>
+          {isLoading ? (
+            <Skeleton sx={{mr:1}} width={100} />
+          ) :
+            <a
+              style={{ 
+                textDecoration: "none", 
+                background: '#EEECEB', 
+                marginRight: '8px', 
+                color: "black", 
+                fontSize:'16px',
+                borderRadius: '20px', 
+                padding: '4px 12px' }}
+              href={`/tags/${name ? name : 'Другие'}`}>
+              {name ? name : 'Другие'}
+            </a>
+          }
+        </li>
+      ))}
+    </List>
+
   );
 };
