@@ -15,30 +15,105 @@ import { useMediaQuery } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import BasicTabs from '../Tab';
 
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
-import Marquee from "react-fast-marquee";
+
+const responsive = {
+    superLargeDesktop: {
+        // the naming can be any, depends on you.
+        breakpoint: { max: 4000, min: 3000 },
+        items: 5
+    },
+    desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 3
+    },
+    tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 2
+    },
+    mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1
+    }
+};
 
 
+
+const data = [
+    {
+        title: 'Неотложная задача руководителей: как руководители компаний будут реагировать на новые реалии рецессии?',
+        img: '79250266-a2ff-439b-bd2b-fa559d95dcb3.jpeg'
+    },
+    {
+        title: 'Рост зарплат отстает от инфляции впервые за шесть лет',
+        img: 'a40d8e95-0301-4206-96fc-25cd8e36ad91.jpeg'
+    },
+    {
+        title: 'Путь углеродной нейтральности',
+        img: 'd792f529-c33a-40b0-99be-f550324a6a08.jpeg'
+    },
+    {
+        title: 'Неотложная задача руководителей: как руководители компаний будут реагировать на новые реалии рецессии?',
+        img: '79250266-a2ff-439b-bd2b-fa559d95dcb3.jpeg'
+    },
+    {
+        title: 'Рост зарплат отстает от инфляции впервые за шесть лет',
+        img: 'a40d8e95-0301-4206-96fc-25cd8e36ad91.jpeg'
+    },
+    {
+        title: 'Путь углеродной нейтральности',
+        img: 'd792f529-c33a-40b0-99be-f550324a6a08.jpeg'
+    }
+]
 
 export const HomeComponent = (props) => {
     const isMobile = useMediaQuery('(max-width:600px)');
 
     return (
         <div className={styles.wrap}>
-            <Paper className={styles.background_wrap} >
+            <Paper className={styles.background_wrap} sx={{ height: isMobile ? '320px' : '610px' }}>
                 <Box className={styles.content} sx={{ pl: isMobile ? '5px' : '20px', pt: isMobile ? '60px' : '280px', pb: isMobile ? '10px' : '70px', }}>
                     <Container maxWidth={false}>
-                        <Typography sx={{ width: isMobile ? '100%' : '45%', color: 'rgb(205,179,47)' }} variant={isMobile ? 'h5' : 'h3'} gutterBottom>
-                            Стратегии для успешного корпоративного разделения
+                        <Typography sx={{ width: isMobile ? '100%' : '45%', color: 'rgb(205,179,47)' }} variant={isMobile ? 'title1' : 'title2'} gutterBottom>
+                        Исследование глобального лидерства в области кибербезопасности, проведенное EY в 2023 году
                         </Typography>
-                        <Typography sx={{ width: isMobile ? '100%' : '45%', color: '#000' }} variant="body1" gutterBottom>
-                            Совместное исследование EY и Goldman Sachs показало, что разделение корпорации служит катализатором трансформации и роста.
+                        <Typography sx={{ width: isMobile ? '100%' : '45%', color: '#fff' }} variant={isMobile ? 'h5' : 'h3'} gutterBottom>
+                        Является ли сложность вашей киберстратегии вашим самым большим риском?
+                        </Typography>
+                        <Typography sx={{ width: isMobile ? '100%' : '45%', color: '#fff' }} variant="body1" gutterBottom>
+                        Глобальное исследование лидерства в области кибербезопасности, проведенное EY в 2023 году, показывает, как лидеры укрепляют защиту, создавая при этом ценность.
                         </Typography>
                     </Container>
                 </Box>
             </Paper>
             {/* <BasicTabs/> */}
-            <Container >
+            <Container maxWidth={false}>
+                <Typography sx={{ width: isMobile ? '100%' : '45%', my: 3 }} variant={isMobile ? 'h5' : 'h4'} gutterBottom>
+                Блог: полезно знать
+                </Typography>
+                {/* <Grid container spacing={8}> */}
+
+                <Carousel responsive={responsive}>
+                {data.map((obj, index) => (
+                             <Box sx={{height: isMobile ? '320px' : '610px' , position: 'relative', backgroundImage: `url(${obj.img})`, backgroundRepeat: 'no-repeat', backgroundPosition: '50% 50%', backgroundSize: 'cover',mr:2}}>
+                                 <Box sx={{background:'linear-gradient(transparent,rgba(0,0,0,0.75))',position:'absolute',bottom:'0',left:'0',right:'0',top:'50%'}}></Box>
+                                 <Box sx={{ position: 'absolute', left: 0, right: 0, bottom: 0,p:3.75 }}>
+                                     <Typography sx={{ color: '#fff' }} variant={isMobile ? 'h6' : 'h6'} gutterBottom>
+                                         {obj.title}
+                                     </Typography>
+                                     <Typography sx={{ color: '#fff' }}>
+                                         Читать далее
+                                     </Typography>
+                                 </Box>
+                             </Box>
+                ))} 
+                </Carousel>
+             
+
+                {/* </Grid> */}
+
                 {/* <Grid container spacing={2}>
                     <Grid item sm={12} md={6}>
                         <Box sx={{ pl: isMobile ? 0 : 15, pt: isMobile ? 2 : 10, pr: isMobile ? 0 : 22.5 }}>
@@ -66,28 +141,12 @@ export const HomeComponent = (props) => {
                         </Box>
                     </Grid>
                 </Grid> */}
-            
-                <Typography sx={{ width: isMobile ? '100%' : '45%', }} variant={isMobile ? 'h5' : 'h4'} gutterBottom>
-                          Наши клиенты
-                        </Typography>
-                <Marquee>
-                    <Stack
-                        sx={{ mt:2, mb: 4 }}
-                        direction="row"
-                        divider={<Divider orientation="vertical" flexItem />}
-                        spacing={8}
-                    >
-                        <img src="./companies/1.png" />
-                        <img src="./companies/2.png" />
-                        <img src="./companies/3.png" />
-                        <img src="./companies/4.png" />
-                        <img src="./companies/5.png" />
-                        <img src="./companies/6.png" />
-                    </Stack>
-                </Marquee>
-                
 
-                <Grid container>
+
+
+
+
+                {/* <Grid container>
                     <Grid item sm={12} md={6}>
                         <Box sx={{ height: '100%', display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
                             <Typography sx={{ color: '#2e2e38' }} variant={isMobile ? 'h5' : 'h4'} color="primary" gutterBottom>
@@ -103,12 +162,30 @@ export const HomeComponent = (props) => {
                     <Grid item sm={12} md={6}>
                         <img style={{ maxHeight: '560px' }} src='https://assets.ey.com/content/dam/ey-sites/ey-com/ru_ru/topics/advisory/ey-business-academy-promo-banner-image.jpg.rendition.3840.2560.jpg' />
                     </Grid>
-                </Grid>
-             
+                </Grid> */}
+
             </Container>
 
         </div>
 
+    )
+
+}
+
+function Item(props) {
+    const isMobile = useMediaQuery('(max-width:600px)');
+    return (
+        <Box sx={{ height: isMobile ? '320px' : '610px', position: 'relative', backgroundImage: `url(${props.item.img})`, backgroundRepeat: 'no-repeat', backgroundPosition: '50% 50%', backgroundSize: 'cover' }}>
+            <Box sx={{ background: 'linear-gradient(transparent,rgba(0,0,0,0.75))', position: 'absolute', bottom: '0', left: '0', right: '0', top: '50%' }}></Box>
+            <Box sx={{ position: 'absolute', left: 0, right: 0, bottom: 0, p: 3.75 }}>
+                <Typography sx={{ color: '#fff' }} variant={isMobile ? 'h6' : 'h6'} gutterBottom>
+                    {props.item.title}
+                </Typography>
+                <Typography sx={{ color: '#fff' }}>
+                    Читать далее
+                </Typography>
+            </Box>
+        </Box>
     )
 }
 

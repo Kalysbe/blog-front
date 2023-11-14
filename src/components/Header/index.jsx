@@ -110,7 +110,7 @@ export const Header = (props) => {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item,index) => (
-              <Button key={index} color="primary" >
+              <Button key={index} sx={{color:'#000'}} >
                 {item.value} 
               </Button>
             ))}
@@ -126,7 +126,7 @@ export const Header = (props) => {
             ) : (
               <>
                 <Link to="/login">
-                  <Button variant="outlined" color="primary">Войти</Button>
+                  <Button variant="outlined" sx={{color:'#000'}}>Войти</Button>
                 </Link>
                 {/* <Link to="/register">
                   <Button variant="contained">Создать аккаунт</Button>

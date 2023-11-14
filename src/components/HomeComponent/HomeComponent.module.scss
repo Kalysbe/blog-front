@@ -10,13 +10,17 @@
 .background_wrap {
     // background-image: url('https://catherineasquithgallery.com/uploads/posts/2023-01/1674366370_catherineasquithgallery-com-p-serii-fon-abstraktnii-foto-204.jpg');
     // background-image: url('https://abrakadabra.fun/uploads/posts/2021-12/1639400660_9-abrakadabra-fun-p-audit-fon-dlya-prezentatsii-9.png');
-    background-image: url('http://audit-concret.md/wp-content/uploads/2020/07/home-top-1.jpg');
+    // background-image: url('http://audit-concret.md/wp-content/uploads/2020/07/home-top-1.jpg');
+    background-image: url('https://assets.ey.com/content/dam/ey-sites/ey-com/en_gl/topics/consulting/ey-reframe-your-future-wire-tangle-data-pulse-static.jpg.rendition.3840.2560.jpg');
+   background-size: cover;
+   background-position: 50% 50%;
 }
 
 .background_wrap .content {
-    // background: rgba(0,0,0,0.3);
     width: 100%;
     height: 100%;
+    background: -webkit-gradient(linear,left top,left bottom,from(rgba(46,46,56,0)),to(#2e2e38));
+    background: linear-gradient(180deg,rgba(46,46,56,0) 0%,#2e2e38 100%);
 }
 
 .services {
