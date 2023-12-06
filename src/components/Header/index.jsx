@@ -97,7 +97,9 @@ export const Header = (props) => {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
+ 
       <AppBar component="nav" sx={{ background: '#fff' }}>
+      <Container>
         <Toolbar sx={{p:0}}>
           <Typography
             variant="h6"
@@ -144,6 +146,7 @@ export const Header = (props) => {
             <MenuIcon />
           </IconButton>
         </Toolbar>
+        </Container>
       </AppBar>
       <nav>
         <Drawer
