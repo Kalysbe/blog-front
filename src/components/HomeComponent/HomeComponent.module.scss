@@ -11,22 +11,14 @@
     // background-image: url('https://catherineasquithgallery.com/uploads/posts/2023-01/1674366370_catherineasquithgallery-com-p-serii-fon-abstraktnii-foto-204.jpg');
     // background-image: url('https://abrakadabra.fun/uploads/posts/2021-12/1639400660_9-abrakadabra-fun-p-audit-fon-dlya-prezentatsii-9.png');
     // background-image: url('http://audit-concret.md/wp-content/uploads/2020/07/home-top-1.jpg');
-    // background-image: url('https://assets.ey.com/content/dam/ey-sites/ey-com/en_gl/topics/consulting/ey-reframe-your-future-wire-tangle-data-pulse-static.jpg.rendition.3840.2560.jpg');
+    //background-image: url('https://assets.ey.com/content/dam/ey-sites/ey-com/en_gl/topics/consulting/ey-reframe-your-future-wire-tangle-data-pulse-static.jpg.rendition.3840.2560.jpg');
 //    background-image: url('https://base-tailwind.preview.uideck.com/images/hero.png');
+    background-image: url(../../../public/Rectangle560.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
 position: relative;
-height: 300px;
-}
-.background_wrap .circle {
-    position: absolute;
-    right: 0;
-    top:-20px;
-    z-index: 0;
-}
-.background_wrap .woman {
-    position: absolute;
-    right: 0;
-    top:-20px;
-    z-index: 1;
+// height: 300px;
 }
 
 .background_wrap .content {

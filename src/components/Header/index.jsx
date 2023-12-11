@@ -15,6 +15,8 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import Drawer from '@mui/material/Drawer';
+import Input from '@mui/material/Input';
+import TextField from "@mui/material/TextField";
 
 
 import styles from './Header.module.scss';
@@ -100,43 +102,21 @@ export const Header = (props) => {
  
       <AppBar component="nav" sx={{ background: '#fff' }}>
       <Container>
-        <Toolbar sx={{p:0}}>
-          <Typography
-            variant="h6"
+      <Toolbar sx={{p:0}}>
+      <Box
+           
             component="div"
-            sx={{ flexGrow: 1, display: { sm: 'block' } }}
+            sx={{ m:0, flexGrow: 1,  display: 'flex',alignItems:'center' }}
           >
            <Link className={styles.logo} to="/">
             <img className={styles.logo_image} src="logo.png" alt="" />
           </Link>
-          </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item,index) => (
-              <Button key={index} sx={{color:'#000'}} >
-                {item.value} 
-              </Button>
-            ))}
-              {isAuth ? (
-              <>
-                <Link to="/add-post">
-                  <Button variant="contained">Написать статью</Button>
-                </Link>
-                <Button  sx={{ml:2,mr:2}}  onClick={onClickLogout} variant="contained"  color="error">
-                  Выйти
-                </Button>
-              </>
-            ) : (
-              <>
-                <Link to="/login">
-                  <Button variant="outlined" sx={{color:'#000'}}>Войти</Button>
-                </Link>
-                {/* <Link to="/register">
-                  <Button variant="contained">Создать аккаунт</Button>
-                </Link> */}
-              </>
-            )}
+          <Typography variant='subtitle2' sx={{color:'rgba(85, 95, 105, 1)',fontWeight:'400',display: { xs: 'none',sm:'block' }}}>г. Бишкек, ул. Московская, 172</Typography>
+          <Typography variant='subtitle2' sx={{color:'rgba(85, 95, 105, 1)',fontWeight:'400',display: { xs: 'none', sm:'block' }}}>(0312) 31 14 84;  (0551) 31 14 84</Typography>
           </Box>
-          <IconButton
+          <Box>
+            <Input sx={{display: { xs: 'none',sm:'block' }}} type="text" placeholder='Поиск по сайту' />
+            <IconButton
             color="default"
             aria-label="open drawer"
             edge="start"
@@ -145,6 +125,52 @@ export const Header = (props) => {
           >
             <MenuIcon />
           </IconButton>
+      
+          </Box>
+      </Toolbar>
+        <Toolbar sx={{p:0,display: { xs: 'none',sm:'flex' }}}>
+          <Box sx={{width:'100%', display: { xs: 'none', sm: 'flex' },justifyContent:'space-between' }}>
+        <Box>
+          <IconButton
+            color="default"
+            aria-label="open drawer"
+            
+            onClick={handleDrawerToggle}
+            
+          >
+            <MenuIcon />
+          </IconButton>
+
+
+            {navItems.map((item,index) => (
+              <Button key={index} sx={{color:'#000'}} >
+                {item.value} 
+              </Button>
+            ))}
+            </Box>
+            <Box sx={{ml:'auto'}}>
+              {isAuth ? (
+              <>
+                <Link  to="/add-post">
+                  <Button variant="contained">Написать статью</Button>
+                </Link>
+                <Button  sx={{ml:2,mr:2}}  onClick={onClickLogout} variant="contained"  color="error">
+                  Выйти
+                </Button>
+              </>
+            ) : (
+              <>
+                <Link  to="/login">
+                  <Button variant="outlined" sx={{color:'#000'}}>Войти</Button>
+                </Link>
+                {/* <Link to="/register">
+                  <Button variant="contained">Создать аккаунт</Button>
+                </Link> */}
+              </>
+            )}
+            </Box>
+          </Box>
+     
         </Toolbar>
         </Container>
       </AppBar>
