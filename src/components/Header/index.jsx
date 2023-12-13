@@ -28,7 +28,7 @@ const drawerWidth = 240;
 const navItems = [
   {value: 'В фокусе',path:''},
   {value: 'Услуги',path:''},
-  {value: 'Отрасли',path:''},
+  {value: 'Новости',path:'/blog'},
   {value: 'Карьера',path:''},
   {value: 'О нас',path:''}
  
@@ -111,8 +111,10 @@ export const Header = (props) => {
            <Link className={styles.logo} to="/">
             <img className={styles.logo_image} src="logo.png" alt="" />
           </Link>
-          <Typography variant='subtitle2' sx={{color:'rgba(85, 95, 105, 1)',fontWeight:'400',display: { xs: 'none',sm:'block' }}}>г. Бишкек, ул. Московская, 172</Typography>
-          <Typography variant='subtitle2' sx={{color:'rgba(85, 95, 105, 1)',fontWeight:'400',display: { xs: 'none', sm:'block' }}}>(0312) 31 14 84;  (0551) 31 14 84</Typography>
+          <img style={{marginLeft:'18px'}} src="location.svg" alt="" />
+          <Typography variant='subtitle2' sx={{color:'rgba(85, 95, 105, 1)',ml:1,mr:2,fontWeight:'400',fontSize:'14px',display: { xs: 'none',sm:'block' }}}>г. Бишкек, ул. Раззакова, 112</Typography>
+          <img src="call.png" alt="" />
+          <Typography variant='subtitle2' sx={{color:'rgba(85, 95, 105, 1)',ml:1,fontWeight:'400',fontSize:'14px',display: { xs: 'none', sm:'block' }}}>(0312) 31 14 84;    (0551) 31 14 84</Typography>
           </Box>
           <Box>
             <Input sx={{display: { xs: 'none',sm:'block' }}} type="text" placeholder='Поиск по сайту' />
@@ -143,9 +145,11 @@ export const Header = (props) => {
 
 
             {navItems.map((item,index) => (
+                    <Link to={item.path}>
               <Button key={index} sx={{color:'#000'}} >
                 {item.value} 
               </Button>
+              </Link>
             ))}
             </Box>
             <Box sx={{ml:'auto'}}>
@@ -160,8 +164,8 @@ export const Header = (props) => {
               </>
             ) : (
               <>
-                <Link  to="/login">
-                  <Button variant="outlined" sx={{color:'#000'}}>Войти</Button>
+                <Link to="/login">
+                  <Button variant="outlined" sx={{color:'rgb(205,179,47)',borderColor:'rgb(205,179,47)'}}>Войти</Button>
                 </Link>
                 {/* <Link to="/register">
                   <Button variant="contained">Создать аккаунт</Button>

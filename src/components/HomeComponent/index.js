@@ -108,16 +108,17 @@ export const HomeComponent = (props) => {
     return (
         <div className={styles.wrap}>
             <Paper className={styles.background_wrap} sx={{ height: isMobile ? '320px' : '610px', marginBottom: '100px' }}>
+            <Box className={styles.content} sx={{ pl: isMobile ? '5px' : '20px', pt: isMobile ? '60px' : '80px', pb: isMobile ? '10px' : '70px', }}>
                 <Container>
-                <Box className={styles.content} sx={{ pl: isMobile ? '5px' : '20px', pt: isMobile ? '60px' : '80px', pb: isMobile ? '10px' : '70px', }}>
+             
                     <Container maxWidth={false}>
                         {/* <Typography sx={{ width: isMobile ? '100%' : '45%', color: 'rgb(205,179,47)' }} variant={isMobile ? 'title1' : 'title2'} gutterBottom>
                         Что такое аудит и зачем моя компания нуждается в услугах аудиторской фирмы?
                         </Typography> */}
                         <Typography sx={{ width: isMobile ? '100%' : '45%', color: '#fff' }} variant={isMobile ? 'h5' : 'h4'} gutterBottom>
-                        Что такое аудит и зачем компании нуждаются в услугах аудиторской фирмы?
+                        Что такое аудит и зачем компании нуждаются в услугах <b style={{color: 'rgb(205,179,47)'}}>аудиторской</b> фирмы?
                         </Typography>
-                        <Typography sx={{ width: isMobile ? '100%' : '45%', color: 'rgb(205,179,47)' }} variant="body1" gutterBottom>
+                        <Typography sx={{ width: isMobile ? '100%' : '45%', color:'#fff'}} variant="body1" gutterBottom>
                             Глобальное исследование лидерства в области кибербезопасности, проведенное EY в 2023 году, показывает, как лидеры укрепляют защиту, создавая при этом ценность.
                         </Typography>
                         <Button sx={{background: 'linear-gradient(0deg, #F5F6F7, #F5F6F7),linear-gradient(0deg, #FFFFFF, #FFFFFF)',
@@ -133,8 +134,9 @@ export const HomeComponent = (props) => {
                             Узнать больше
                             </Button>
                     </Container>
-                </Box>
+          
                 </Container>
+                </Box>
             </Paper>
 
             {/* <Container maxWidth={false}>

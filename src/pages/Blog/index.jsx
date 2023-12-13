@@ -34,7 +34,7 @@ export const Blog = () => {
   return (
     <>
   
-      <Container maxWidth={false}>
+      <Container>
         <Typography variant={isMobile ? 'h5' : 'h4'} gutterBottom>
           Статьи
         </Typography>
