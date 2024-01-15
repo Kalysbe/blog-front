@@ -20,7 +20,7 @@ function App() {
     <>
       <Header />
       {/* <Container maxWidth="lg"> */}
-      <Box sx={{ pt: 8 }}>
+      <Box>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/blog' element={<Blog />} />
