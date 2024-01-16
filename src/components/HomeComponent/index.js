@@ -14,7 +14,7 @@ import Typography from '@mui/material/Typography';
 import { useMediaQuery } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import CustomizedAccordions from '../ Questions/ Questions'
-import BasicTabs from '../Tab';
+import BasicTaаbs from '../Tab';
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -112,15 +112,11 @@ export const HomeComponent = (props) => {
                 <Container>
              
                     <Container maxWidth={false}>
-                        {/* <Typography sx={{ width: isMobile ? '100%' : '45%', color: 'rgb(205,179,47)' }} variant={isMobile ? 'title1' : 'title2'} gutterBottom>
-                        Что такое аудит и зачем моя компания нуждается в услугах аудиторской фирмы?
-                        </Typography> */}
+                        <span style={{border:'2px solid #fff',color:'#fff'}}>У НАС ЛУЧШИЕ АУДИТ-ЭКСПЕРТЫ</span>
                         <Typography sx={{ width: isMobile ? '100%' : '45%', color: '#fff' }} variant={isMobile ? 'h5' : 'h4'} gutterBottom>
-                        Что такое аудит и зачем компании нуждаются в услугах <b style={{color: 'rgb(205,179,47)'}}>аудиторской</b> фирмы?
+                        Лучшая  <b style={{color: 'rgb(205,179,47)'}}>Аудиторскоя</b> компания в 2023 г.
                         </Typography>
-                        <Typography sx={{ width: isMobile ? '100%' : '45%', color:'#fff'}} variant="body1" gutterBottom>
-                            Глобальное исследование лидерства в области кибербезопасности, проведенное EY в 2023 году, показывает, как лидеры укрепляют защиту, создавая при этом ценность.
-                        </Typography>
+                       
                         <Button sx={{background: 'linear-gradient(0deg, #F5F6F7, #F5F6F7),linear-gradient(0deg, #FFFFFF, #FFFFFF)',
                                     color:'rgb(205,179,47)',
                                     width: '250px',

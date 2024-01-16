@@ -1,3 +1,10 @@
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Exo&family=Roboto&display=swap');
+* {
+    font-family: 'Exo', sans-serif;
+font-family: 'Roboto', sans-serif;
+}
 .wrap {
   display: block;
 
@@ -14,7 +21,8 @@
     //background-image: url('https://assets.ey.com/content/dam/ey-sites/ey-com/en_gl/topics/consulting/ey-reframe-your-future-wire-tangle-data-pulse-static.jpg.rendition.3840.2560.jpg');
 //    background-image: url('https://base-tailwind.preview.uideck.com/images/hero.png');
     // background-image: url(../../../public/Rectangle560.png);
-    background-image: url('https://top-fon.com/uploads/posts/2023-02/1675389046_top-fon-com-p-fon-dlya-bukhgalterskoi-prezentatsii-195.jpg');
+    // background-image: url('https://top-fon.com/uploads/posts/2023-02/1675389046_top-fon-com-p-fon-dlya-bukhgalterskoi-prezentatsii-195.jpg');
+    background-image: url('https://wordpress.vecurosoft.com/techbiz/wp-content/uploads/layerslider/projects/TechBiz-Slider-1/hero-1-1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 position: relative;
