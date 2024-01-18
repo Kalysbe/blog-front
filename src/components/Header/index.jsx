@@ -207,7 +207,7 @@ export const Header = (props) => {
                                   <div className="elementor-element elementor-element-28599e5 vs-logo elementor-widget elementor-widget-techbizimage" data-id="28599e5" data-element_type="widget" data-widget_type="techbizimage.default">
                                     <div className="elementor-widget-container">
                                       {/* Advertisement Image */}
-                                      <div className="techbiz_img "><a href rel="nofollow" target="_blank"><img className src="images/logo.png" alt="logo5" /></a></div>
+                                      <div className="techbiz_img "><Link to='/'><img className src="images/logo.png" alt="logo5" /></Link></div>
                                       {/* End Advertisement Image */}
                                     </div>
                                   </div>
@@ -283,26 +283,23 @@ export const Header = (props) => {
                                           <li id="menu-item-8919" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8919">
                                             <a href="#">Сервисы</a>
                                             <ul className="sub-menu">
-                                              <li id="menu-item-8924" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-8924">
-                                                <a href>Shop</a>
-                                              </li>
+                                              {/* <li id="menu-item-8924" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-8924">
+                                                <a href=""></a>
+                                              </li> */}
                                               <li id="menu-item-8925" className="menu-item menu-item-type-post_type menu-item-object-product menu-item-8925">
-                                                <a href>Shop
-                                                  Details</a>
+                                                <a href>Расчет налога на имущество на жилое здание, сооружение и помещение</a>
                                               </li>
                                               <li id="menu-item-8923" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-8923">
-                                                <a href>Cart</a>
+                                                <a href>Расчет налога на имущество на нежилое здание, сооружение и помещение</a>
                                               </li>
                                               <li id="menu-item-8921" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-8921">
-                                                <a href>My
-                                                  Account</a>
+                                                <a href>Расчет налога на имущество на земли населенных пунктов и земли несельскохозяйственного назначения</a>
                                               </li>
                                               <li id="menu-item-8922" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-8922">
-                                                <a href>Checkout</a>
+                                              <Link to={'taxcar'}>Расчет налога на имущество на транспортное средство</Link>
+                                        
                                               </li>
-                                              <li id="menu-item-8920" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-8920">
-                                                <a href>Wishlist</a>
-                                              </li>
+                          
                                             </ul>
                                           </li>
                                           <li id="menu-item-88" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-88">
