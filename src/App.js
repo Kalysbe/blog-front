@@ -4,7 +4,7 @@ import Container from "@mui/material/Container";
 import Box from '@mui/material/Box';
 
 import { Header,Footer } from "./components";
-import { Home, FullPost, Registration, AddPost, Login, Blog } from "./pages";
+import { Home, FullPost, Registration, AddPost, Login, Blog , TaxCar } from "./pages";
 import React from 'react';
 import { fetchAuthMe, logout , selectIsAuth } from './redux/slices/auth';
 
@@ -29,6 +29,10 @@ function App() {
           <Route path='/add-post' element={<AddPost />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Registration />} />
+
+
+          {/* Налоги */}
+          <Route path='/taxcar' element={<TaxCar />} />
         </Routes>
         </Box>
         <Footer/>
