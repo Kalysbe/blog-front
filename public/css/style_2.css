@@ -13122,10 +13122,6 @@ a.vs-btn.style11.ls-vs-btn2:hover {
   background-color: var(--white-color);
   opacity: 0.3;
 }
-.form-style1 .wpcf7-not-valid-tip {
-  margin-top: 5px;
-  color: #ff3a3a;
-}
 .form-style1 .vs-btn {
   width: 100%;
   padding-left: 10px;
@@ -13171,10 +13167,6 @@ a.vs-btn.style11.ls-vs-btn2:hover {
   border: none;
   font-size: 16px;
   padding-left: 25px;
-}
-
-.wpcf7-not-valid-tip {
-  margin-top: 10px;
 }
 
 .form-style3 .form-title {

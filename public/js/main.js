@@ -208,6 +208,7 @@
             $($sideMenu).addClass($toggleCls);
         });
         $($sideMenu).on('click', function(e) {
+            alert(324)
             e.stopPropagation();
             $($sideMenu).removeClass($toggleCls)
         });
@@ -229,6 +230,7 @@
     function popupSarchBox($searchBox, $searchOpen, $searchCls, $toggleCls) {
         $($searchOpen).on('click', function(e) {
             e.preventDefault();
+   
             $($searchBox).addClass($toggleCls);
         });
         $($searchBox).on('click', function(e) {
@@ -392,7 +394,6 @@
         slidesToShow: 1,
         slidesToScroll: 1,
     });
-
     $(document).on('click', '.quantity-plus,.quantity-minus', function(e) {
         e.preventDefault();
         // Get current quantity values
