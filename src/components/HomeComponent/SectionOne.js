@@ -1,8 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 
 export const SectionOne = (props) => {
+  const [initModule, setInitModule] = useState(null);
+
+  useEffect(() => {
+    // Dynamically import Init.js after the page has loaded
+    import('./Slides/Init.js')
+      .then((module) => {
+        // Store the imported module in the state
+        setInitModule(module.default); // Access the default export of the module
+      })
+      .catch((error) => {
+        console.error('Error importing Init.js:', error);
+      });
+  }, []); 
     return (
+      <div>
 <section className="elementor-section elementor-top-section elementor-element elementor-element-bd1d09e elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="bd1d09e" data-element_type="section">
 <div className="elementor-container elementor-column-gap-no">
   <div className="elementor-row">
@@ -27,7 +41,7 @@ export const SectionOne = (props) => {
                   <h1 style={{top: '378px', left: '345px', fontWeight: 700, backgroundSize: 'inherit', backgroundPosition: 'inherit', fontSize: '60px', fontFamily: 'Exo', color: '#ffffff', backgroundColor: 'transparent', cursor: 'auto'}} className="ls-l ls-hide-tablet ls-hide-phone ls-text-layer" data-ls="offsetxin:-200;durationin:1500;delayin:200;easingin:easeOutQuint;offsetxout:-100;durationout:1500;easingout:easeOutQuint;">
                     И РЕШЕНИЯ В 2024 - ГОДУ</h1>
                   <div style={{top: '505px', left: '350px', backgroundSize: 'inherit', backgroundPosition: 'inherit', fontSize: '24px'}} className="ls-l ls-hide-tablet ls-hide-phone ls-html-layer" data-ls="offsetyin:50;durationin:1500;delayin:900;easingin:easeOutQuint;offsetyout:50;durationout:1500;easingout:easeOutQuint;position:relative;">
-                    <div className="ls-btn-group"><a href className="vs-btn ls-hero-btn">ABOUT US<i className="far fa-arrow-right" /></a><a href className="vs-btn style2 ls-hero-btn">READ
+                    <div className="ls-btn-group"><a className="vs-btn ls-hero-btn">ABOUT US<i className="far fa-arrow-right" /></a><a className="vs-btn style2 ls-hero-btn">READ
                         MORE<i className="far fa-arrow-right" /></a>
                     </div>
                   </div>
@@ -38,7 +52,7 @@ export const SectionOne = (props) => {
                   <h1 style={{top: '380px', left: '80px', fontWeight: 700, backgroundSize: 'inherit', backgroundPosition: 'inherit', fontSize: '80px', fontFamily: 'Exo', color: '#ffffff', backgroundColor: 'transparent', cursor: 'auto'}} className="ls-l ls-hide-desktop ls-hide-phone ls-text-layer" data-ls="offsetxin:-200;durationin:1500;delayin:200;easingin:easeOutQuint;offsetxout:-100;durationout:1500;easingout:easeOutQuint;">
                     SERVICE &amp; SOLUTION 2022</h1>
                   <div style={{top: '540px', left: '80px', backgroundSize: 'inherit', backgroundPosition: 'inherit', fontSize: '24px'}} className="ls-l ls-hide-desktop ls-hide-phone ls-html-layer" data-ls="offsetyin:50;durationin:1500;delayin:900;easingin:easeOutQuint;offsetyout:50;durationout:1500;easingout:easeOutQuint;position:relative;">
-                    <div className="ls-btn-group"><a href className="vs-btn ls-hero-btn">ABOUT US<i className="far fa-arrow-right" /></a><a href className="vs-btn style2 ls-hero-btn">READ
+                    <div className="ls-btn-group"><a className="vs-btn ls-hero-btn">ABOUT US<i className="far fa-arrow-right" /></a><a className="vs-btn style2 ls-hero-btn">READ
                         MORE<i className="far fa-arrow-right" /></a>
                     </div>
                   </div>
@@ -47,7 +61,7 @@ export const SectionOne = (props) => {
                   <h1 style={{top: '232px', left: '50%', textAlign: 'center', fontWeight: 700, backgroundSize: 'inherit', backgroundPosition: 'inherit', fontSize: '130px', fontFamily: 'Exo', color: '#ffffff', width: '10000px', backgroundColor: 'transparent', cursor: 'auto'}} className="ls-l ls-hide-desktop ls-hide-tablet ls-text-layer" data-ls="offsetxin:-200;durationin:1500;delayin:200;easingin:easeOutQuint;offsetxout:-100;durationout:1500;easingout:easeOutQuint;">
                     И РЕШЕНИЯ В 2024 - ГОДУ</h1>
                   <div style={{top: '486px', left: '50%', textAlign: 'center', backgroundSize: 'inherit', backgroundPosition: 'inherit', fontSize: '24px', width: '1920px'}} className="ls-l ls-hide-desktop ls-hide-tablet ls-html-layer" data-ls="offsetyin:50;durationin:1500;delayin:900;easingin:easeOutQuint;offsetyout:50;durationout:1500;easingout:easeOutQuint;position:relative;">
-                    <div className="ls-btn-group"><a href className="vs-btn ls-hero-btn">О НАС<i className="far fa-arrow-right" /></a><a href className="vs-btn style2 ls-hero-btn">Читать<i className="far fa-arrow-right" /></a>
+                    <div className="ls-btn-group"><a className="vs-btn ls-hero-btn">О НАС<i className="far fa-arrow-right" /></a><a className="vs-btn style2 ls-hero-btn">Читать<i className="far fa-arrow-right" /></a>
                     </div>
                   </div><a style={{}} className="ls-l ls-hide-tablet ls-hide-phone" href="#next" target="_self" data-ls="static:forever;">
                     <div style={{left: '1685px', top: '50%'}} className="ls-html-layer"><span className="icon-btn style2"><i className="far fa-arrow-right" /></span>
@@ -69,7 +83,7 @@ export const SectionOne = (props) => {
                     ЭКСПЕРТНОЕ РЕШЕНИЕ
                   </h1>
                   <div style={{top: '505px', left: '350px', backgroundSize: 'inherit', backgroundPosition: 'inherit', fontSize: '24px'}} className="ls-l ls-hide-tablet ls-hide-phone ls-html-layer" data-ls="offsetyin:50;durationin:1500;delayin:900;easingin:easeOutQuint;offsetyout:50;durationout:1500;easingout:easeOutQuint;position:relative;">
-                    <div className="ls-btn-group"><a href className="vs-btn ls-hero-btn">ABOUT US<i className="far fa-arrow-right" /></a><a href className="vs-btn style2 ls-hero-btn">READ
+                    <div className="ls-btn-group"><a className="vs-btn ls-hero-btn">ABOUT US<i className="far fa-arrow-right" /></a><a className="vs-btn style2 ls-hero-btn">READ
                         MORE<i className="far fa-arrow-right" /></a>
                     </div>
                   </div>
@@ -82,7 +96,7 @@ export const SectionOne = (props) => {
                   <h1 style={{top: '380px', left: '80px', fontWeight: 700, backgroundSize: 'inherit', backgroundPosition: 'inherit', fontSize: '80px', fontFamily: 'Exo', color: '#ffffff', backgroundColor: 'transparent', cursor: 'auto'}} className="ls-l ls-hide-desktop ls-hide-phone ls-text-layer" data-ls="offsetxin:-200;durationin:1500;delayin:200;easingin:easeOutQuint;offsetxout:-100;durationout:1500;easingout:easeOutQuint;">
                     И УПРАВЛЕНИЕ</h1>
                   <div style={{top: '540px', left: '80px', backgroundSize: 'inherit', backgroundPosition: 'inherit', fontSize: '24px'}} className="ls-l ls-hide-desktop ls-hide-phone ls-html-layer" data-ls="offsetyin:50;durationin:1500;delayin:900;easingin:easeOutQuint;offsetyout:50;durationout:1500;easingout:easeOutQuint;position:relative;">
-                    <div className="ls-btn-group"><a href className="vs-btn ls-hero-btn">ABOUT US<i className="far fa-arrow-right" /></a><a href className="vs-btn style2 ls-hero-btn">READ
+                    <div className="ls-btn-group"><a className="vs-btn ls-hero-btn">ABOUT US<i className="far fa-arrow-right" /></a><a className="vs-btn style2 ls-hero-btn">READ
                         MORE<i className="far fa-arrow-right" /></a>
                     </div>
                   </div>
@@ -91,7 +105,7 @@ export const SectionOne = (props) => {
                   <h1 style={{top: '232px', left: '50%', textAlign: 'center', fontWeight: 700, backgroundSize: 'inherit', backgroundPosition: 'inherit', fontSize: '130px', fontFamily: 'Exo', color: '#ffffff', width: '10000px', backgroundColor: 'transparent', cursor: 'auto'}} className="ls-l ls-hide-desktop ls-hide-tablet ls-text-layer" data-ls="offsetxin:-200;durationin:1500;delayin:200;easingin:easeOutQuint;offsetxout:-100;durationout:1500;easingout:easeOutQuint;">
                     И УПРАВЛЕНИЕ</h1>
                   <div style={{top: '486px', left: '50%', textAlign: 'center', backgroundSize: 'inherit', backgroundPosition: 'inherit', fontSize: '24px', width: '1920px'}} className="ls-l ls-hide-desktop ls-hide-tablet ls-html-layer" data-ls="offsetyin:50;durationin:1500;delayin:900;easingin:easeOutQuint;offsetyout:50;durationout:1500;easingout:easeOutQuint;position:relative;">
-                    <div className="ls-btn-group"><a href className="vs-btn ls-hero-btn">ABOUT US<i className="far fa-arrow-right" /></a><a href className="vs-btn style2 ls-hero-btn">READ
+                    <div className="ls-btn-group"><a className="vs-btn ls-hero-btn">ABOUT US<i className="far fa-arrow-right" /></a><a className="vs-btn style2 ls-hero-btn">READ
                         MORE<i className="far fa-arrow-right" /></a>
                     </div>
                   </div>
@@ -105,7 +119,7 @@ export const SectionOne = (props) => {
                   <p style={{fontSize: '18px', fontWeight: 600, fontFamily: 'Exo', color: '#ffffff', borderWidth: '2px 2px 2px 2px', borderColor: '#ffffff', borderRadius: '5px 5px 5px 5px', paddingTop: '9px', paddingRight: '23.5px', paddingLeft: '23.5px', top: '220px', left: '345PX', paddingBottom: '9px'}} className="ls-l ls-hide-tablet ls-hide-phone ls-text-layer" data-ls="offsetxin:300;durationin:1500;delayin:400;easingin:easeOutQuint;offsetxout:300;durationout:1500;easingout:easeOutQuint;">
                     ВЫСОКОКВАЛИФИЦИРОВАННЫЕ ЭКСПЕРТЫ</p>
                   <div style={{top: '505px', left: '350px', backgroundSize: 'inherit', backgroundPosition: 'inherit', fontSize: '24px'}} className="ls-l ls-hide-tablet ls-hide-phone ls-html-layer" data-ls="offsetyin:50;durationin:1500;delayin:900;easingin:easeOutQuint;offsetyout:50;durationout:1500;easingout:easeOutQuint;position:relative;">
-                    <div className="ls-btn-group"><a href className="vs-btn ls-hero-btn">ABOUT US<i className="far fa-arrow-right" /></a><a href className="vs-btn style2 ls-hero-btn">READ
+                    <div className="ls-btn-group"><a className="vs-btn ls-hero-btn">ABOUT US<i className="far fa-arrow-right" /></a><a className="vs-btn style2 ls-hero-btn">READ
                         MORE<i className="far fa-arrow-right" /></a>
                     </div>
                   </div>
@@ -120,7 +134,7 @@ export const SectionOne = (props) => {
                   <h1 style={{top: '380px', left: '80px', fontWeight: 700, backgroundSize: 'inherit', backgroundPosition: 'inherit', fontSize: '80px', fontFamily: 'Exo', color: '#ffffff', backgroundColor: 'transparent', cursor: 'auto'}} className="ls-l ls-hide-desktop ls-hide-phone ls-text-layer" data-ls="offsetxin:-200;durationin:1500;delayin:200;easingin:easeOutQuint;offsetxout:-100;durationout:1500;easingout:easeOutQuint;">
                     PROFESSINAL ENGINERS</h1>
                   <div style={{top: '540px', left: '80px', backgroundSize: 'inherit', backgroundPosition: 'inherit', fontSize: '24px'}} className="ls-l ls-hide-desktop ls-hide-phone ls-html-layer" data-ls="offsetyin:50;durationin:1500;delayin:900;easingin:easeOutQuint;offsetyout:50;durationout:1500;easingout:easeOutQuint;position:relative;">
-                    <div className="ls-btn-group"><a href className="vs-btn ls-hero-btn">ABOUT US<i className="far fa-arrow-right" /></a><a href className="vs-btn style2 ls-hero-btn">READ
+                    <div className="ls-btn-group"><a className="vs-btn ls-hero-btn">ABOUT US<i className="far fa-arrow-right" /></a><a className="vs-btn style2 ls-hero-btn">READ
                         MORE<i className="far fa-arrow-right" /></a>
                     </div>
                   </div>
@@ -129,7 +143,7 @@ export const SectionOne = (props) => {
                   <h2 style={{top: '232px', left: '50%', textAlign: 'center', fontWeight: 700, backgroundSize: 'inherit', backgroundPosition: 'inherit', fontSize: '100px', fontFamily: 'Exo', color: '#ffffff', width: '10000px', backgroundColor: 'transparent', cursor: 'auto'}} className="ls-l ls-hide-desktop ls-hide-tablet ls-text-layer" data-ls="offsetxin:-200;durationin:1500;delayin:200;easingin:easeOutQuint;offsetxout:-100;durationout:1500;easingout:easeOutQuint;">
                     АУДИТОРОВ</h2>
                   <div style={{top: '486px', left: '50%', textAlign: 'center', backgroundSize: 'inherit', backgroundPosition: 'inherit', fontSize: '24px', width: '1920px'}} className="ls-l ls-hide-desktop ls-hide-tablet ls-html-layer" data-ls="offsetyin:50;durationin:1500;delayin:900;easingin:easeOutQuint;offsetyout:50;durationout:1500;easingout:easeOutQuint;position:relative;">
-                    <div className="ls-btn-group"><a href className="vs-btn ls-hero-btn">О нас<i className="far fa-arrow-right" /></a><a href className="vs-btn style2 ls-hero-btn">Читать<i className="far fa-arrow-right" /></a>
+                    <div className="ls-btn-group"><a className="vs-btn ls-hero-btn">О нас<i className="far fa-arrow-right" /></a><a className="vs-btn style2 ls-hero-btn">Читать<i className="far fa-arrow-right" /></a>
                     </div>
                   </div>
                 </div>
@@ -142,6 +156,8 @@ export const SectionOne = (props) => {
   </div>
 </div>
 </section>
+{initModule && <initModule />} {/* Use initModule as a component */}
+</div>
     )
 }
 

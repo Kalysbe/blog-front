@@ -2943,7 +2943,7 @@ a.text-theme:hover,
 .widget_categories a {
   display: block;
   background-color: transparent;
-  color: var(--body-color);
+  color: var(--body-color) !important;
   margin: 0 0 18px 0;
   padding: 0 0 17px 0;
   font-size: 16px;

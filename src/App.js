@@ -4,11 +4,14 @@ import Container from "@mui/material/Container";
 import Box from '@mui/material/Box';
 
 import { Header,Footer } from "./components";
-import { Home, FullPost, Registration, AddPost, Login, Blog , TaxCar } from "./pages";
-import React from 'react';
+import { Home, FullPost, Registration, AddPost, Login, Blog , TaxCar ,TaxHome ,TaxNoHome,TaxPlace} from "./pages";
+import React , { useEffect } from 'react';
 import { fetchAuthMe, logout , selectIsAuth } from './redux/slices/auth';
 
 function App() {
+
+
+
   const dispath = useDispatch()
   const isAuth = useSelector(selectIsAuth);
 
@@ -33,9 +36,13 @@ function App() {
 
           {/* Налоги */}
           <Route path='/taxcar' element={<TaxCar />} />
+          <Route path='/taxhome' element={<TaxHome />} />
+          <Route path='/taxnohome' element={<TaxNoHome />} />
+          <Route path='/taxplace' element={<TaxPlace />} />
         </Routes>
         </Box>
         <Footer/>
+        <a href="#" className="scrollToTop scroll-btn show"><i className="far fa-arrow-up"></i></a>
       {/* </Container> */}
     </>
   );

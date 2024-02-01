@@ -207,7 +207,7 @@ export const Header = (props) => {
                                   <div className="elementor-element elementor-element-28599e5 vs-logo elementor-widget elementor-widget-techbizimage" data-id="28599e5" data-element_type="widget" data-widget_type="techbizimage.default">
                                     <div className="elementor-widget-container">
                                       {/* Advertisement Image */}
-                                      <div className="techbiz_img "><Link to='/'><img className src="images/logo.png" alt="logo5" /></Link></div>
+                                      <div className="techbiz_img "><Link to='/'><img src="images/logo.png" alt="logo5" /></Link></div>
                                       {/* End Advertisement Image */}
                                     </div>
                                   </div>
@@ -220,23 +220,22 @@ export const Header = (props) => {
                                   <div className="elementor-element elementor-element-052837e elementor-widget elementor-widget-techbizmegamenu" data-id="052837e" data-element_type="widget" data-widget_type="techbizmegamenu.default">
                                     <div className="elementor-widget-container">
                                       <nav className="main-menu menu-style1 d-none d-lg-block">
-                                        <ul id="menu-primary-menu" className>
+                                        <ul id="menu-primary-menu">
                                           <li id="menu-item-101" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-101">
-                                            <a href>О
-                                              Главная</a>
+                                            <Link to="/">Главная</Link>
                                           </li>
                                           <li id="menu-item-97" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-97">
-                                            <a href>О
+                                            <a>О
                                               Нас</a>
                                           </li>
                                           <li id="menu-item-94" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-94">
-                                            <a href>Новости</a>
+                                            <a>Новости</a>
                                             <ul className="sub-menu">
                                               <li id="menu-item-104" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-104">
-                                                <a href>Blog</a>
+                                                <a>Blog</a>
                                               </li>
                                               <li id="menu-item-103" className="menu-item menu-item-type-post_type menu-item-object-post menu-item-103">
-                                                <a href>Blog
+                                                <a>Blog
                                                   Details</a>
                                               </li>
                                             </ul>
@@ -245,37 +244,37 @@ export const Header = (props) => {
                                             <a href="#">Услуги</a>
                                             <ul className="sub-menu">
                                               <li id="menu-item-96" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-96">
-                                                <a href>Service</a>
+                                                <a>Service</a>
                                                 <ul className="sub-menu">
                                                   <li id="menu-item-102" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-102">
-                                                    <a href>Service</a>
+                                                    <a>Service</a>
                                                   </li>
                                                   <li id="menu-item-95" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-95">
-                                                    <a href>Service
+                                                    <a>Service
                                                       Details</a>
                                                   </li>
                                                 </ul>
                                               </li>
                                               <li id="menu-item-90" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-90">
-                                                <a href>Projects</a>
+                                                <a>Projects</a>
                                               </li>
                                               <li id="menu-item-89" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-89">
-                                                <a href>Project
+                                                <a>Project
                                                   Details</a>
                                               </li>
                                               <li id="menu-item-92" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-92">
-                                                <a href>Team</a>
+                                                <a>Team</a>
                                               </li>
                                               <li id="menu-item-91" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-91">
-                                                <a href>Team
+                                                <a>Team
                                                   Details</a>
                                               </li>
                                               <li id="menu-item-116" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-116">
-                                                <a href>Pricing
+                                                <a>Pricing
                                                   Plan</a>
                                               </li>
                                               <li id="menu-item-118" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-118">
-                                                <a href>404
+                                                <a>404
                                                   Page</a>
                                               </li>
                                             </ul>
@@ -287,13 +286,13 @@ export const Header = (props) => {
                                                 <a href=""></a>
                                               </li> */}
                                               <li id="menu-item-8925" className="menu-item menu-item-type-post_type menu-item-object-product menu-item-8925">
-                                                <a href>Расчет налога на имущество на жилое здание, сооружение и помещение</a>
+                                                <Link to="taxhome">Расчет налога на имущество на жилое здание, сооружение и помещение</Link>
                                               </li>
                                               <li id="menu-item-8923" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-8923">
-                                                <a href>Расчет налога на имущество на нежилое здание, сооружение и помещение</a>
+                                              <Link to="taxnohome">Расчет налога на имущество на нежилое здание, сооружение и помещение</Link>
                                               </li>
                                               <li id="menu-item-8921" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-8921">
-                                                <a href>Расчет налога на имущество на земли населенных пунктов и земли несельскохозяйственного назначения</a>
+                                              <Link to="taxplace">Расчет налога на имущество на земли населенных пунктов и земли несельскохозяйственного назначения</Link>
                                               </li>
                                               <li id="menu-item-8922" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-8922">
                                               <Link to={'taxcar'}>Расчет налога на имущество на транспортное средство</Link>
@@ -303,7 +302,7 @@ export const Header = (props) => {
                                             </ul>
                                           </li>
                                           <li id="menu-item-88" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-88">
-                                            <a href>Контакты</a>
+                                            <a>Контакты</a>
                                           </li>
                                         </ul>
                                       </nav>
@@ -317,35 +316,35 @@ export const Header = (props) => {
                                       <div className="vs-menu-wrapper">
                                         <div className="vs-menu-area text-center">
                                           <button className="vs-menu-toggle"><i className="fal fa-times" /></button>
-                                          <div className="mobile-logo"><a href><img src="images/logo.png" alt="logo5" /></a></div>
+                                          <div className="mobile-logo"><a><img src="images/logo.png" alt="logo5" /></a></div>
                                           <div className="vs-mobile-menu">
-                                            <ul id="menu-mobile-menu" className>
+                                            <ul id="menu-mobile-menu">
                                               <li id="menu-item-131" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-131">
-                                                <a href>Главная</a>
+                                                <Link to="/">Главная</Link>
                                               </li>
                                               <li id="menu-item-135" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-135">
-                                                <a href>О нас</a>
+                                                <a>О нас</a>
                                               </li>
                                               <li id="menu-item-136" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-136">
-                                                <a href>Service</a>
+                                                <a>Service</a>
                                                 <ul className="sub-menu">
                                                   <li id="menu-item-137" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-137">
-                                                    <a href>Service</a>
+                                                    <a>Service</a>
                                                   </li>
                                                   <li id="menu-item-138" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-138">
-                                                    <a href>Service
+                                                    <a>Service
                                                       Details</a>
                                                   </li>
                                                 </ul>
                                               </li>
                                               <li id="menu-item-139" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-139">
-                                                <a href>Blog</a>
+                                                <a>Blog</a>
                                                 <ul className="sub-menu">
                                                   <li id="menu-item-140" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
-                                                    <a href>Blog</a>
+                                                    <a>Blog</a>
                                                   </li>
                                                   <li id="menu-item-141" className="menu-item menu-item-type-post_type menu-item-object-post menu-item-141">
-                                                    <a href>Blog
+                                                    <a>Blog
                                                       Details</a>
                                                   </li>
                                                 </ul>
@@ -354,31 +353,31 @@ export const Header = (props) => {
                                                 <a href="#">Pages</a>
                                                 <ul className="sub-menu">
                                                   <li id="menu-item-151" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-151">
-                                                    <a href>Pricing
+                                                    <a>Pricing
                                                       Plan</a>
                                                   </li>
                                                   <li id="menu-item-153" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-153">
-                                                    <a href>Projects</a>
+                                                    <a>Projects</a>
                                                   </li>
                                                   <li id="menu-item-154" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-154">
-                                                    <a href>Project
+                                                    <a>Project
                                                       Details</a>
                                                   </li>
                                                   <li id="menu-item-155" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-155">
-                                                    <a href>Team</a>
+                                                    <a>Team</a>
                                                   </li>
                                                   <li id="menu-item-156" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-156">
-                                                    <a href>Team
+                                                    <a>Team
                                                       Details</a>
                                                   </li>
                                                   <li id="menu-item-160" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-160">
-                                                    <a href>404
+                                                    <a>404
                                                       Page</a>
                                                   </li>
                                                 </ul>
                                               </li>
                                               <li id="menu-item-161" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-161">
-                                                <a href>Contact
+                                                <a>Contact
                                                   Us</a>
                                               </li>
                                             </ul>
@@ -396,7 +395,7 @@ export const Header = (props) => {
                                   <div className="elementor-element elementor-element-99562d2 elementor-widget__width-auto d-none d-xxl-inline-block elementor-widget elementor-widget-techbizbutton" data-id="99562d2" data-element_type="widget" data-widget_type="techbizbutton.default">
                                     <div className="elementor-widget-container">
                                       {/* Button */}
-                                      <div className="btn-wrapper left"><a className="vs-btn" href>Войти<i className="far fa-arrow-right" /></a>
+                                      <div className="btn-wrapper left"><a className="vs-btn">Войти<i className="far fa-arrow-right" /></a>
                                       </div>{/* End Button */}
                                     </div>
                                   </div>
@@ -424,7 +423,19 @@ export const Header = (props) => {
                                               </div>
                                             </div>
                                           </div>
-                                          {/*  */}
+                                          {/* <div id="block-14" className="widget widget_block">
+        <div className="wp-block-group is-layout-flow wp-block-group-is-layout-flow"><div className="wp-block-group__inner-container">
+            <h3 className="widget_title wp-block-heading">Gallery Posts</h3>
+            <figure className="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-1 is-layout-flex wp-block-gallery-is-layout-flex">
+              <figure className="wp-block-image size-large is-style-default"><img decoding="async" width={89} height={89} src="https://wordpress.vecurosoft.com/techbiz/wp-content/uploads/2022/09/gal-1-1.jpg" alt="" className="wp-image-738" /></figure>
+              <figure className="wp-block-image size-large"><img decoding="async" width={89} height={89} src="https://wordpress.vecurosoft.com/techbiz/wp-content/uploads/2022/09/gal-1-2.jpg" alt="" className="wp-image-737" /></figure>
+              <figure className="wp-block-image size-large"><img decoding="async" width={89} height={89} src="https://wordpress.vecurosoft.com/techbiz/wp-content/uploads/2022/09/gal-1-3.jpg" alt="" className="wp-image-736" /></figure>
+              <figure className="wp-block-image size-large"><img loading="lazy" decoding="async" width={89} height={89} src="https://wordpress.vecurosoft.com/techbiz/wp-content/uploads/2022/09/gal-1-4.jpg" alt="" className="wp-image-735" /></figure>
+              <figure className="wp-block-image size-large"><img loading="lazy" decoding="async" width={89} height={89} src="https://wordpress.vecurosoft.com/techbiz/wp-content/uploads/2022/09/gal-1-5.jpg" alt="" className="wp-image-734" /></figure>
+              <figure className="wp-block-image size-large"><img loading="lazy" decoding="async" width={89} height={89} src="https://wordpress.vecurosoft.com/techbiz/wp-content/uploads/2022/09/gal-1-6.jpg" alt="" className="wp-image-733" /></figure>
+            </figure>
+          </div></div>
+      </div> */}
                                           <div id="block-15" className="widget widget_block">
                                             <div className="wp-block-group is-layout-flow wp-block-group-is-layout-flow">
                                               <div className="wp-block-group__inner-container">

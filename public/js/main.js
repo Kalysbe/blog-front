@@ -69,6 +69,7 @@
 
             // Menu Show & Hide
             function menuToggle() {
+            
                 menu.toggleClass(opt.bodyToggleClass);
 
                 // collapse submenu on menu hide or show
@@ -208,7 +209,6 @@
             $($sideMenu).addClass($toggleCls);
         });
         $($sideMenu).on('click', function(e) {
-            alert(324)
             e.stopPropagation();
             $($sideMenu).removeClass($toggleCls)
         });
