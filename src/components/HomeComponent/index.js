@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './HomeComponent.module.scss';
 import Box from '@mui/material/Box';
+import { useEffect } from 'react';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
@@ -14,7 +15,7 @@ import Typography from '@mui/material/Typography';
 import { useMediaQuery } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import CustomizedAccordions from '../ Questions/ Questions'
-import BasicTaаbs from '../Tab';
+import BasicTabs from '../Tab';
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -49,69 +50,54 @@ const responsive = {
     }
 };
 
-const services = [
-    {
-        title: 'Профессиональная экспертиза',
-        text: 'Наши высококвалифицированные специалисты обладают обширным опытом в области финансов, налогообложения и законодательства. Мы гарантируем точность и соответствие всей финансовой документации требованиям законодательства, обеспечивая вашу безопасность и спокойствие.',
-        icon: 'https://base-tailwind.preview.uideck.com/images/icon-04.svg'
-    },
-    {
-        title: 'Эффективное управление налогами',
-        text: 'Мы разрабатываем индивидуальные стратегии, направленные на оптимизацию налоговых обязательств вашей компании. Наши специалисты помогают минимизировать налоговые издержки, соблюдая все законодательные нормы.',
-        icon: 'https://base-tailwind.preview.uideck.com/images/icon-05.svg'
-    },
-    {
-        title: 'Оптимизация финансов',
-        text: 'Мы проводим глубокий анализ финансовых процессов вашего предприятия, предлагая конкретные рекомендации по сокращению расходов и увеличению прибыли.',
-        icon: 'https://base-tailwind.preview.uideck.com/images/icon-06.svg'
-    },
-    {
-        title: 'Соблюдение законодательства',
-        text: 'Наша компания всегда в курсе последних изменений в налоговом и бухгалтерском законодательстве. Мы гарантируем, что ваш бизнес полностью соответствует всем требованиям и нормативам.',
-        icon: 'https://base-tailwind.preview.uideck.com/images/icon-05.svg'
-    },
-    {
-        title: 'Экономия времени и ресурсов',
-        text: 'Доверив нам ведение учета и налоговой отчетности, вы освобождаете свое время для стратегического развития бизнеса, а также экономите ресурсы, которые можно использовать более эффективно.',
-        icon: 'https://base-tailwind.preview.uideck.com/images/icon-07.svg'
-    },
-    {
-        title: 'Инновационные технологии и инструменты',
-        text: 'Мы работаем с передовыми технологиями и программным обеспечением, чтобы обеспечить более точный и эффективный учет и анализ данных вашей компании.',
-        icon: 'https://base-tailwind.preview.uideck.com/images/icon-06.svg'
-    }
-]
 
 
 
-const data = [
-    {
-        title: 'Неотложная задача руководителей: как руководители компаний будут реагировать на новые реалии рецессии?',
-        img: '79250266-a2ff-439b-bd2b-fa559d95dcb3.jpeg'
-    },
-    {
-        title: 'Рост зарплат отстает от инфляции впервые за шесть лет',
-        img: 'a40d8e95-0301-4206-96fc-25cd8e36ad91.jpeg'
-    },
-    {
-        title: 'Путь углеродной нейтральности',
-        img: 'd792f529-c33a-40b0-99be-f550324a6a08.jpeg'
-    },
-    {
-        title: 'Неотложная задача руководителей: как руководители компаний будут реагировать на новые реалии рецессии?',
-        img: '79250266-a2ff-439b-bd2b-fa559d95dcb3.jpeg'
-    },
-    {
-        title: 'Рост зарплат отстает от инфляции впервые за шесть лет',
-        img: 'a40d8e95-0301-4206-96fc-25cd8e36ad91.jpeg'
-    },
-    {
-        title: 'Путь углеродной нейтральности',
-        img: 'd792f529-c33a-40b0-99be-f550324a6a08.jpeg'
-    }
-]
+
+
 
 export const HomeComponent = (props) => {
+
+  useEffect(() => {
+    const scriptFiles = [
+      'jquery.min.js',
+      'layerslider.utils.js',
+      'layerslider.kreaturamedia.jquery.js',
+     'layerslider.transitions.js',
+     'init.js',
+    'index.js',
+    'index_1.js',
+    'slick.min.js',
+    'jquery.magnific-popup.min.js',
+    'bootstrap.min.js',
+    'imagesloaded.min.js',
+    'main.js',
+    'webpack.runtime.min.js',
+    'frontend-modules.min.js',
+    'core.min.js',
+    'config.js',
+    'frontend.min.js',
+    'techbiz-frontend.js'
+      // Добавьте остальные имена файлов скриптов
+    ];
+    const scriptElements = [];
+
+    const loadScripts = () => {
+      scriptFiles.forEach((fileName) => {
+        const script = document.createElement('script');
+        script.src = `./js/${fileName}`;
+        script.setAttribute('data-nscript','afterInteractive')
+        document.body.appendChild(script);
+        scriptElements.push(script);
+      });
+    };
+
+      loadScripts();
+
+
+
+  }, []);
+
     const isMobile = useMediaQuery('(max-width:600px)');
 
     return (
@@ -377,22 +363,22 @@ export const HomeComponent = (props) => {
                                                   <div className="col-md-6">
                                                     <div className="vs-blog blog-style1">
                                                       <div className="blog-img">
-                                                        <a href><img loading="lazy" decoding="async" width={387} height={320} src="images/blog1-387x320.jpg" className="w-100 wp-post-image" alt="" /></a>
+                                                        <a><img loading="lazy" decoding="async" width={387} height={320} src="images/blog1-387x320.jpg" className="w-100 wp-post-image" alt="" /></a>
                                                         <div className="blog-content">
                                                           <div className="blog-meta">
-                                                            <a href><i className="far fa-calendar" /><time dateTime="2022-08-10T06:12:37+02:00">10
+                                                            <a><i className="far fa-calendar" /><time dateTime="2022-08-10T06:12:37+02:00">10
                                                                 Aug,
-                                                                2022</time></a><a href><i className="fal fa-user" />Rodja
+                                                                2022</time></a><a><i className="fal fa-user" />Rodja
                                                               Hartmann</a>
                                                           </div>
                                                           <h3 className="blog-title">
-                                                            <a href>Richard
+                                                            <a>Richard
                                                               McClintock,
                                                               a
                                                               Latin
                                                               scholar
                                                               from</a>
-                                                          </h3><a href className="link-btn">Read
+                                                          </h3><a className="link-btn">Read
                                                             Deatils<i className="far fa-arrow-right" /></a>
                                                         </div>
                                                       </div>
@@ -401,22 +387,22 @@ export const HomeComponent = (props) => {
                                                   <div className="col-md-6">
                                                     <div className="vs-blog blog-style1">
                                                       <div className="blog-img">
-                                                        <a href><img loading="lazy" decoding="async" width={387} height={320} src="images/blog4-387x320.jpg" className="w-100 wp-post-image" alt="" /></a>
+                                                        <a><img loading="lazy" decoding="async" width={387} height={320} src="images/blog4-387x320.jpg" className="w-100 wp-post-image" alt="" /></a>
                                                         <div className="blog-content">
                                                           <div className="blog-meta">
-                                                            <a href><i className="far fa-calendar" /><time dateTime="2022-08-10T06:09:28+02:00">10
+                                                            <a><i className="far fa-calendar" /><time dateTime="2022-08-10T06:09:28+02:00">10
                                                                 Aug,
-                                                                2022</time></a><a href><i className="fal fa-user" />Rodja
+                                                                2022</time></a><a><i className="fal fa-user" />Rodja
                                                               Hartmann</a>
                                                           </div>
                                                           <h3 className="blog-title">
-                                                            <a href>Latin
+                                                            <a>Latin
                                                               derived
                                                               from
                                                               Cicero’s
                                                               1st-century
                                                               BC</a>
-                                                          </h3><a href className="link-btn">Read
+                                                          </h3><a className="link-btn">Read
                                                             Deatils<i className="far fa-arrow-right" /></a>
                                                         </div>
                                                       </div>
@@ -425,23 +411,23 @@ export const HomeComponent = (props) => {
                                                   <div className="col-md-6">
                                                     <div className="vs-blog blog-style1">
                                                       <div className="blog-img">
-                                                        <a href><img loading="lazy" decoding="async" width={387} height={320} src="images/blog3-387x320.jpg" className="w-100 wp-post-image" alt="" /></a>
+                                                        <a><img loading="lazy" decoding="async" width={387} height={320} src="images/blog3-387x320.jpg" className="w-100 wp-post-image" alt="" /></a>
                                                         <div className="blog-content">
                                                           <div className="blog-meta">
-                                                            <a href><i className="far fa-calendar" /><time dateTime="2022-08-10T06:13:33+02:00">10
+                                                            <a><i className="far fa-calendar" /><time dateTime="2022-08-10T06:13:33+02:00">10
                                                                 Aug,
-                                                                2022</time></a><a href><i className="fal fa-user" />Rodja
+                                                                2022</time></a><a><i className="fal fa-user" />Rodja
                                                               Hartmann</a>
                                                           </div>
                                                           <h3 className="blog-title">
-                                                            <a href>Global
+                                                            <a>Global
                                                               Business
                                                               Goal
                                                               Make
                                                               Life
                                                               Easy
                                                               From</a>
-                                                          </h3><a href className="link-btn">Read
+                                                          </h3><a className="link-btn">Read
                                                             Deatils<i className="far fa-arrow-right" /></a>
                                                         </div>
                                                       </div>
@@ -450,23 +436,23 @@ export const HomeComponent = (props) => {
                                                   <div className="col-md-6">
                                                     <div className="vs-blog blog-style1">
                                                       <div className="blog-img">
-                                                        <a href><img loading="lazy" decoding="async" width={387} height={320} src="images/blog5-387x320.jpg" className="w-100 wp-post-image" alt="" /></a>
+                                                        <a><img loading="lazy" decoding="async" width={387} height={320} src="images/blog5-387x320.jpg" className="w-100 wp-post-image" alt="" /></a>
                                                         <div className="blog-content">
                                                           <div className="blog-meta">
-                                                            <a href><i className="far fa-calendar" /><time dateTime="2022-08-09T06:25:07+02:00">9
+                                                            <a><i className="far fa-calendar" /><time dateTime="2022-08-09T06:25:07+02:00">9
                                                                 Aug,
-                                                                2022</time></a><a href><i className="fal fa-user" />Rodja
+                                                                2022</time></a><a><i className="fal fa-user" />Rodja
                                                               Hartmann</a>
                                                           </div>
                                                           <h3 className="blog-title">
-                                                            <a href>The
+                                                            <a>The
                                                               passage
                                                               experienced
                                                               a
                                                               surge
                                                               in
                                                               during</a>
-                                                          </h3><a href className="link-btn">Read
+                                                          </h3><a className="link-btn">Read
                                                             Deatils<i className="far fa-arrow-right" /></a>
                                                         </div>
                                                       </div>
@@ -499,22 +485,22 @@ export const HomeComponent = (props) => {
 
 }
 
-function Item(props) {
-    const isMobile = useMediaQuery('(max-width:600px)');
-    return (
-        <Box sx={{ height: isMobile ? '320px' : '610px', position: 'relative', backgroundImage: `url(${props.item.img})`, backgroundRepeat: 'no-repeat', backgroundPosition: '50% 50%', backgroundSize: 'cover' }}>
-            <Box sx={{ background: 'linear-gradient(transparent,rgba(0,0,0,0.75))', position: 'absolute', bottom: '0', left: '0', right: '0', top: '50%' }}></Box>
-            <Box sx={{ position: 'absolute', left: 0, right: 0, bottom: 0, p: 3.75 }}>
-                <Typography sx={{ color: '#fff' }} variant={isMobile ? 'h6' : 'h6'} gutterBottom>
-                    {props.item.title}
-                </Typography>
-                <Typography sx={{ color: '#fff' }}>
-                    Читать далее
-                </Typography>
-            </Box>
-        </Box>
-    )
-}
+// function Item(props) {
+//     const isMobile = useMediaQuery('(max-width:600px)');
+//     return (
+//         <Box sx={{ height: isMobile ? '320px' : '610px', position: 'relative', backgroundImage: `url(${props.item.img})`, backgroundRepeat: 'no-repeat', backgroundPosition: '50% 50%', backgroundSize: 'cover' }}>
+//             <Box sx={{ background: 'linear-gradient(transparent,rgba(0,0,0,0.75))', position: 'absolute', bottom: '0', left: '0', right: '0', top: '50%' }}></Box>
+//             <Box sx={{ position: 'absolute', left: 0, right: 0, bottom: 0, p: 3.75 }}>
+//                 <Typography sx={{ color: '#fff' }} variant={isMobile ? 'h6' : 'h6'} gutterBottom>
+//                     {props.item.title}
+//                 </Typography>
+//                 <Typography sx={{ color: '#fff' }}>
+//                     Читать далее
+//                 </Typography>
+//             </Box>
+//         </Box>
+//     )
+// }
 
 
 
