@@ -15,7 +15,7 @@ import Typography from '@mui/material/Typography';
 import { useMediaQuery } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import CustomizedAccordions from '../ Questions/ Questions'
-import BasicTabs from '../Tab';
+import BasicTaаbs from '../Tab';
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
