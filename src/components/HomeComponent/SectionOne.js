@@ -4,17 +4,17 @@ import React, { useEffect, useState } from 'react';
 export const SectionOne = (props) => {
   const [initModule, setInitModule] = useState(null);
 
-  useEffect(() => {
-    // Dynamically import Init.js after the page has loaded
-    import('./Slides/Init.js')
-      .then((module) => {
-        // Store the imported module in the state
-        setInitModule(module.default); // Access the default export of the module
-      })
-      .catch((error) => {
-        console.error('Error importing Init.js:', error);
-      });
-  }, []); 
+  // useEffect(() => {
+  //   // Dynamically import Init.js after the page has loaded
+  //   import('./Slides/Init.js')
+  //     .then((module) => {
+  //       // Store the imported module in the state
+  //       setInitModule(module.default); // Access the default export of the module
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error importing Init.js:', error);
+  //     });
+  // }, []); 
     return (
       <div>
 <section className="elementor-section elementor-top-section elementor-element elementor-element-bd1d09e elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="bd1d09e" data-element_type="section">

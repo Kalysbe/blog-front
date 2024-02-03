@@ -58,40 +58,80 @@ const responsive = {
 
 export const HomeComponent = (props) => {
 
+  // useEffect(() => {
+  //   const scriptFiles = [
+  //   'index.js',
+  //   'index_1.js',
+  //   'slick.min.js',
+  //   'jquery.magnific-popup.min.js',
+  //   'bootstrap.min.js',
+  //   'imagesloaded.min.js',
+  //   'main.js',
+  //   'webpack.runtime.min.js',
+  //   'frontend-modules.min.js',
+  //   'core.min.js',
+  //   'config.js',
+  //   'frontend.min.js',
+  //   'techbiz-frontend.js'
+  //     // Добавьте остальные имена файлов скриптов
+  //   ];
+  //   const scriptElements = [];
+
+  //   const loadScripts = () => {
+  //     scriptFiles.forEach((fileName) => {
+  //       const script = document.createElement('script');
+  //       script.src = `./js/${fileName}`;
+  //       script.setAttribute('data-nscript','afterInteractive')
+  //       document.body.appendChild(script);
+  //       scriptElements.push(script);
+  //     });
+  //   };
+
+  //     loadScripts();
+
+
+
+  // }, []);
   useEffect(() => {
     const scriptFiles = [
-    'index.js',
-    'index_1.js',
-    'slick.min.js',
-    'jquery.magnific-popup.min.js',
-    'bootstrap.min.js',
-    'imagesloaded.min.js',
-    'main.js',
-    'webpack.runtime.min.js',
-    'frontend-modules.min.js',
-    'core.min.js',
-    'config.js',
-    'frontend.min.js',
-    'techbiz-frontend.js'
-      // Добавьте остальные имена файлов скриптов
+   
+      'init.js',
+      'index.js',
+      'index_1.js',
+      'slick.min.js',
+      'jquery.magnific-popup.min.js',
+      'bootstrap.min.js',
+      'imagesloaded.min.js',
+      'main.js',
+      'webpack.runtime.min.js',
+      'frontend-modules.min.js',
+      'core.min.js',
+      'swiper.min.js',
+      'config.js',
+      'frontend.min.js',
+      'techbiz-frontend.js'
+      // Add the names of the remaining script files
     ];
-    const scriptElements = [];
-
-    const loadScripts = () => {
-      scriptFiles.forEach((fileName) => {
+  
+    const loadScript = (src) => {
+      return new Promise((resolve, reject) => {
         const script = document.createElement('script');
-        script.src = `./js/${fileName}`;
-        script.setAttribute('data-nscript','afterInteractive')
+        script.src = `./js/${src}`;
+        script.async = true;
+        script.onload = resolve;
+        script.onerror = reject;
         document.body.appendChild(script);
-        scriptElements.push(script);
       });
     };
-
-      loadScripts();
-
-
-
+  
+    const loadScriptsAsync = async () => {
+      const scriptPromises = scriptFiles.map((fileName) => loadScript(fileName));
+      await Promise.all(scriptPromises);
+    };
+  
+    loadScriptsAsync();
   }, []);
+
 
     const isMobile = useMediaQuery('(max-width:600px)');
 

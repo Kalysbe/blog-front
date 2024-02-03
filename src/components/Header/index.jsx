@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom'
 import Button from '@mui/material/Button';
 import PropTypes from 'prop-types';
@@ -36,6 +36,7 @@ const navItems = [
 
 
 export const Header = (props) => {
+
 
   const dispatch = useDispatch();
   const isAuth = useSelector(selectIsAuth);
