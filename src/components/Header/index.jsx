@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, {useContext,  useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 import Button from '@mui/material/Button';
 import PropTypes from 'prop-types';
@@ -55,6 +56,48 @@ export const Header = (props) => {
     setMobileOpen((prevState) => !prevState)
   };
 
+  const location = useLocation();
+
+    useEffect(() => {
+     
+      const scriptFiles = [
+   
+        'init.js',
+        // 'index.js',
+        // 'index_1.js',
+        // 'slick.min.js',
+        // 'jquery.magnific-popup.min.js',
+        // 'bootstrap.min.js',
+        // 'imagesloaded.min.js',
+        'main.js',
+        // 'webpack.runtime.min.js',
+        // 'frontend-modules.min.js',
+        // 'core.min.js',
+        // 'swiper.min.js',
+        'config.js',
+        // 'frontend.min.js',
+        // 'techbiz-frontend.js'
+        // Add the names of the remaining script files
+      ];
+    
+      const loadScript = (src) => {
+        return new Promise((resolve, reject) => {
+          const script = document.createElement('script');
+          script.src = `./js/${src}`;
+          script.async = true;
+          script.onload = resolve;
+          script.onerror = reject;
+          document.body.appendChild(script);
+        });
+      };
+    
+      const loadScriptsAsync = async () => {
+        const scriptPromises = scriptFiles.map((fileName) => loadScript(fileName));
+        await Promise.all(scriptPromises);
+      };
+    
+      loadScriptsAsync();
+    }, [location.pathname]);
 
 
   const drawer = (
@@ -329,7 +372,7 @@ export const Header = (props) => {
                                                   <a>Сервисы</a>
                                                   <ul className="sub-menu">
                                                     <li id="menu-item-8925" className="menu-item menu-item-type-post_type menu-item-object-product menu-item-8925">
-                                                      <Link to="taxhome">Расчет налога на имущество на жилое здание, сооружение и помещение</Link>
+                                                      <Link to='taxhome'>Расчет налога на имущество на жилое здание, сооружение и помещение</Link>
                                                     </li>
                                                     <li id="menu-item-8923" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-8923">
                                                       <Link to="taxnohome">Расчет налога на имущество на нежилое здание, сооружение и помещение</Link>
@@ -406,7 +449,10 @@ export const Header = (props) => {
                                     </div>
                                     <div className="elementor-element elementor-element-4fa0521 elementor-widget__width-auto elementor-hidden-tablet elementor-hidden-mobile elementor-widget elementor-widget-techbizoffcanvas" data-id="4fa0521" data-element_type="widget" data-widget_type="techbizoffcanvas.default">
                                       <div className="elementor-widget-container">
-                                        <div className="header-btns"><button className="icon-btn style3 sideMenuToggler"><i className="far fa-bars" /></button>
+                                        <div className="header-btns">
+                                          <button className="icon-btn style3 sideMenuToggler">
+                                            <i className="far fa-bars" />
+                                          </button>
                                         </div>
                                         <div className="sidemenu-wrapper d-none d-lg-block">
                                           <div className="sidemenu-content">
