@@ -1,5 +1,5 @@
 import React, {useContext,  useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate} from 'react-router-dom';
 import { Link } from 'react-router-dom'
 import Button from '@mui/material/Button';
 import PropTypes from 'prop-types';
@@ -37,7 +37,11 @@ const navItems = [
 
 
 export const Header = (props) => {
+  const navigate = useNavigate();
 
+  const goToHome = () => {
+    navigate('/');
+  };
 
   const dispatch = useDispatch();
   const isAuth = useSelector(selectIsAuth);
@@ -57,47 +61,54 @@ export const Header = (props) => {
   };
 
   const location = useLocation();
-
-    useEffect(() => {
-     
-      const scriptFiles = [
-   
-        'init.js',
-        // 'index.js',
-        // 'index_1.js',
-        // 'slick.min.js',
-        // 'jquery.magnific-popup.min.js',
-        // 'bootstrap.min.js',
-        // 'imagesloaded.min.js',
-        'main.js',
-        // 'webpack.runtime.min.js',
-        // 'frontend-modules.min.js',
-        // 'core.min.js',
-        // 'swiper.min.js',
-        'config.js',
-        // 'frontend.min.js',
-        // 'techbiz-frontend.js'
-        // Add the names of the remaining script files
-      ];
-    
-      const loadScript = (src) => {
-        return new Promise((resolve, reject) => {
-          const script = document.createElement('script');
-          script.src = `./js/${src}`;
-          script.async = true;
-          script.onload = resolve;
-          script.onerror = reject;
-          document.body.appendChild(script);
-        });
-      };
-    
-      const loadScriptsAsync = async () => {
-        const scriptPromises = scriptFiles.map((fileName) => loadScript(fileName));
-        await Promise.all(scriptPromises);
-      };
-    
-      loadScriptsAsync();
-    }, [location.pathname]);
+  useEffect(() => {
+    // alert(1)
+    const scriptFiles = [
+      'init.js',
+      // 'index.js',
+      // 'index_1.js',
+      // 'slick.min.js',
+      // 'jquery.magnific-popup.min.js',
+      // 'bootstrap.min.js',
+      // 'imagesloaded.min.js',
+      'main.js',
+      // 'webpack.runtime.min.js',
+      // 'frontend-modules.min.js',
+      // 'core.min.js',
+      // 'swiper.min.js',
+      'config.js',
+      'frontend.min.js',
+      // 'techbiz-frontend.js'
+      // Add the names of the remaining script files
+    ];
+  
+    const removeScripts = () => {
+      const dynamicScripts = document.querySelectorAll('.dynamic-script');
+      dynamicScripts.forEach((script) => {
+        script.remove();
+      });
+    };
+  
+    const loadScript = (src) => {
+      return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = `./js/${src}`;
+        script.async = true;
+        script.classList.add('dynamic-script'); // Add a class to identify dynamically added scripts
+        script.onload = resolve;
+        script.onerror = reject;
+        document.body.appendChild(script);
+      });
+    };
+  
+    const loadScriptsAsync = async () => {
+      removeScripts(); // Remove dynamically added scripts before adding new ones
+      const scriptPromises = scriptFiles.map((fileName) => loadScript(fileName));
+      await Promise.all(scriptPromises);
+    };
+  
+    loadScriptsAsync();
+  }, [location.pathname]);
 
 
   const drawer = (
@@ -251,7 +262,7 @@ export const Header = (props) => {
                                     <div className="elementor-element elementor-element-28599e5 vs-logo elementor-widget elementor-widget-techbizimage" data-id="28599e5" data-element_type="widget" data-widget_type="techbizimage.default">
                                       <div className="elementor-widget-container">
                                         {/* Advertisement Image */}
-                                        <div className="techbiz_img "><Link to='/'><img src="images/logo.png" alt="logo5" /></Link></div>
+                                        <div className="techbiz_img "><a href="/"><img src="images/logo.png" alt="logo5" /> </a></div>
                                         {/* End Advertisement Image */}
                                       </div>
                                     </div>
@@ -262,11 +273,11 @@ export const Header = (props) => {
                                 <div className="elementor-column-wrap elementor-element-populated">
                                   <div className="elementor-widget-wrap">
                                     <div className="elementor-element elementor-element-052837e elementor-widget elementor-widget-techbizmegamenu" data-id="052837e" data-element_type="widget" data-widget_type="techbizmegamenu.default">
-                                      <div className="elementor-widget-container">
+                                      <div className="elementor-widget-container"> 
                                         <nav className="main-menu menu-style1 d-none d-lg-block">
                                           <ul id="menu-primary-menu">
                                             <li id="menu-item-101" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-101">
-                                              <Link to="/">Главная</Link>
+                                              <Link to='/'>Главная</Link>
                                             </li>
                                             <li id="menu-item-97" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-97">
                                               <a>О
@@ -353,17 +364,19 @@ export const Header = (props) => {
                                     </div>
                                     <div className="elementor-element elementor-element-d4956a1 elementor-widget-tablet__width-auto elementor-widget elementor-widget-techbizmobilemenu"
                                       data-id="d4956a1" data-element_type="widget"
-                                      data-widget_type="techbizmobilemenu.default">
+                                      data-widget_type="techbizmobilemenu.default">  
                                       <div className="elementor-widget-container">
                                         <button className="vs-menu-toggle d-inline-block d-lg-none"><i className="fal fa-bars" /></button>
-                                        <div className="vs-menu-wrapper">
+                                     
+                                        <div className="vs-menu-wrapper ">
+                                        
                                           <div className="vs-menu-area text-center">
                                             <button className="vs-menu-toggle"><i className="fal fa-times" /></button>
-                                            <div className="mobile-logo"><a><img src="images/logo.png" alt="logo5" /></a></div>
+                                            <div className="mobile-logo"> <Link to='/'><img src="images/logo.png" alt="logo5" /></Link></div>
                                             <div className="vs-mobile-menu">
                                               <ul id="menu-mobile-menu">
-                                                <li id="menu-item-131" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-131">
-                                                  <Link to="/">Главная</Link>
+                                                <li onClick={goToHome}  id="menu-item-131" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-131">
+                                                <Link to='/'>Главная</Link>
                                                 </li>
                                                 <li id="menu-item-135" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-135">
                                                   <a>О нас</a>
