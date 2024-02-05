@@ -69,6 +69,7 @@
 
             // Menu Show & Hide
             function menuToggle() {
+            
                 menu.toggleClass(opt.bodyToggleClass);
 
                 // collapse submenu on menu hide or show
@@ -229,6 +230,7 @@
     function popupSarchBox($searchBox, $searchOpen, $searchCls, $toggleCls) {
         $($searchOpen).on('click', function(e) {
             e.preventDefault();
+   
             $($searchBox).addClass($toggleCls);
         });
         $($searchBox).on('click', function(e) {
@@ -392,7 +394,6 @@
         slidesToShow: 1,
         slidesToScroll: 1,
     });
-
     $(document).on('click', '.quantity-plus,.quantity-minus', function(e) {
         e.preventDefault();
         // Get current quantity values

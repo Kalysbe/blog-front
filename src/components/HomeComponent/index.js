@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from './HomeComponent.module.scss';
 import Box from '@mui/material/Box';
-import { useEffect } from 'react';
+import {useEffect } from 'react';
+
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
@@ -58,45 +59,82 @@ const responsive = {
 
 export const HomeComponent = (props) => {
 
+  // useEffect(() => {
+  //   const scriptFiles = [
+  //   'index.js',
+  //   'index_1.js',
+  //   'slick.min.js',
+  //   'jquery.magnific-popup.min.js',
+  //   'bootstrap.min.js',
+  //   'imagesloaded.min.js',
+  //   'main.js',
+  //   'webpack.runtime.min.js',
+  //   'frontend-modules.min.js',
+  //   'core.min.js',
+  //   'config.js',
+  //   'frontend.min.js',
+  //   'techbiz-frontend.js'
+  //     // Добавьте остальные имена файлов скриптов
+  //   ];
+  //   const scriptElements = [];
+
+  //   const loadScripts = () => {
+  //     scriptFiles.forEach((fileName) => {
+  //       const script = document.createElement('script');
+  //       script.src = `./js/${fileName}`;
+  //       script.setAttribute('data-nscript','afterInteractive')
+  //       document.body.appendChild(script);
+  //       scriptElements.push(script);
+  //     });
+  //   };
+
+  //     loadScripts();
+
+
+
+  // }, []);
+
+
   useEffect(() => {
-    const scriptFiles = [
-      'jquery.min.js',
-      'layerslider.utils.js',
-      'layerslider.kreaturamedia.jquery.js',
-     'layerslider.transitions.js',
-     'init.js',
-    'index.js',
-    'index_1.js',
-    'slick.min.js',
-    'jquery.magnific-popup.min.js',
-    'bootstrap.min.js',
-    'imagesloaded.min.js',
-    'main.js',
-    'webpack.runtime.min.js',
-    'frontend-modules.min.js',
-    'core.min.js',
-    'config.js',
-    'frontend.min.js',
-    'techbiz-frontend.js'
-      // Добавьте остальные имена файлов скриптов
-    ];
-    const scriptElements = [];
-
-    const loadScripts = () => {
-      scriptFiles.forEach((fileName) => {
-        const script = document.createElement('script');
-        script.src = `./js/${fileName}`;
-        script.setAttribute('data-nscript','afterInteractive')
-        document.body.appendChild(script);
-        scriptElements.push(script);
-      });
-    };
-
-      loadScripts();
-
-
-
+    // const scriptFiles = [
+   
+    //   'init.js',
+    //   'index.js',
+    //   'index_1.js',
+    //   'slick.min.js',
+    //   'jquery.magnific-popup.min.js',
+    //   'bootstrap.min.js',
+    //   'imagesloaded.min.js',
+    //   'main.js',
+    //   'webpack.runtime.min.js',
+    //   'frontend-modules.min.js',
+    //   'core.min.js',
+    //   'swiper.min.js',
+    //   'config.js',
+    //   'frontend.min.js',
+    //   'techbiz-frontend.js'
+    //   // Add the names of the remaining script files
+    // ];
+  
+    // const loadScript = (src) => {
+    //   return new Promise((resolve, reject) => {
+    //     const script = document.createElement('script');
+    //     script.src = `./js/${src}`;
+    //     script.async = true;
+    //     script.onload = resolve;
+    //     script.onerror = reject;
+    //     document.body.appendChild(script);
+    //   });
+    // };
+  
+    // const loadScriptsAsync = async () => {
+    //   const scriptPromises = scriptFiles.map((fileName) => loadScript(fileName));
+    //   await Promise.all(scriptPromises);
+    // };
+  
+    // loadScriptsAsync();
   }, []);
+
 
     const isMobile = useMediaQuery('(max-width:600px)');
 

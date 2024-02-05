@@ -50,7 +50,7 @@ export const Home = () => {
 
   
 
-  console.log(posts)
+  // console.log(posts)
 
   return (
     <>
@@ -65,7 +65,7 @@ export const Home = () => {
         <Tab label="Новости налоговой" />
       </Tabs> */}
 
-        <Grid container spacing={2}>
+        {/* <Grid container spacing={2}>
           {(isPostsLoading ? [...Array(5)] : posts.items).map((obj, index) =>
             index < 3 ? (
             isPostsLoading  ? (
@@ -87,14 +87,14 @@ export const Home = () => {
                   first={index == 0 ? true : false}
                 />
               </Grid>
-            )): '') }
+            )): '') } */}
 
           {/* <Grid xs={4} item> */}
           {/* <TagsBlock items={tags.items} isLoading={isTagsLoading} /> */}
           
           {/* </Grid> */}
 
-        </Grid>
+        {/* </Grid> */}
       </Container>
       
     </>

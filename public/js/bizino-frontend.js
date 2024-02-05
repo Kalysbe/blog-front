@@ -38,8 +38,8 @@
                     }
 
                     // Custom Arrow Button
-                    var prevButton = '<button type="button" class="slick-prev"><i class="' + d("prev-arrow") + '"></i></button>',
-                        nextButton = '<button type="button" class="slick-next"><i class="' + d("next-arrow") + '"></i></button>';
+                    var prevButton = '<button type="button" className="slick-prev"><i className="' + d("prev-arrow") + '"></i></button>',
+                        nextButton = '<button type="button" className="slick-next"><i className="' + d("next-arrow") + '"></i></button>';
 
                     // Function For Custom Arrow Btn
                     $("[data-slick-next]").each(function () {
@@ -82,8 +82,8 @@
                         variableWidth: d("variable-width") ? true : false,
                         vertical: d("vertical") ? true : false,
                         verticalSwiping: d("vertical") ? true : false,
-                        prevArrow: d("prev-arrow") ? prevButton : '<button type="button" class="slick-prev"><i class="fal fa-long-arrow-left"></i></button>',
-                        nextArrow: d("next-arrow") ? nextButton : '<button type="button" class="slick-next"><i class="fal fa-long-arrow-right"></i></button>',
+                        prevArrow: d("prev-arrow") ? prevButton : '<button type="button" className="slick-prev"><i className="fal fa-long-arrow-left"></i></button>',
+                        nextArrow: d("next-arrow") ? nextButton : '<button type="button" className="slick-next"><i className="fal fa-long-arrow-right"></i></button>',
                         rtl: $("html").attr("dir") == "rtl" ? true : false,
                         responsive: [{
                             breakpoint: 1600,
@@ -172,8 +172,8 @@
                     }
 
                     // Custom Arrow Button
-                    var prevButton = '<button type="button" class="slick-prev"><i class="' + d("prev-arrow") + '"></i></button>',
-                        nextButton = '<button type="button" class="slick-next"><i class="' + d("next-arrow") + '"></i></button>';
+                    var prevButton = '<button type="button" className="slick-prev"><i className="' + d("prev-arrow") + '"></i></button>',
+                        nextButton = '<button type="button" className="slick-next"><i className="' + d("next-arrow") + '"></i></button>';
 
                     // Function For Custom Arrow Btn
                     $("[data-slick-next]").each(function () {
@@ -216,8 +216,8 @@
                         variableWidth: d("variable-width") ? true : false,
                         vertical: d("vertical") ? true : false,
                         verticalSwiping: d("vertical") ? true : false,
-                        prevArrow: d("prev-arrow") ? prevButton : '<button type="button" class="slick-prev"><i class="fal fa-long-arrow-left"></i></button>',
-                        nextArrow: d("next-arrow") ? nextButton : '<button type="button" class="slick-next"><i class="fal fa-long-arrow-right"></i></button>',
+                        prevArrow: d("prev-arrow") ? prevButton : '<button type="button" className="slick-prev">fds<i className="fal fa-long-arrow-left"></i></button>',
+                        nextArrow: d("next-arrow") ? nextButton : '<button type="button" className="slick-next"><i className="fal fa-long-arrow-right"></i></button>',
                         rtl: $("html").attr("dir") == "rtl" ? true : false,
                         responsive: [{
                             breakpoint: 1600,

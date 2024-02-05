@@ -1,4 +1,7 @@
-;(function($) {
+Testt()
+function Testt () {
+
+(function ($) {
     'use strict';
     $(window).on( 'elementor/frontend/init', function() {
 
@@ -22,8 +25,8 @@
                 dots:  $slickcarousels.data('slick-dots'),
                 infinite: true,
                 arrows: $slickcarousels.data('slick-arrows'),
-                prevArrow: '<button type="button" class="slick-prev"><i class="far fa-arrow-left"></i></button>',
-                nextArrow: '<button type="button" class="slick-next"><i class="far fa-arrow-right"></i></button>',
+                prevArrow: '<button type="button" className="slick-prev">авы<i className="far fa-arrow-left"></i></button>',
+                nextArrow: '<button type="button" className="slick-next"><i className="far fa-arrow-right"></i></button>',
                 autoplay: $slickcarousels.data('slick-autoplay'),
                 autoplaySpeed: 6000,
                 fade: false,
@@ -78,38 +81,7 @@
                 })
             })
             
-            let $slickcarousels = $scope.find('.vs-carousel');
-            $slickcarousels.not('.slick-initialized').slick({
-                dots:  false,
-                infinite: true,
-                arrows: false,
-                prevArrow: '<button type="button" class="slick-prev"><i class="far fa-arrow-left"></i></button>',
-                nextArrow: '<button type="button" class="slick-next"><i class="far fa-arrow-right"></i></button>',
-                autoplay: false,
-                autoplaySpeed: 6000,
-                fade: false,
-                speed: 1000,
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                responsive: [{
-                    breakpoint: 1200,
-                    settings: {
-                        slidesToShow: 3,
-                    }
-                },{
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 2,
-                    }
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 1,
-                    }
-                }
-                ]
-            });
+       
 
             if ($('[data-bg-src]').length > 0) {
                 $('[data-bg-src]').each(function () {
@@ -144,8 +116,8 @@
                 dots: false,
                 infinite: true,
                 arrows: $slickcarousels.data('slick-arrows'),
-                prevArrow: '<button type="button" class="slick-prev"><i class="far fa-arrow-left"></i></button>',
-                nextArrow: '<button type="button" class="slick-next"><i class="far fa-arrow-right"></i></button>',
+                prevArrow: '<button type="button" className="slick-prev"><i className="far fa-arrow-left"></i></button>',
+                nextArrow: '<button type="button" className="slick-next"><i className="far fa-arrow-right"></i></button>',
                 autoplay: $slickcarousels.data('slick-autoplay'),
                 autoplaySpeed: 6000,
                 fade: false,
@@ -253,8 +225,8 @@
                 dots: false,
                 infinite: true,
                 arrows: $slickcarousels.data('slick-arrows'),
-                prevArrow: '<button type="button" class="slick-prev"><i class="far fa-arrow-left"></i></button>',
-                nextArrow: '<button type="button" class="slick-next"><i class="far fa-arrow-right"></i></button>',
+                prevArrow: '<button type="button" className="slick-prev"><i className="far fa-arrow-left"></i></button>',
+                nextArrow: '<button type="button" className="slick-next"><i className="far fa-arrow-right"></i></button>',
                 autoplay: $slickcarousels.data('slick-autoplay'),
                 autoplaySpeed: 6000,
                 fade: false,
@@ -287,8 +259,8 @@
                 dots: false,
                 infinite: true,
                 arrows: false,
-                prevArrow: '<button type="button" class="slick-prev"><i class="far fa-arrow-left"></i></button>',
-                nextArrow: '<button type="button" class="slick-next"><i class="far fa-arrow-right"></i></button>',
+                prevArrow: '<button type="button" className="slick-prev"><i className="far fa-arrow-left"></i></button>',
+                nextArrow: '<button type="button" className="slick-next"><i className="far fa-arrow-right"></i></button>',
                 autoplay: true,
                 autoplaySpeed: 6000,
                 fade: false,
@@ -333,8 +305,8 @@
                 dots: false,
                 infinite: true,
                 arrows: $slickcarousels.data('slick-arrows'),
-                prevArrow: '<button type="button" class="slick-prev"><i class="far fa-arrow-left"></i></button>',
-                nextArrow: '<button type="button" class="slick-next"><i class="far fa-arrow-right"></i></button>',
+                prevArrow: '<button type="button" className="slick-prev"><i className="far fa-arrow-left"></i></button>',
+                nextArrow: '<button type="button" className="slick-next"><i className="far fa-arrow-right"></i></button>',
                 autoplay: $slickcarousels.data('slick-autoplay'),
                 autoplaySpeed: 6000,
                 fade: false,
@@ -387,8 +359,8 @@
                 dots: false,
                 infinite: true,
                 arrows: false,
-                prevArrow: '<button type="button" class="slick-prev"><i class="far fa-arrow-left"></i></button>',
-                nextArrow: '<button type="button" class="slick-next"><i class="far fa-arrow-right"></i></button>',
+                prevArrow: '<button type="button" className="slick-prev"><i className="far fa-arrow-left"></i></button>',
+                nextArrow: '<button type="button" className="slick-next"><i className="far fa-arrow-right"></i></button>',
                 autoplay: $slickcarousels.data('slick-autoplay'),
                 autoplaySpeed: 6000,
                 fade: false,
@@ -415,8 +387,8 @@
                 dots: false,
                 infinite: true,
                 arrows: false,
-                prevArrow: '<button type="button" class="slick-prev"><i class="far fa-arrow-left"></i></button>',
-                nextArrow: '<button type="button" class="slick-next"><i class="far fa-arrow-right"></i></button>',
+                prevArrow: '<button type="button" className="slick-prev"><i className="far fa-arrow-left"></i></button>',
+                nextArrow: '<button type="button" className="slick-next"><i className="far fa-arrow-right"></i></button>',
                 autoplay: $slickcarouselsfour.data('slick-autoplay'),
                 autoplaySpeed: 6000,
                 fade: false,
@@ -443,8 +415,8 @@
                 dots: false,
                 infinite: true,
                 arrows: false,
-                prevArrow: '<button type="button" class="slick-prev"><i class="far fa-arrow-left"></i></button>',
-                nextArrow: '<button type="button" class="slick-next"><i class="far fa-arrow-right"></i></button>',
+                prevArrow: '<button type="button" className="slick-prev"><i className="far fa-arrow-left"></i></button>',
+                nextArrow: '<button type="button" className="slick-next"><i className="far fa-arrow-right"></i></button>',
                 autoplay: false,
                 autoplaySpeed: 6000,
                 fade: true,
@@ -459,8 +431,8 @@
                 dots: false,
                 infinite: true,
                 arrows: false,
-                prevArrow: '<button type="button" class="slick-prev"><i class="far fa-arrow-left"></i></button>',
-                nextArrow: '<button type="button" class="slick-next"><i class="far fa-arrow-right"></i></button>',
+                prevArrow: '<button type="button" className="slick-prev"><i className="far fa-arrow-left"></i></button>',
+                nextArrow: '<button type="button" className="slick-next"><i className="far fa-arrow-right"></i></button>',
                 autoplay: false,
                 autoplaySpeed: 6000,
                 fade: true,
@@ -475,8 +447,8 @@
                 dots: false,
                 infinite: true,
                 arrows: false,
-                prevArrow: '<button type="button" class="slick-prev"><i class="far fa-arrow-left"></i></button>',
-                nextArrow: '<button type="button" class="slick-next"><i class="far fa-arrow-right"></i></button>',
+                prevArrow: '<button type="button" className="slick-prev"><i className="far fa-arrow-left"></i></button>',
+                nextArrow: '<button type="button" className="slick-next"><i className="far fa-arrow-right"></i></button>',
                 autoplay: false,
                 autoplaySpeed: 6000,
                 fade: false,
@@ -505,8 +477,8 @@
                 dots: false,
                 infinite: true,
                 arrows: false,
-                prevArrow: '<button type="button" class="slick-prev"><i class="far fa-arrow-left"></i></button>',
-                nextArrow: '<button type="button" class="slick-next"><i class="far fa-arrow-right"></i></button>',
+                prevArrow: '<button type="button" className="slick-prev"><i className="far fa-arrow-left"></i></button>',
+                nextArrow: '<button type="button" className="slick-next"><i className="far fa-arrow-right"></i></button>',
                 autoplay: false,
                 autoplaySpeed: 6000,
                 fade: false,
@@ -532,4 +504,4 @@
 
 
     });
-}(jQuery));
+}(jQuery))};
