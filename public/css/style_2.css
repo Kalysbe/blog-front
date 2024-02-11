@@ -13932,7 +13932,7 @@ a.vs-btn.style11.ls-vs-btn2:hover {
 .contact-box__form textarea,
 .contact-box__form select,
 .contact-box__form input {
-  height: 55px;
+  /* height: 55px; */
   font-size: 16px;
   border-radius: 5px;
   border: none;

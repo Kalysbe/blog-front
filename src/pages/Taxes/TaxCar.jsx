@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { TextField, Button, Select, MenuItem, FormControl, InputLabel, Grid } from '@mui/material';
 
 export const TaxCar = () => {
 
@@ -25,15 +26,15 @@ export const TaxCar = () => {
       setTaxResult('Введите корректные значения');
     }
   };
- //Без двигателя
+  //Без двигателя
   const calculateTax2 = () => {
 
     const price = parseFloat(vehiclePrice);
     const rate = parseFloat(vehicleTaxRate);
 
     if (!isNaN(price) && !isNaN(rate)) {
-     
-      const taxValue2 = (price/100) * rate
+
+      const taxValue2 = (price / 100) * rate
       setTaxResult2(taxValue2.toFixed(2));
     } else {
       setTaxResult2('Введите корректные значения');
@@ -79,7 +80,7 @@ export const TaxCar = () => {
 
   return (
     <>
-      <section className="elementor-section elementor-top-section elementor-element elementor-element-33b4740 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="33b4740" data-element_type="section" style={{marginBottom:'20px'}}>
+      <section className="elementor-section elementor-top-section elementor-element elementor-element-33b4740 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="33b4740" data-element_type="section" style={{ marginBottom: '20px' }}>
         <div className="elementor-container elementor-column-gap-no">
           <div className="elementor-row">
             <div className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-55f84ff" data-id="55f84ff" data-element_type="column">
@@ -99,7 +100,7 @@ export const TaxCar = () => {
                                       <div className="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
 
 
-                                      <div className="contact-box">
+                                      {/* <div className="contact-box">
                                         <h3 className="contact-box__title h4">Расчет налога на имущество на транспортное средство</h3>
                                         <p className="contact-box__text">a) Объекты, имеющие двигатель внутреннего сгорания</p>
                                         <div className="contact-box__form">
@@ -132,7 +133,7 @@ export const TaxCar = () => {
                                                   <option value="5">До 5 лет</option>
                                                   <option value="10">C 5 до 10 лет</option>
                                                   <option value="15">C 10 до 15 лет</option>
-                                                  <option value="999">Свыше 15 лет</option> {/* Значение 999 вместо "бесконечности" */}
+                                                  <option value="999">Свыше 15 лет</option> 
                                                 </select>
                                               </span>
                                             </div>
@@ -166,6 +167,93 @@ export const TaxCar = () => {
                                             <p>Исчисление налоговой стоимости (сом): {taxResult2}</p>
                                           </div>
                                         </div>
+                                      </div> */}
+                                      <div className="contact-box__form">
+                                      <h3 className="contact-box__title h4">Расчет налога на имущество на транспортное средство</h3>
+                                        <p className="contact-box__text">a) Объекты, имеющие двигатель внутреннего сгорания</p>
+                                        <Grid container spacing={2}>
+                                          <Grid item xs={6}>
+                                            <TextField
+                                              label="Объем двигателя"
+                                              value={engineVolume}
+                                              onChange={(e) => setEngineVolume(e.target.value)}
+                                              fullWidth
+                                              type="number"
+                                            />
+                                          </Grid>
+                                          <Grid item xs={6}>
+                                            <FormControl fullWidth>
+                                              <InputLabel>Вид транспорта</InputLabel>
+                                              <Select
+                                                value={vehicleType}
+                                                onChange={(e) => setVehicleType(e.target.value)}
+                                              >
+                                                <MenuItem value="">Выберите вид транспорта</MenuItem>
+                                                <MenuItem value="Легковые автомобили, фургоны и пикапы на базе легковых автомобилей">Легковые автомобили</MenuItem>
+                                                <MenuItem value="Грузовые автомобили, автобусы, микроавтобусы">Грузовые автомобили</MenuItem>
+                                                <MenuItem value="Самоходные машины и механизмы: тракторы, комбайны, дорожно-строительные машины">Самоходные машины</MenuItem>
+                                                <MenuItem value="Самоходные машины и механизмы (тракторы и комбайны), используемые в селхоз производстве">Сельхозтехника</MenuItem>
+                                                <MenuItem value="Мотоциклы, мотороллеры, мопеды, мотосани и моторные лодки, катера, корабли, теплоходы">Мототехника и водный транспорт</MenuItem>
+                                                <MenuItem value="Яхты и водные мотоциклы">Яхты и водные мотоциклы</MenuItem>
+                                              </Select>
+                                            </FormControl>
+                                          </Grid>
+                                          <Grid item xs={12}>
+                                            <FormControl fullWidth>
+                                              <InputLabel>Срок эксплуатации</InputLabel>
+                                              <Select
+                                                value={usagePeriod}
+                                                onChange={(e) => setUsagePeriod(e.target.value)}
+                                              >
+                                                <MenuItem value="">Выберите срок эксплуатации</MenuItem>
+                                                <MenuItem value="5">До 5 лет</MenuItem>
+                                                <MenuItem value="10">C 5 до 10 лет</MenuItem>
+                                                <MenuItem value="15">C 10 до 15 лет</MenuItem>
+                                                <MenuItem value="999">Свыше 15 лет</MenuItem>
+                                                {/* Other options */}
+                                              </Select>
+                                            </FormControl>
+                                          </Grid>
+                                          <Grid item xs={12}>
+                                            <Button onClick={calculateTax} className='vs-btn a wpcf7-submit' style={{ backgroundColor: 'rgb(205, 179, 47)' }} variant="contained">
+                                              Рассчитать
+                                            </Button>
+                                            <p>Исчисление налоговой стоимости (сом): {taxResult}</p>
+                                          </Grid>
+                                        </Grid>
+                                      </div>
+
+                                      <p className="contact-box__text" style={{ marginTop: '24px' }}>
+                                        б) Транспортные средства, не имеющие двигателя внутреннего сгорания
+                                      </p>
+
+                                      <div className="contact-box__form">
+                                        <Grid container spacing={2}>
+                                          <Grid item xs={6}>
+                                            <TextField
+                                              label="Балансовая стоимость (сом)"
+                                              value={vehiclePrice}
+                                              onChange={(e) => setVehiclePrice(e.target.value)}
+                                              fullWidth
+                                              type="number"
+                                            />
+                                          </Grid>
+                                          <Grid item xs={6}>
+                                            <TextField
+                                              label="Ставка налога %"
+                                              value={vehicleTaxRate}
+                                              onChange={(e) => setVehicleTaxRate(e.target.value)}
+                                              fullWidth
+                                              type="number"
+                                            />
+                                          </Grid>
+                                          <Grid item xs={12}>
+                                            <Button onClick={calculateTax2} className='vs-btn a wpcf7-submit' style={{ backgroundColor: 'rgb(205, 179, 47)' }} variant="contained" >
+                                              Рассчитать
+                                            </Button>
+                                            <p>Исчисление налоговой стоимости (сом): {taxResult2}</p>
+                                          </Grid>
+                                        </Grid>
                                       </div>
                                     </div>
                                   </div>
