@@ -164,8 +164,8 @@ export const Header = (props) => {
                     <div className="elementor-column-wrap elementor-element-populated">
                       <div className="elementor-widget-wrap">
                         <section className="elementor-section elementor-inner-section elementor-element elementor-element-e48c633 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="e48c633" data-element_type="section" data-settings="{' background_background':'classic'}">
-                          <div className="elementor-container elementor-column-gap-no">
-                            <div className="elementor-row">
+                          <Container>
+                            <div className="elementor-row ds">
                               <div className="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-7031ac8" data-id="7031ac8" data-element_type="column">
                                 <div className="elementor-column-wrap elementor-element-populated">
                                   <div className="elementor-widget-wrap">
@@ -239,7 +239,7 @@ export const Header = (props) => {
                                 </div>
                               </div>
                             </div>
-                          </div>
+                          </Container>
                         </section>
                       </div>
                     </div>
@@ -254,7 +254,7 @@ export const Header = (props) => {
                     <div className="elementor-column-wrap elementor-element-populated">
                       <div className="elementor-widget-wrap">
                         <section className="elementor-section elementor-inner-section elementor-element elementor-element-be813d9 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="be813d9" data-element_type="section">
-                          <div className="elementor-container elementor-column-gap-no">
+                          <Container>
                             <div className="elementor-row">
                               <div className="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-b99aabf" data-id="b99aabf" data-element_type="column">
                                 <div className="elementor-column-wrap elementor-element-populated">
@@ -279,35 +279,28 @@ export const Header = (props) => {
                                             <li id="menu-item-101" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-101">
                                               <Link to='/'>Главная</Link>
                                             </li>
-                                            <li id="menu-item-97" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-97">
-                                              <a>О
-                                                Нас</a>
-                                            </li>
-                                            <li id="menu-item-94" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-94">
-                                              <a>Новости</a>
-                                              <ul className="sub-menu">
-                                                <li id="menu-item-104" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-104">
-                                                  <a>Blog</a>
-                                                </li>
-                                                <li id="menu-item-103" className="menu-item menu-item-type-post_type menu-item-object-post menu-item-103">
-                                                  <a>Blog
-                                                    Details</a>
-                                                </li>
-                                              </ul>
-                                            </li>
                                             <li id="menu-item-105" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-105">
-                                              <a href="#">Услуги</a>
+                                              <a href="#">Сервисы</a>
                                               <ul className="sub-menu">
                                                 <li id="menu-item-96" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-96">
-                                                  <a>Service</a>
+                                                  <a>Расчет налога</a>
                                                   <ul className="sub-menu">
                                                     <li id="menu-item-102" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-102">
-                                                      <a>Service</a>
+                                                      <Link to="taxhome">Жилое здание, сооружение и помещение</Link>
                                                     </li>
-                                                    <li id="menu-item-95" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-95">
+                                                    <li id="menu-item-102" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-102">
+                                                      <Link to="taxnohome">Нежилое здание, сооружение и помещение</Link>
+                                                    </li>
+                                                    <li id="menu-item-102" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-102">
+                                                      <Link to="taxplace">Земли насел. пунктов и несельхоз назнач.</Link>
+                                                    </li>
+                                                    <li id="menu-item-102" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-102">
+                                                      <Link to="taxcar">Транспортное средство</Link>
+                                                    </li>
+                                                    {/* <li id="menu-item-95" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-95">
                                                       <a>Service
                                                         Details</a>
-                                                    </li>
+                                                    </li> */}
                                                   </ul>
                                                 </li>
                                                 <li id="menu-item-90" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-90">
@@ -334,12 +327,27 @@ export const Header = (props) => {
                                                 </li>
                                               </ul>
                                             </li>
-                                            <li id="menu-item-8919" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8919">
+                                            <li id="menu-item-97" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-97">
+                                              <a>О
+                                                Нас</a>
+                                            </li>
+                                            <li id="menu-item-94" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-94">
+                                              <a>Новости</a>
+                                              <ul className="sub-menu">
+                                                <li id="menu-item-104" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-104">
+                                                  <a>Blog</a>
+                                                </li>
+                                                <li id="menu-item-103" className="menu-item menu-item-type-post_type menu-item-object-post menu-item-103">
+                                                  <a>Blog
+                                                    Details</a>
+                                                </li>
+                                              </ul>
+                                            </li>
+                                         
+                                            {/* <li id="menu-item-8919" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8919">
                                               <a href="#">Сервисы</a>
                                               <ul className="sub-menu">
-                                                {/* <li id="menu-item-8924" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-8924">
-                                                <a href=""></a>
-                                              </li> */}
+                                          
                                                 <li id="menu-item-8925" className="menu-item menu-item-type-post_type menu-item-object-product menu-item-8925">
                                                   <Link to="taxhome">Расчет налога на имущество на жилое здание, сооружение и помещение</Link>
                                                 </li>
@@ -354,7 +362,7 @@ export const Header = (props) => {
                                                 </li>
 
                                               </ul>
-                                            </li>
+                                            </li> */}
                                             <li id="menu-item-88" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-88">
                                               <a>Контакты</a>
                                             </li>
@@ -382,19 +390,19 @@ export const Header = (props) => {
                                                   <a>О нас</a>
                                                 </li>
                                                 <li id="menu-item-136" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-136">
-                                                  <a>Сервисы</a>
+                                                  <a>Расчет налога</a>
                                                   <ul className="sub-menu">
                                                     <li id="menu-item-8925" className="menu-item menu-item-type-post_type menu-item-object-product menu-item-8925">
-                                                      <Link to='taxhome'>Расчет налога на имущество на жилое здание, сооружение и помещение</Link>
+                                                      <Link to='taxhome'>Жилое здание, сооружение и помещение</Link>
                                                     </li>
                                                     <li id="menu-item-8923" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-8923">
-                                                      <Link to="taxnohome">Расчет налога на имущество на нежилое здание, сооружение и помещение</Link>
+                                                      <Link to="taxnohome">Нежилое здание, сооружение и помещение</Link>
                                                     </li>
                                                     <li id="menu-item-8921" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-8921">
-                                                      <Link to="taxplace">Расчет налога на имущество на земли населенных пунктов и земли несельскохозяйственного назначения</Link>
+                                                      <Link to="taxplace">Земли насел. пунктов и несельхоз назнач.</Link>
                                                     </li>
                                                     <li id="menu-item-8922" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-8922">
-                                                      <Link to={'taxcar'}>Расчет налога на имущество на транспортное средство</Link>
+                                                      <Link to={'taxcar'}>Транспортное средство</Link>
                                                     </li>
                                                   </ul>
                                                 </li>
@@ -540,7 +548,7 @@ export const Header = (props) => {
                                 </div>
                               </div>
                             </div>
-                          </div>
+                          </Container>
                         </section>
                       </div>
                     </div>

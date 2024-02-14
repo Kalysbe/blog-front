@@ -187,7 +187,7 @@ export const Footer = (props) => {
                                             <div className="menu-links-container">
                                               <ul id="menu-links" className="menu">
                                                 <li id="menu-item-189" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-189">
-                                                  <a>Team</a>
+                                                  <a >Team</a>
                                                 </li>
                                                 <li id="menu-item-188" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-188">
                                                   <a>Projects</a>

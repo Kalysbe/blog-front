@@ -1454,7 +1454,6 @@ textarea.is-invalid {
   padding: 12px 0;
   line-height: 1;
   font-size: 16px;
-  text-transform: capitalize;
   color: var(--title-color);
 }
 .vs-mobile-menu ul li a:before {

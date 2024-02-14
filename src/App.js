@@ -4,7 +4,7 @@ import Container from "@mui/material/Container";
 import Box from '@mui/material/Box';
 
 import { Header, Footer } from "./components";
-import { Home, FullPost, Registration, AddPost, Login, Blog, TaxCar, TaxHome, TaxNoHome, TaxPlace } from "./pages";
+import { Home, FullPost, Registration, AddPost, Login, Blog,TaxMenu, TaxCar, TaxHome, TaxNoHome, TaxPlace } from "./pages";
 import React, { useEffect } from 'react';
 import { fetchAuthMe, logout, selectIsAuth } from './redux/slices/auth';
 
@@ -37,6 +37,7 @@ function App() {
 
 
           {/* Налоги */}
+          <Route path='/taxmenu' element={<TaxMenu />} />
           <Route path='/taxcar' element={<TaxCar />} />
           <Route path='/taxhome' element={<TaxHome />} />
           <Route path='/taxnohome' element={<TaxNoHome />} />

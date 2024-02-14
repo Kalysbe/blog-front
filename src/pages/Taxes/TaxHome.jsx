@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Grid, Typography, FormControl, InputLabel, Select, MenuItem, TextField, Button, Container } from '@mui/material';
 
 export const TaxHome = () => {
   const provinces = [
@@ -205,118 +206,95 @@ export const TaxHome = () => {
     setResult((quadrature * (selectedCityObj.krValue * selectedAgeRangeObj.cost * coefficient) * 0.35 / 100).toFixed(2));
 
 
-  }; 
+  };
 
 
   return (
+    <Container>
+      <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <Typography variant="h5">Расчет налога на имущество на жилое здание, сооружение и помещение</Typography>
+        </Grid>
 
-    <section className="elementor-section elementor-top-section elementor-element elementor-element-33b4740 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="33b4740" data-element_type="section" style={{ marginBottom: '20px' }}>
-      <div className="elementor-container elementor-column-gap-no">
-        <div className="elementor-row">
-          <div className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-55f84ff" data-id="55f84ff" data-element_type="column">
-            <div className="elementor-column-wrap elementor-element-populated">
-              <div className="elementor-widget-wrap">
-                <section className="elementor-section elementor-inner-section elementor-element elementor-element-1cd676f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="1cd676f" data-element_type="section">
-                  <div className="elementor-container elementor-column-gap-no">
-                    <div className="elementor-row">
-
-                      <div className="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-0b1b19b" data-id="0b1b19b" data-element_type="column">
-                        <div className="elementor-column-wrap elementor-element-populated">
-                          <div className="elementor-widget-wrap">
-                            <div className="elementor-element elementor-element-6fb1070 elementor-widget elementor-widget-shortcode" data-id="6fb1070" data-element_type="widget" data-widget_type="shortcode.default">
-                              <div className="elementor-widget-container">
-                                <div className="elementor-shortcode">
-                                  <div className="wpcf7 js" id="wpcf7-f1639-p86-o1" lang="en-US" dir="ltr">
-                                    <div className="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> </div>
-                                    <div className="contact-box">
-                                      <h3 className="contact-box__title h4">Расчет налога на имущество на жилое здание, сооружение и помещение</h3>
-                                      <div className="contact-box__form">
-                                        <div className="row gx-20">
-                                       
-                                          <div className="col-md-4 form-group">
-                                            <label>
-                                            Область
-                                            </label>
-                                              <select value={selectedProvince} onChange={handleProvinceChange}>
-                                                <option value="">Выберите область</option>
-                                                {provinces.map((province, index) => (
-                                                  <option key={index} value={province.province}>{province.province}</option>
-                                                ))}
-                                              </select>
-                                  
-                                            </div>
-                                            <div className="col-md-4 form-group">
-                                            <label>
-                                             Район
-                                             </label>
-                                              <select value={selectedCity} onChange={handleCityChange}>
-                                                <option value="">Выберите район</option>
-                                                {selectedProvince &&
-                                                  provinces.find(province => province.province === selectedProvince).cities.map((city, index) => (
-                                                    <option key={index} value={city.name}>{city.name}</option>
-                                                  ))}
-                                              </select>
-                                   
-                                            </div>
-                                            <div className="col-md-4 form-group">
-                                            <label>
-                                            Материал стен
-                                            </label>
-                                              <select value={selectedMaterial} onChange={handleMaterialChange}>
-                                                <option value="">Выберите материал</option>
-                                                {materialsArray.map((material, index) => (
-                                                  <option key={index} value={material.title}>{material.title}</option>
-                                                ))}
-                                              </select>
-                                       
-                                            </div>
-                                            <div className="col-md-4 form-group">
-                                            <label>
-                                            Срок эксплуатации
-                                              </label>
-                                              <select value={selectedAgeRange} onChange={handleAgeRangeChange}>
-                                                <option value="">Выберите возрастной диапазон</option>
-                                                {selectedMaterial &&
-                                                  materialsArray.find(mat => mat.title === selectedMaterial).data.map((data, index) => (
-                                                    <option key={index} value={data.ageRange}>{data.ageRange}</option>
-                                                  ))}
-                                              </select>
-                                       
-                                            </div>
-                                            <div className="col-md-4 form-group">
-                                              <label >Зональный коэффициент</label>
-                                              <span className="wpcf7-form-control-wrap" data-name="text-69">
-                                                <input value={coefficient} onChange={(e) => setCoefficient(e.target.value)} size="40" className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="0" type="number" name="text-69" />
-                                              </span>
-                                            </div>
-                                            <div className="col-md-4 form-group">
-                                              <label>Налогооблагаемая площадь, кв. м</label>
-                                              <span className="wpcf7-form-control-wrap" data-name="text-69">
-                                                <input value={quadrature} onChange={(e) => setQuadrature(e.target.value)} size="40" className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="0" type="number" name="text-69" />
-                                              </span>
-                                            </div>
-                                            <div className="col-12">
-                                            <button className="vs-btn  а   wpcf7-submit" onClick={calculateCost}>Рассчитать стоимость <i className="far fa-arrow-right"></i></button>
-                                            <p>Исчисление налоговой стоимости (сом): {result}</p>
-                                            </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        <Grid item xs={12} md={4}>
+          <FormControl fullWidth margin="normal">
+            <InputLabel>
+              Область
+            </InputLabel>
+            <Select label="Область" value={selectedProvince} onChange={handleProvinceChange}>
+              <MenuItem value="">Выберите область</MenuItem>
+              {provinces.map((province, index) => (
+                <MenuItem key={index} value={province.province}>{province.province}</MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <FormControl fullWidth margin="normal">
+            <InputLabel>
+              Район
+            </InputLabel>
+            <Select label="Район" value={selectedCity} onChange={handleCityChange}>
+              <MenuItem value="">Выберите район</MenuItem>
+              {selectedProvince &&
+                provinces.find(province => province.province === selectedProvince).cities.map((city, index) => (
+                  <MenuItem key={index} value={city.name}>{city.name}</MenuItem>
+                ))}
+            </Select>
+          </FormControl>
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <FormControl fullWidth margin="normal">
+            <InputLabel>
+              Материал стен
+            </InputLabel>
+            <Select label="Материал стен" value={selectedMaterial} onChange={handleMaterialChange}>
+              <MenuItem value="">Выберите материал</MenuItem>
+              {materialsArray.map((material, index) => (
+                <MenuItem key={index} value={material.title}>{material.title}</MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <FormControl fullWidth margin="normal">
+            <InputLabel>
+              Срок эксплуатации
+            </InputLabel>
+            <Select label="Срок эксплуатации" value={selectedAgeRange} onChange={handleAgeRangeChange}>
+              <MenuItem value="">Выберите возрастной диапазон</MenuItem>
+              {selectedMaterial &&
+                materialsArray.find(mat => mat.title === selectedMaterial).data.map((data, index) => (
+                  <MenuItem key={index} value={data.ageRange}>{data.ageRange}</MenuItem>
+                ))}
+            </Select>
+          </FormControl>
+        </Grid>
+        <Grid item xs={12} md={4}>
+            <TextField 
+            label="Зональный коэффициент"
+            value={coefficient} 
+            onChange={(e) => setCoefficient(e.target.value)} 
+            fullWidth
+            type="number"
+            margin="normal" />
+        </Grid>
+        <Grid item xs={12} md={4}>
+            <TextField 
+            label="Налогооблагаемая площадь, кв. м"
+            value={quadrature} 
+            onChange={(e) => setQuadrature(e.target.value)} 
+            fullWidth
+            type="number"
+            margin="normal"/>
+        </Grid>
+      </Grid>
+      <Grid container spacing={2}>
+        <Grid item xs={12} md={4}>
+          <Button onClick={calculateCost} variant="contained" style={{ backgroundColor: 'rgb(205, 179, 47)', marginLeft: 'auto' }} className='vs-btn' fullWidth>Рассчитать</Button>
+          <p>Исчисление налоговой стоимости (сом): {result}</p>
+        </Grid>
+      </Grid>
+    </Container>
   );
 };

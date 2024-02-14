@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { TextField, Button, Select, MenuItem, FormControl, InputLabel, Grid, Typography, Box, Container } from '@mui/material';
 
 export const TaxPlace = () => {
   const provinces = [
@@ -150,8 +151,8 @@ export const TaxPlace = () => {
 
 
   const calculateCost = () => {
-   
-   
+
+
 
     // Найдите выбранный город
     const selectedCityObj = provinces.find(province => province.province === selectedProvince).cities.find(city => city.name === selectedCity);
@@ -159,123 +160,103 @@ export const TaxPlace = () => {
 
 
     // Умножьте стоимость материала на значение города
-    setResult((quadrature * ( price * zoneCoefficient  * selectedIndustry * coefficient) * 1/100).toFixed(2));
+    setResult((quadrature * (price * zoneCoefficient * selectedIndustry * coefficient) * 1 / 100).toFixed(2));
 
 
-  }; 
+  };
 
 
   return (
-
-    <section className="elementor-section elementor-top-section elementor-element elementor-element-33b4740 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="33b4740" data-element_type="section" style={{ marginBottom: '20px' }}>
-      <div className="elementor-container elementor-column-gap-no">
-        <div className="elementor-row">
-          <div className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-55f84ff" data-id="55f84ff" data-element_type="column">
-            <div className="elementor-column-wrap elementor-element-populated">
-              <div className="elementor-widget-wrap">
-                <section className="elementor-section elementor-inner-section elementor-element elementor-element-1cd676f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="1cd676f" data-element_type="section">
-                  <div className="elementor-container elementor-column-gap-no">
-                    <div className="elementor-row">
-
-                      <div className="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-0b1b19b" data-id="0b1b19b" data-element_type="column">
-                        <div className="elementor-column-wrap elementor-element-populated">
-                          <div className="elementor-widget-wrap">
-                            <div className="elementor-element elementor-element-6fb1070 elementor-widget elementor-widget-shortcode" data-id="6fb1070" data-element_type="widget" data-widget_type="shortcode.default">
-                              <div className="elementor-widget-container">
-                                <div className="elementor-shortcode">
-                                  <div className="wpcf7 js" id="wpcf7-f1639-p86-o1" lang="en-US" dir="ltr">
-                                    <div className="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> </div>
-                                    <div className="contact-box">
-                                      <h3 className="contact-box__title h4">Расчет налога на имущество на земли населенных пунктов и земли несельскохозяйственного назначения</h3>
-                                      <div className="contact-box__form">
-                                        <div className="row gx-20">
-                                       
-                                          <div className="col-md-4 form-group">
-                                            <label style={{fontSize:'13px'}}>
-                                            Область
-                                            </label>
-                                              <select value={selectedProvince} onChange={handleProvinceChange}>
-                                                <option value="">Выберите область</option>
-                                                {provinces.map((province, index) => (
-                                                  <option key={index} value={province.province}>{province.province}</option>
-                                                ))}
-                                              </select>
-                                  
-                                            </div>
-                                            <div className="col-md-4 form-group">
-                                            <label style={{fontSize:'13px'}}>
-                                             Район
-                                             </label>
-                                              <select value={selectedCity} onChange={handleCityChange}>
-                                                <option value="">Выберите район</option>
-                                                {selectedProvince &&
-                                                  provinces.find(province => province.province === selectedProvince).cities.map((city, index) => (
-                                                    <option key={index} value={city.name}>{city.name}</option>
-                                                  ))}
-                                              </select>
-                                   
-                                            </div>
-                                            <div className="col-md-4 form-group">
-                                              <label style={{fontSize:'13px'}}>Коэффициент инфляции (Ки)</label>
-                                              <span className="wpcf7-form-control-wrap" data-name="text-69">
-                                                <input value={coefficient} onChange={(e) => setCoefficient(e.target.value)} size="40" className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="0" type="number" name="text-69" />
-                                              </span>
-                                            </div>
-                                    
-                                    
-                                            <div className="col-md-4 form-group">
-                                            <label style={{fontSize:'13px'}}>
-                                            Функциональное назначение
-                                              </label>
-                                              <select value={selectedIndustry} onChange={handleIndustryChange}>
-                                                <option value="">Выберите Функциональное назначение</option>
-                                                {
-                                                 Industries.map((data, index) => (
-                                                    <option key={index} value={data.cost}>{data.name}</option>
-                                                  ))}
-                                              </select>
-                                       
-                                            </div>
-                                            <div className="col-md-4 form-group">
-                                              <label style={{fontSize:'13px'}}>Зональный коэффициент (Кз)</label>
-                                              <span className="wpcf7-form-control-wrap" data-name="text-69">
-                                                <input value={zoneCoefficient} onChange={(e) => setZoneCoefficient(e.target.value)} size="40" className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="0" type="number" name="text-69" />
-                                              </span>
-                                            </div>
-                                            <div className="col-md-4 form-group">
-                                              <label style={{fontSize:'13px'}}>Базовая налоговая стоимость (БНС) </label>
-                                              <span className="wpcf7-form-control-wrap" data-name="text-69">
-                                                <input value={price} onChange={(e) => setPrice(e.target.value)} size="40" className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="0" type="number" name="text-69" />
-                                              </span>
-                                            </div>
-                                            <div className="col-md-4 form-group">
-                                              <label style={{fontSize:'13px'}}>Налогооблагаемая площадь, кв. м</label>
-                                              <span className="wpcf7-form-control-wrap" data-name="text-69">
-                                                <input value={quadrature} onChange={(e) => setQuadrature(e.target.value)} size="40" className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="0" type="number" name="text-69" />
-                                              </span>
-                                            </div>
-                                            <div className="col-12">
-                                            <button className="vs-btn  а   wpcf7-submit" onClick={calculateCost}>Рассчитать стоимость <i className="far fa-arrow-right"></i></button>
-                                            <p>Исчисление налоговой стоимости (сом): {result}</p>
-                                            </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <Container>
+      <Grid container spacing={2}>
+      <Grid item xs={12}>
+          <Typography variant="h5">Расчет налога на имущество на земли населенных пунктов и земли несельскохозяйственного назначения</Typography>
+        </Grid>
+        <Grid item xs={12} sm={12} md={4}>
+          <FormControl fullWidth margin="normal">
+            <InputLabel>Область</InputLabel>
+            <Select label="Область" value={selectedProvince} onChange={handleProvinceChange}>
+              <MenuItem value="">Выберите область</MenuItem>
+              {provinces.map((province, index) => (
+                <MenuItem key={index} value={province.province}>{province.province}</MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Grid>
+        <Grid item xs={12} sm={12} md={4}>
+          <FormControl fullWidth margin="normal">
+            <InputLabel >
+              Район
+            </InputLabel>
+            <Select label="Район" value={selectedCity} onChange={handleCityChange}>
+              <MenuItem value="">Выберите район</MenuItem>
+              {selectedProvince &&
+                provinces.find(province => province.province === selectedProvince).cities.map((city, index) => (
+                  <MenuItem key={index} value={city.name}>{city.name}</MenuItem>
+                ))}
+            </Select>
+          </FormControl>
+        </Grid>
+        <Grid item xs={12} sm={12} md={4}>
+          <FormControl fullWidth margin="normal">
+            <InputLabel>
+              Функциональное назначение
+            </InputLabel>
+            <Select label=" Функциональное назначение" value={selectedIndustry} onChange={handleIndustryChange}>
+              <MenuItem value="">Выберите Функциональное назначение</MenuItem>
+              {
+                Industries.map((data, index) => (
+                  <MenuItem key={index} value={data.cost}>{data.name}</MenuItem>
+                ))}
+            </Select>
+          </FormControl>
+        </Grid>
+        <Grid item xs={12} sm={12} md={4}>
+          <TextField
+            label="Коэффициент инфляции (Ки)"
+            value={coefficient}
+            onChange={(e) => setCoefficient(e.target.value)}
+            fullWidth
+            type="number"
+            margin="normal"
+          />
+        </Grid>
+        <Grid item xs={12} sm={12} md={4}>
+          <TextField
+            label="Зональный коэффициент (Кз)"
+            value={zoneCoefficient}
+            onChange={(e) => setZoneCoefficient(e.target.value)}
+            fullWidth
+            type="number"
+            margin="normal"
+          />
+        </Grid>
+        <Grid item xs={12} sm={12} md={4}>
+          <TextField label="Базовая налоговая стоимость (БНС) "
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+            fullWidth
+            type="number"
+            margin="normal" />
+        </Grid>
+        <Grid item xs={12} sm={12} md={4}>
+          <TextField
+            label="Налогооблагаемая площадь, кв. м"
+            value={quadrature}
+            onChange={(e) => setQuadrature(e.target.value)}
+            fullWidth
+            type="number"
+            margin="normal" />
+        </Grid>
+      </Grid>
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={12} md={4}>
+          <Button onClick={calculateCost} variant="contained" style={{ backgroundColor: 'rgb(205, 179, 47)', marginLeft: 'auto' }} className='vs-btn' fullWidth>
+            Рассчитать
+          </Button>
+          <p>Исчисление налоговой стоимости (сом): {result}</p>
+        </Grid>
+      </Grid>
+    </Container>
   );
 };
