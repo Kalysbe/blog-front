@@ -132,9 +132,9 @@ export const Header = (props) => {
           <Link to="/add-post">
             <Button variant="contained">Написать статью</Button>
           </Link>
-          <Button onClick={onClickLogout} variant="contained" color="error">
+          {/* <Button onClick={onClickLogout} variant="contained" color="error">
             Выйти
-          </Button>
+          </Button> */}
         </>
       ) : (
         <>
