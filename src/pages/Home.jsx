@@ -69,11 +69,11 @@ export const Home = () => {
           {(isPostsLoading ? [...Array(5)] : posts.items).map((obj, index) =>
             index < 3 ? (
             isPostsLoading  ? (
-              <Grid sx={{ pl: 0 }} xs={12} item>
+              <Grid sx={{ pl: 0 }} xs={12} item key={index}> 
                 <Post key={index} isLoading={true} />
               </Grid>
             ) : (
-              <Grid sm={12} md={4} item>
+              <Grid sm={12} md={4} item key={obj._id}>
                 <Post
                   _id={obj._id}
                   title={obj.title}

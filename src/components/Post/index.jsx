@@ -35,7 +35,6 @@ export const Post = ({
   }
 
   const onClickRemove = () => {
-    
     if(window.confirm('Вы правда хотите удалить?')) {
       dispatch(fetchRemovePost(_id))
     }
@@ -47,6 +46,7 @@ export const Post = ({
 
   return (
     // <Container maxWidth={false}>
+    // {isFullPost ? ( ) : ( ) } <>
     <div className={clsx(styles.root, { [styles.rootFull]: isFullPost },first ? styles.firts_post : '')}>
       {isEditable && (
         <div className={styles.editButtons}>
@@ -101,6 +101,31 @@ export const Post = ({
         </div>
       </div>
     </div>
+      // </> ) : (   
+  //   <div className="col-md-6">
+  //   <div className="vs-blog blog-style1">
+  //     <div className="blog-img">
+  //       <a><img loading="lazy" decoding="async" width={387} height={320} src="images/blog4-387x320.jpg" className="w-100 wp-post-image" alt="" /></a>
+  //       <div className="blog-content">
+  //         <div className="blog-meta">
+  //           <a><i className="far fa-calendar" /><time dateTime="2022-08-10T06:09:28+02:00">10
+  //               Aug,
+  //               2022</time></a><a><i className="fal fa-user" />Rodja
+  //             Hartmann</a>
+  //         </div>
+  //         <h3 className="blog-title">
+  //           <a>Latin
+  //             derived
+  //             from
+  //             Cicero’s
+  //             1st-century
+  //             BC</a>
+  //         </h3><a className="link-btn">Открыть<i className="far fa-arrow-right" /></a>
+  //       </div>
+  //     </div>
+  //   </div>
+  // </div>
+    // )}
     // </Container>
   );
 };

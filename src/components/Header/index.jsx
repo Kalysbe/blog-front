@@ -48,13 +48,13 @@ export const Header = (props) => {
   const { windowProps } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
-  const onClickLogout = () => {
 
-    if (window.confirm('Вы правда хотите выйти?')) {
-      dispatch(logout());
-      window.localStorage.removeItem('token')
-    }
-  };
+  const onClickLogout = () => {
+     if (window.confirm('Вы правда хотите выйти?')) {
+       dispatch(logout());
+       window.localStorage.removeItem('token')
+     }
+   };
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState)
@@ -62,7 +62,6 @@ export const Header = (props) => {
 
   const location = useLocation();
   useEffect(() => {
-    // alert(1)
     const scriptFiles = [
       'init.js',
       'index.js',
@@ -111,43 +110,43 @@ export const Header = (props) => {
   }, [location.pathname]);
 
 
-  const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
-      </Typography>
-      <Divider />
-      <List>
-        {navItems.map((item, index) => (
-          <ListItem key={index} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item.value} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+  // const drawer = (
+  //   <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+  //     <Typography variant="h6" sx={{ my: 2 }}>
+  //       MUI
+  //     </Typography>
+  //     <Divider />
+  //     <List>
+  //       {navItems.map((item, index) => (
+  //         <ListItem key={index} disablePadding>
+  //           <ListItemButton sx={{ textAlign: 'center' }}>
+  //             <ListItemText primary={item.value} />
+  //           </ListItemButton>
+  //         </ListItem>
+  //       ))}
 
-      </List>
-      {isAuth ? (
-        <>
-          <Link to="/add-post">
-            <Button variant="contained">Написать статью</Button>
-          </Link>
-          {/* <Button onClick={onClickLogout} variant="contained" color="error">
-            Выйти
-          </Button> */}
-        </>
-      ) : (
-        <>
-          <Link to="/login">
-            <Button variant="outlined" color="primary">Войти</Button>
-          </Link>
-          {/* <Link to="/register">
-                  <Button variant="contained">Создать аккаунт</Button>
-                </Link> */}
-        </>
-      )}
-    </Box>
-  );
+  //     </List>
+  //     {isAuth ? (
+  //       <>
+  //         <Link to="/add-post">
+  //           <Button variant="contained">Написать статью</Button>
+  //         </Link>
+  //         <Button onClick={onClickLogout} variant="contained" color="error">
+  //           Выйти
+  //         </Button>
+  //       </>
+  //     ) : (
+  //       <>
+  //         <Link to="/login">
+  //           <Button variant="outlined" color="primary">Войти</Button>
+  //         </Link>
+  //         {/* <Link to="/register">
+  //                 <Button variant="contained">Создать аккаунт</Button>
+  //               </Link> */}
+  //       </>
+  //     )}
+  //   </Box>
+  // );
 
   const container = windowProps !== undefined ? () => windowProps().document.body : undefined;
 
@@ -450,6 +449,7 @@ export const Header = (props) => {
                                                   <a>Contact
                                                     Us</a>
                                                 </li>
+                                                
                                               </ul>
                                             </div>
                                           </div>
@@ -465,8 +465,22 @@ export const Header = (props) => {
                                     <div className="elementor-element elementor-element-99562d2 elementor-widget__width-auto d-none d-xxl-inline-block elementor-widget elementor-widget-techbizbutton" data-id="99562d2" data-element_type="widget" data-widget_type="techbizbutton.default">
                                       <div className="elementor-widget-container">
                                         {/* Button */}
-                                        <div className="btn-wrapper left"><Link to='login' className="vs-btn">Войти<i className="far fa-arrow-right" /></Link>
+                                        <div className="btn-wrapper left">
+                                        
                                         </div>{/* End Button */}
+                                      
+                                              {isAuth ? (
+                                                <>
+                                                  <Button onClick={onClickLogout} variant="contained" color="error">
+                                                    Выйти
+                                                  </Button>
+                                                </>
+                                              ) : (
+                                                <>
+                                                  <Link to='login' className="vs-btn">Войти<i className="far fa-arrow-right" /></Link>
+                                                </>
+                                              )}
+                                         
                                       </div>
                                     </div>
                                     <div className="elementor-element elementor-element-4fa0521 elementor-widget__width-auto elementor-hidden-tablet elementor-hidden-mobile elementor-widget elementor-widget-techbizoffcanvas" data-id="4fa0521" data-element_type="widget" data-widget_type="techbizoffcanvas.default">
@@ -550,6 +564,7 @@ export const Header = (props) => {
                                                   <Button onClick={onClickLogout} variant="contained" color="error">
                                                     Выйти
                                                   </Button>
+                                               
                                                 </>
                                               ) : (
                                                 <>
