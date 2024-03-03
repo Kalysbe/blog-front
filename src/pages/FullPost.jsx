@@ -7,6 +7,8 @@ import { Post } from "../components/Post";
 import { Index } from "../components/AddComment";
 import { CommentsBlock } from "../components/CommentsBlock";
 
+import Container from '@mui/material/Container';
+
 
 export const FullPost = () => {
   const [data , setData] = React.useState()
@@ -30,7 +32,7 @@ export const FullPost = () => {
     return <Post isLoading={isLoading} isFullPost/>
   }
   return (
-    <>
+    <Container>
       <Post
        _id={data._id}
        title={data.title}
@@ -44,7 +46,7 @@ export const FullPost = () => {
       >
         <ReactMarkDown children={data.text}/>
       </Post>
-      <CommentsBlock
+      {/* <CommentsBlock
         items={[
           {
             user: {
@@ -64,7 +66,7 @@ export const FullPost = () => {
         isLoading={false}
       >
         <Index />
-      </CommentsBlock>
-    </>
+      </CommentsBlock> */}
+    </Container>
   );
 };

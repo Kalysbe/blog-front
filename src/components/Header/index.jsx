@@ -1,5 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import React, { useContext, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 import Button from '@mui/material/Button';
 import PropTypes from 'prop-types';
@@ -94,13 +96,13 @@ export const Header = (props) => {
   const { windowProps } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
-  const onClickLogout = () => {
 
-    if (window.confirm('Вы правда хотите выйти?')) {
-      dispatch(logout());
-      window.localStorage.removeItem('token')
-    }
-  };
+  const onClickLogout = () => {
+     if (window.confirm('Вы правда хотите выйти?')) {
+       dispatch(logout());
+       window.localStorage.removeItem('token')
+     }
+   };
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState)
@@ -108,7 +110,6 @@ export const Header = (props) => {
 
   const location = useLocation();
   useEffect(() => {
-    // alert(1)
     const scriptFiles = [
       'init.js',
       'index.js',
@@ -128,12 +129,14 @@ export const Header = (props) => {
       // Add the names of the remaining script files
     ];
 
+
     const removeScripts = () => {
       const dynamicScripts = document.querySelectorAll('.dynamic-script');
       dynamicScripts.forEach((script) => {
         script.remove();
       });
     };
+
 
     const loadScript = (src) => {
       return new Promise((resolve, reject) => {
@@ -147,53 +150,55 @@ export const Header = (props) => {
       });
     };
 
+
     const loadScriptsAsync = async () => {
       removeScripts(); // Remove dynamically added scripts before adding new ones
       const scriptPromises = scriptFiles.map((fileName) => loadScript(fileName));
       await Promise.all(scriptPromises);
     };
 
+
     loadScriptsAsync();
   }, [location.pathname]);
 
 
-  const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
-      </Typography>
-      <Divider />
-      <List>
-        {navItems.map((item, index) => (
-          <ListItem key={index} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item.value} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+  // const drawer = (
+  //   <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+  //     <Typography variant="h6" sx={{ my: 2 }}>
+  //       MUI
+  //     </Typography>
+  //     <Divider />
+  //     <List>
+  //       {navItems.map((item, index) => (
+  //         <ListItem key={index} disablePadding>
+  //           <ListItemButton sx={{ textAlign: 'center' }}>
+  //             <ListItemText primary={item.value} />
+  //           </ListItemButton>
+  //         </ListItem>
+  //       ))}
 
-      </List>
-      {isAuth ? (
-        <>
-          <Link to="/add-post">
-            <Button variant="contained">Написать статью</Button>
-          </Link>
-          <Button onClick={onClickLogout} variant="contained" color="error">
-            Выйти
-          </Button>
-        </>
-      ) : (
-        <>
-          <Link to="/login">
-            <Button variant="outlined" color="primary">Войти</Button>
-          </Link>
-          {/* <Link to="/register">
-                  <Button variant="contained">Создать аккаунт</Button>
-                </Link> */}
-        </>
-      )}
-    </Box>
-  );
+  //     </List>
+  //     {isAuth ? (
+  //       <>
+  //         <Link to="/add-post">
+  //           <Button variant="contained">Написать статью</Button>
+  //         </Link>
+  //         <Button onClick={onClickLogout} variant="contained" color="error">
+  //           Выйти
+  //         </Button>
+  //       </>
+  //     ) : (
+  //       <>
+  //         <Link to="/login">
+  //           <Button variant="outlined" color="primary">Войти</Button>
+  //         </Link>
+  //         {/* <Link to="/register">
+  //                 <Button variant="contained">Создать аккаунт</Button>
+  //               </Link> */}
+  //       </>
+  //     )}
+  //   </Box>
+  // );
 
   const container = windowProps !== undefined ? () => windowProps().document.body : undefined;
 
@@ -321,6 +326,7 @@ export const Header = (props) => {
                                   <div className="elementor-widget-wrap">
                                     <div className="elementor-element elementor-element-052837e elementor-widget elementor-widget-techbizmegamenu" data-id="052837e" data-element_type="widget" data-widget_type="techbizmegamenu.default">
                                       <div className="elementor-widget-container">
+                                      <div className="elementor-widget-container">
                                         <nav className="main-menu menu-style1 d-none d-lg-block">
                                           <ul id="menu-primary-menu">
                                             <li id="menu-item-101" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-101">
@@ -374,13 +380,10 @@ export const Header = (props) => {
                                                 </li>
                                               </ul>
                                             </li>
-                                            <li id="menu-item-97" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-97">
-                                              <a>О
-                                                Нас</a>
-                                            </li>
-                                            <li id="menu-item-94" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-94">
-                                              <a>Новости</a>
-                                              <ul className="sub-menu">
+                                            
+                                            <li id="menu-item-94" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-94">
+                                              <Link to='blog'>Новости</Link>
+                                              {/* <ul className="sub-menu">
                                                 <li id="menu-item-104" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-104">
                                                   <a>Blog</a>
                                                 </li>
@@ -388,8 +391,13 @@ export const Header = (props) => {
                                                   <a>Blog
                                                     Details</a>
                                                 </li>
-                                              </ul>
+                                              </ul> */}
                                             </li>
+                                            <li id="menu-item-97" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-97">
+                                              <a>О
+                                                Нас</a>
+                                            </li>
+
 
                                             {/* <li id="menu-item-8919" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8919">
                                               <a href="#">Сервисы</a>
@@ -420,16 +428,21 @@ export const Header = (props) => {
                                     <div className="elementor-element elementor-element-d4956a1 elementor-widget-tablet__width-auto elementor-widget elementor-widget-techbizmobilemenu"
                                       data-id="d4956a1" data-element_type="widget"
                                       data-widget_type="techbizmobilemenu.default">
+                                      data-widget_type="techbizmobilemenu.default">
                                       <div className="elementor-widget-container">
                                         <button className="vs-menu-toggle d-inline-block d-lg-none"><i className="fal fa-bars" /></button>
 
+
                                         <div className="vs-menu-wrapper ">
+
 
                                           <div className="vs-menu-area text-center">
                                             <button className="vs-menu-toggle"><i className="fal fa-times" /></button>
                                             <div className="mobile-logo"> <Link to='/'><img src="images/logo.png" alt="logo5" /></Link></div>
                                             <div className="vs-mobile-menu">
                                               <ul id="menu-mobile-menu">
+                                                <li onClick={goToHome} id="menu-item-131" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-131">
+                                                  <Link to='/'>Главная</Link>
                                                 <li onClick={goToHome} id="menu-item-131" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-131">
                                                   <Link to='/'>Главная</Link>
                                                 </li>
@@ -496,6 +509,7 @@ export const Header = (props) => {
                                                   <a>Contact
                                                     Us</a>
                                                 </li>
+                                                
                                               </ul>
                                             </div>
                                           </div>
@@ -513,6 +527,19 @@ export const Header = (props) => {
                                         {/* Button */}
                                         <div className="btn-wrapper left"><Link to='login' className="vs-btn">Войти<i className="far fa-arrow-right" /></Link>
                                         </div>{/* End Button */}
+                                      
+                                              {isAuth ? (
+                                                <>
+                                                  <Button onClick={onClickLogout} variant="contained" color="error">
+                                                    Выйти
+                                                  </Button>
+                                                </>
+                                              ) : (
+                                                <>
+                                                  <Link to='login' className="vs-btn">Войти<i className="far fa-arrow-right" /></Link>
+                                                </>
+                                              )}
+                                         
                                       </div>
                                     </div>
                                     <div className="elementor-element elementor-element-4fa0521 elementor-widget__width-auto elementor-hidden-tablet elementor-hidden-mobile elementor-widget elementor-widget-techbizoffcanvas" data-id="4fa0521" data-element_type="widget" data-widget_type="techbizoffcanvas.default">
@@ -601,6 +628,28 @@ export const Header = (props) => {
                                                 </div>
                                               </div>
                                             </div>
+                                            <div className={styles.buttons}>
+                                              {isAuth ? (
+                                                <>
+                                                  <Link to="/add-post">
+                                                    <Button variant="contained">Написать статью</Button>
+                                                  </Link>
+                                                  <Button onClick={onClickLogout} variant="contained" color="error">
+                                                    Выйти
+                                                  </Button>
+                                               
+                                                </>
+                                              ) : (
+                                                <>
+                                                  <Link to="/login">
+                                                    <Button variant="outlined">Войти</Button>
+                                                  </Link>
+                                                  <Link to="/register">
+                                                    <Button variant="contained">Создать аккаунт</Button>
+                                                  </Link>
+                                                </>
+                                              )}
+                                            </div>
                                           </div>
                                         </div>
                                       </div>
@@ -621,6 +670,7 @@ export const Header = (props) => {
         </div>
       </div>
     </header>
+
   );
 };
 

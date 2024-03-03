@@ -65,15 +65,15 @@ export const Home = () => {
         <Tab label="Новости налоговой" />
       </Tabs> */}
 
-        {/* <Grid container spacing={2}>
+        <Grid container spacing={2}>
           {(isPostsLoading ? [...Array(5)] : posts.items).map((obj, index) =>
             index < 3 ? (
             isPostsLoading  ? (
-              <Grid sx={{ pl: 0 }} xs={12} item>
+              <Grid sx={{ pl: 0 }} xs={12} item key={index}> 
                 <Post key={index} isLoading={true} />
               </Grid>
             ) : (
-              <Grid sm={12} md={4} item>
+              <Grid sm={12} md={4} item key={obj._id}>
                 <Post
                   _id={obj._id}
                   title={obj.title}
@@ -87,14 +87,14 @@ export const Home = () => {
                   first={index == 0 ? true : false}
                 />
               </Grid>
-            )): '') } */}
+            )): '') } 
 
           {/* <Grid xs={4} item> */}
           {/* <TagsBlock items={tags.items} isLoading={isTagsLoading} /> */}
           
           {/* </Grid> */}
 
-        {/* </Grid> */}
+         </Grid>
       </Container>
       
     </>
