@@ -46,14 +46,8 @@ export const SectionThree = (props) => {
                                   <div className="service-bg" data-bg-src>
                                   </div>
                                   <div className="service-icon"><img decoding="async" src="images/sr-icon-1-1.svg" alt="sr icon 1 1" /></div>
-                                  <h3 className="service-title h5"><a>Профессиональная
-                                      экспертиза</a></h3>
-                                  <p className="service-text">Наши
-                                    высококвалифицированные
-                                    специалисты обладают обширным
-                                    опытом в области финансов,
-                                    налогообложения и
-                                    законодательства.</p><a className="vs-btn style3">ПОДРОБНЕЕ<i className="far fa-long-arrow-right" /></a>
+                                  <h3 className="service-title h5"><a>Анализ финансовой отчетности</a></h3>
+                                  <p className="service-text"> Проведение детального изучения финансовых отчетов компании с целью выявления ошибок, несоответствий стандартам отчетности и потенциальных рисков.</p>
                                 </div>
                               </div>
                             </div>
@@ -63,13 +57,8 @@ export const SectionThree = (props) => {
                                   <div className="service-bg" data-bg-src>
                                   </div>
                                   <div className="service-icon"><img decoding="async" src="images/sr-icon-1-4.svg" alt="sr icon 1 4" /></div>
-                                  <h3 className="service-title h5"><a>Профессиональная экспертиза</a></h3>
-                                  <p className="service-text">Наши
-                                    высококвалифицированные
-                                    специалисты обладают обширным
-                                    опытом в области финансов,
-                                    налогообложения и
-                                    законодательства.</p><a className="vs-btn style3">ПОДРОБНЕЕ<i className="far fa-long-arrow-right" /></a>
+                                  <h3 className="service-title h5"><a>Проверка соблюдения законодательства</a></h3>
+                                  <p className="service-text">Оценка соответствия финансовой отчетности компании требованиям законодательства и стандартам бухгалтерского учета.</p>
                                 </div>
                               </div>
                             </div>
@@ -85,13 +74,8 @@ export const SectionThree = (props) => {
                                   <div className="service-bg" data-bg-src>
                                   </div>
                                   <div className="service-icon"><img decoding="async" src="images/sr-icon-1-2.svg" alt="sr icon 1 2" /></div>
-                                  <h3 className="service-title h5"><a>Профессиональная экспертиза</a></h3>
-                                  <p className="service-text">Наши
-                                    высококвалифицированные
-                                    специалисты обладают обширным
-                                    опытом в области финансов,
-                                    налогообложения и
-                                    законодательства.</p><a className="vs-btn style3">ПОДРОБНЕЕ<i className="far fa-long-arrow-right" /></a>
+                                  <h3 className="service-title h5"><a>Выявление и анализ рисков</a></h3>
+                                  <p className="service-text">Идентификация и оценка рисков, связанных с финансовой деятельностью компании, с последующим разработкой рекомендаций по их снижению или управлению.</p>
                                 </div>
                               </div>
                             </div>
@@ -101,13 +85,9 @@ export const SectionThree = (props) => {
                                   <div className="service-bg" data-bg-src>
                                   </div>
                                   <div className="service-icon"><img decoding="async" src="images/sr-icon-1-5.svg" alt="sr icon 1 5" /></div>
-                                  <h3 className="service-title h5"><a>Профессиональная экспертиза</a></h3>
+                                  <h3 className="service-title h5"><a>Оценка систем внутреннего контроля</a></h3>
                                   <p className="service-text">
-                                      Наши высококвалифицированные
-                                    специалисты обладают обширным
-                                    опытом в области финансов,
-                                    налогообложения и
-                                    законодательства.</p><a className="vs-btn style3">ПОДРОБНЕЕ<i className="far fa-long-arrow-right" /></a>
+                                  Проверка эффективности и надежности систем внутреннего контроля компании с целью предотвращения мошенничества, ошибок и неправильных действий.</p>
                                 </div>
                               </div>
                             </div>
@@ -123,13 +103,8 @@ export const SectionThree = (props) => {
                                   <div className="service-bg" data-bg-src>
                                   </div>
                                   <div className="service-icon"><img decoding="async" src="images/sr-icon-1-3.svg" alt="sr icon 1 3" /></div>
-                                  <h3 className="service-title h5"><a>Профессиональная экспертиза</a></h3>
-                                  <p className="service-text">Наши
-                                    высококвалифицированные
-                                    специалисты обладают обширным
-                                    опытом в области финансов,
-                                    налогообложения и
-                                    законодательства.</p><a className="vs-btn style3">ПОДРОБНЕЕ<i className="far fa-long-arrow-right" /></a>
+                                  <h3 className="service-title h5"><a>Проверка учетных политик и процедур</a></h3>
+                                  <p className="service-text">Анализ соответствия учетных политик и процедур компании требованиям законодательства и лучшим практикам в области управления финансами.</p>
                                 </div>
                               </div>
                             </div>
@@ -139,14 +114,8 @@ export const SectionThree = (props) => {
                                   <div className="service-bg" data-bg-src>
                                   </div>
                                   <div className="service-icon"><img decoding="async" src="images/sr-icon-1-6.svg" alt="sr icon 1 6" /></div>
-                                  <h3 className="service-title h5"><a>Профессиональная
-                                      экспертиза</a></h3>
-                                  <p className="service-text">Наши
-                                    высококвалифицированные
-                                    специалисты обладают обширным
-                                    опытом в области финансов,
-                                    налогообложения и
-                                    законодательства.</p><a className="vs-btn style3">ПОДРОБНЕЕ<i className="far fa-long-arrow-right" /></a>
+                                  <h3 className="service-title h5"><a>Предоставление рекомендаций по улучшению</a></h3>
+                                  <p className="service-text">Предоставление конкретных рекомендаций и рекомендаций по улучшению финансовой деятельности компании на основе результатов проведенного аудита.</p>
                                 </div>
                               </div>
                             </div>

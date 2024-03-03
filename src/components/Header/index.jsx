@@ -1,5 +1,5 @@
-import React, {useContext,  useEffect } from 'react';
-import { useLocation, useNavigate} from 'react-router-dom';
+import React, { useContext, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 import Button from '@mui/material/Button';
 import PropTypes from 'prop-types';
@@ -13,9 +13,12 @@ import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
 import Drawer from '@mui/material/Drawer';
+import MailIcon from '@mui/icons-material/Mail';
 import Input from '@mui/material/Input';
 import TextField from "@mui/material/TextField";
 
@@ -27,7 +30,7 @@ import { logout, selectIsAuth } from '../../redux/slices/auth';
 
 const drawerWidth = 240;
 const navItems = [
-  { value: 'В фокусе', path: '' },
+  { value: 'Написать статью', path: '/add-post' },
   { value: 'Услуги', path: '' },
   { value: 'Новости', path: '/blog' },
   { value: 'Карьера', path: '' },
@@ -37,6 +40,49 @@ const navItems = [
 
 
 export const Header = (props) => {
+  const [state, setState] = React.useState({
+    right: false,
+  });
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
+
+  const list = (anchor) => (
+    <Box
+      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+      role="presentation"
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <List>
+        <ListItem disablePadding>
+          <ListItemButton primary="warning" onClick={onClickLogout}>
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
+            <ListItemText primary="Выйти" />
+          </ListItemButton>
+        </ListItem>
+      </List>
+      <Divider />
+      <List>
+        <ListItem disablePadding>
+          <ListItemButton to='add-post'>
+            <ListItemIcon>
+              <MailIcon />
+            </ListItemIcon>
+            <ListItemText primary="Написать статью" />
+          </ListItemButton>
+        </ListItem>
+      </List>
+    </Box>
+  );
+
   const navigate = useNavigate();
 
   const goToHome = () => {
@@ -81,14 +127,14 @@ export const Header = (props) => {
       'techbiz-frontend.js'
       // Add the names of the remaining script files
     ];
-  
+
     const removeScripts = () => {
       const dynamicScripts = document.querySelectorAll('.dynamic-script');
       dynamicScripts.forEach((script) => {
         script.remove();
       });
     };
-  
+
     const loadScript = (src) => {
       return new Promise((resolve, reject) => {
         const script = document.createElement('script');
@@ -100,13 +146,13 @@ export const Header = (props) => {
         document.body.appendChild(script);
       });
     };
-  
+
     const loadScriptsAsync = async () => {
       removeScripts(); // Remove dynamically added scripts before adding new ones
       const scriptPromises = scriptFiles.map((fileName) => loadScript(fileName));
       await Promise.all(scriptPromises);
     };
-  
+
     loadScriptsAsync();
   }, [location.pathname]);
 
@@ -154,6 +200,7 @@ export const Header = (props) => {
   return (
 
     <header className="header">
+
       <div data-elementor-type="wp-post" data-elementor-id={2106} className="elementor elementor-2106">
         <div className="elementor-inner">
           <div className="elementor-section-wrap">
@@ -273,7 +320,7 @@ export const Header = (props) => {
                                 <div className="elementor-column-wrap elementor-element-populated">
                                   <div className="elementor-widget-wrap">
                                     <div className="elementor-element elementor-element-052837e elementor-widget elementor-widget-techbizmegamenu" data-id="052837e" data-element_type="widget" data-widget_type="techbizmegamenu.default">
-                                      <div className="elementor-widget-container"> 
+                                      <div className="elementor-widget-container">
                                         <nav className="main-menu menu-style1 d-none d-lg-block">
                                           <ul id="menu-primary-menu">
                                             <li id="menu-item-101" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-101">
@@ -343,7 +390,7 @@ export const Header = (props) => {
                                                 </li>
                                               </ul>
                                             </li>
-                                         
+
                                             {/* <li id="menu-item-8919" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8919">
                                               <a href="#">Сервисы</a>
                                               <ul className="sub-menu">
@@ -372,19 +419,19 @@ export const Header = (props) => {
                                     </div>
                                     <div className="elementor-element elementor-element-d4956a1 elementor-widget-tablet__width-auto elementor-widget elementor-widget-techbizmobilemenu"
                                       data-id="d4956a1" data-element_type="widget"
-                                      data-widget_type="techbizmobilemenu.default">  
+                                      data-widget_type="techbizmobilemenu.default">
                                       <div className="elementor-widget-container">
                                         <button className="vs-menu-toggle d-inline-block d-lg-none"><i className="fal fa-bars" /></button>
-                                     
+
                                         <div className="vs-menu-wrapper ">
-                                        
+
                                           <div className="vs-menu-area text-center">
                                             <button className="vs-menu-toggle"><i className="fal fa-times" /></button>
                                             <div className="mobile-logo"> <Link to='/'><img src="images/logo.png" alt="logo5" /></Link></div>
                                             <div className="vs-mobile-menu">
                                               <ul id="menu-mobile-menu">
-                                                <li onClick={goToHome}  id="menu-item-131" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-131">
-                                                <Link to='/'>Главная</Link>
+                                                <li onClick={goToHome} id="menu-item-131" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-131">
+                                                  <Link to='/'>Главная</Link>
                                                 </li>
                                                 <li id="menu-item-135" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-135">
                                                   <a>О нас</a>
@@ -464,16 +511,30 @@ export const Header = (props) => {
                                     <div className="elementor-element elementor-element-99562d2 elementor-widget__width-auto d-none d-xxl-inline-block elementor-widget elementor-widget-techbizbutton" data-id="99562d2" data-element_type="widget" data-widget_type="techbizbutton.default">
                                       <div className="elementor-widget-container">
                                         {/* Button */}
-                                        <div className="btn-wrapper left"><a className="vs-btn">Войти<i className="far fa-arrow-right" /></a>
+                                        <div className="btn-wrapper left"><Link to='login' className="vs-btn">Войти<i className="far fa-arrow-right" /></Link>
                                         </div>{/* End Button */}
                                       </div>
                                     </div>
                                     <div className="elementor-element elementor-element-4fa0521 elementor-widget__width-auto elementor-hidden-tablet elementor-hidden-mobile elementor-widget elementor-widget-techbizoffcanvas" data-id="4fa0521" data-element_type="widget" data-widget_type="techbizoffcanvas.default">
                                       <div className="elementor-widget-container">
                                         <div className="header-btns">
-                                          <button className="icon-btn style3 sideMenuToggler">
-                                            <i className="far fa-bars" />
-                                          </button>
+                                          {/* <button className="icon-btn style3 sideMenuToggler">
+                                          
+                                          </button> */}
+                                          {isAuth ? (
+                                            ['right'].map((anchor) => (
+                                              <React.Fragment key={anchor}>
+                                                <button onClick={toggleDrawer(anchor, true)} className="icon-btn style3 "><i className="far fa-bars" /></button>
+                                                <Drawer
+                                                  anchor={anchor}
+                                                  open={state[anchor]}
+                                                  onClose={toggleDrawer(anchor, false)}
+                                                >
+                                                  {list(anchor)}
+                                                </Drawer>
+                                              </React.Fragment>
+                                            ))
+                                          ) : (``)}
                                         </div>
                                         <div className="sidemenu-wrapper d-none d-lg-block">
                                           <div className="sidemenu-content">
