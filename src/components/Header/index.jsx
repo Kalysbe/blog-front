@@ -1,7 +1,5 @@
 import React, { useContext, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import React, { useContext, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 import Button from '@mui/material/Button';
 import PropTypes from 'prop-types';
@@ -129,14 +127,12 @@ export const Header = (props) => {
       // Add the names of the remaining script files
     ];
 
-
     const removeScripts = () => {
       const dynamicScripts = document.querySelectorAll('.dynamic-script');
       dynamicScripts.forEach((script) => {
         script.remove();
       });
     };
-
 
     const loadScript = (src) => {
       return new Promise((resolve, reject) => {
@@ -150,13 +146,11 @@ export const Header = (props) => {
       });
     };
 
-
     const loadScriptsAsync = async () => {
       removeScripts(); // Remove dynamically added scripts before adding new ones
       const scriptPromises = scriptFiles.map((fileName) => loadScript(fileName));
       await Promise.all(scriptPromises);
     };
-
 
     loadScriptsAsync();
   }, [location.pathname]);
@@ -326,7 +320,6 @@ export const Header = (props) => {
                                   <div className="elementor-widget-wrap">
                                     <div className="elementor-element elementor-element-052837e elementor-widget elementor-widget-techbizmegamenu" data-id="052837e" data-element_type="widget" data-widget_type="techbizmegamenu.default">
                                       <div className="elementor-widget-container">
-                                      <div className="elementor-widget-container">
                                         <nav className="main-menu menu-style1 d-none d-lg-block">
                                           <ul id="menu-primary-menu">
                                             <li id="menu-item-101" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-101">
@@ -398,7 +391,6 @@ export const Header = (props) => {
                                                 Нас</a>
                                             </li>
 
-
                                             {/* <li id="menu-item-8919" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8919">
                                               <a href="#">Сервисы</a>
                                               <ul className="sub-menu">
@@ -428,21 +420,16 @@ export const Header = (props) => {
                                     <div className="elementor-element elementor-element-d4956a1 elementor-widget-tablet__width-auto elementor-widget elementor-widget-techbizmobilemenu"
                                       data-id="d4956a1" data-element_type="widget"
                                       data-widget_type="techbizmobilemenu.default">
-                                      data-widget_type="techbizmobilemenu.default">
                                       <div className="elementor-widget-container">
                                         <button className="vs-menu-toggle d-inline-block d-lg-none"><i className="fal fa-bars" /></button>
 
-
                                         <div className="vs-menu-wrapper ">
-
 
                                           <div className="vs-menu-area text-center">
                                             <button className="vs-menu-toggle"><i className="fal fa-times" /></button>
                                             <div className="mobile-logo"> <Link to='/'><img src="images/logo.png" alt="logo5" /></Link></div>
                                             <div className="vs-mobile-menu">
                                               <ul id="menu-mobile-menu">
-                                                <li onClick={goToHome} id="menu-item-131" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-131">
-                                                  <Link to='/'>Главная</Link>
                                                 <li onClick={goToHome} id="menu-item-131" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-131">
                                                   <Link to='/'>Главная</Link>
                                                 </li>
@@ -525,8 +512,9 @@ export const Header = (props) => {
                                     <div className="elementor-element elementor-element-99562d2 elementor-widget__width-auto d-none d-xxl-inline-block elementor-widget elementor-widget-techbizbutton" data-id="99562d2" data-element_type="widget" data-widget_type="techbizbutton.default">
                                       <div className="elementor-widget-container">
                                         {/* Button */}
-                                        <div className="btn-wrapper left"><Link to='login' className="vs-btn">Войти<i className="far fa-arrow-right" /></Link>
-                                        </div>{/* End Button */}
+                                        <div className="btn-wrapper left">
+                                          {/* <a className="vs-btn">Войти<i className="far fa-arrow-right" /></a> */}
+                                      
                                       
                                               {isAuth ? (
                                                 <>
@@ -539,7 +527,7 @@ export const Header = (props) => {
                                                   <Link to='login' className="vs-btn">Войти<i className="far fa-arrow-right" /></Link>
                                                 </>
                                               )}
-                                         
+                                           </div>{/* End Button */}
                                       </div>
                                     </div>
                                     <div className="elementor-element elementor-element-4fa0521 elementor-widget__width-auto elementor-hidden-tablet elementor-hidden-mobile elementor-widget elementor-widget-techbizoffcanvas" data-id="4fa0521" data-element_type="widget" data-widget_type="techbizoffcanvas.default">
