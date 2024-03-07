@@ -35,17 +35,17 @@ export default function CustomizedAccordions() {
 
 export const Home = () => {
   const isMobile = useMediaQuery('(max-width:600px)');
-  const dispatch = useDispatch()
-  const userData = useSelector(state => state.auth.data)
-  const { posts, tags } = useSelector(state => state.posts)
+  // const dispatch = useDispatch()
+  // const userData = useSelector(state => state.auth.data)
+  // const { posts, tags } = useSelector(state => state.posts)
 
-  const isPostsLoading = posts.status === 'loading'
-  const isTagsLoading = tags.status === 'loading'
+  // const isPostsLoading = posts.status === 'loading'
+  // const isTagsLoading = tags.status === 'loading'
 
-  React.useEffect(() => {
-    dispatch(fetchPosts())
-    dispatch(fetchTags())
-  }, [])
+  // React.useEffect(() => {
+  //   dispatch(fetchPosts())
+  //   dispatch(fetchTags())
+  // }, [])
 
 
   
@@ -66,7 +66,7 @@ export const Home = () => {
       </Tabs> */}
 
         <Grid container spacing={2}>
-          {(isPostsLoading ? [...Array(5)] : posts.items).map((obj, index) =>
+          {/* {(isPostsLoading ? [...Array(5)] : posts.items).map((obj, index) =>
             index < 3 ? (
             isPostsLoading  ? (
               <Grid sx={{ pl: 0 }} xs={12} item key={index}> 
@@ -87,7 +87,7 @@ export const Home = () => {
                   first={index == 0 ? true : false}
                 />
               </Grid>
-            )): '') } 
+            )): '') }  */}
 
           {/* <Grid xs={4} item> */}
           {/* <TagsBlock items={tags.items} isLoading={isTagsLoading} /> */}

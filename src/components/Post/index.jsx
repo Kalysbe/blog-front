@@ -35,7 +35,7 @@ export const Post = ({
   }
 
   const onClickRemove = () => {
-    if(window.confirm('Вы правда хотите удалить?')) {
+    if (window.confirm('Вы правда хотите удалить?')) {
       dispatch(fetchRemovePost(_id))
     }
   };
@@ -46,85 +46,94 @@ export const Post = ({
 
   return (
     // <Container maxWidth={false}>
-    // {isFullPost ? ( ) : ( ) } <>
-    <div className={clsx(styles.root, { [styles.rootFull]: isFullPost },first ? styles.firts_post : '')}>
-      {isEditable && (
-        <div className={styles.editButtons}>
-          <Link to={`/posts/${_id}/edit`}>
-            <IconButton color="primary">
-              <EditIcon />
-            </IconButton>
-          </Link>
-          <IconButton onClick={onClickRemove} color="secondary">
-            <DeleteIcon />
-          </IconButton>
-        </div>
-      )}
-      {imageUrl && (
-        <img
-          className={clsx(styles.image, { [styles.imageFull]: isFullPost })}
-          style={{maxWidth:'40%'}}
-          // src={imageUrl}
-          src='images/blog5-387x320.jpg'
-          alt={title}
-        />
-       
-      )}
-   
-      <div className={styles.wrapper}>
-        {/* <UserInfo {...user} additionalText={createdAt} /> */}
-        <div className={styles.indention}>
-          <span>{localDate}</span>
-          <h3 className={clsx(styles.title, { [styles.titleFull]: isFullPost })}>
-            {isFullPost ? title : <Link to={`/posts/${_id}`}>{title}</Link>}
-          </h3>
-          <ul className={styles.tags}>
-           
-            {tags.map((name) => (
+    <>
+    {isFullPost ? (
 
-              <li key={name}>
-                <Link to={`/tag/${name.length ? name : 'Другие'}`}>{name.length ? name : 'Другие'}</Link>
-              </li>
-            ))}
-          </ul>
-          {children && <div className={styles.content}>{children}</div>}
-          <ul className={styles.postDetails}>
-            <li>
-              <EyeIcon />
-              <span>{viewsCount}</span>
-            </li>
-            {/* <li>
+   
+    <div className = { clsx(styles.root, { [styles.rootFull]: isFullPost }, first? styles.firts_post : '')
+    } >
+    { isEditable && (
+      <div className={styles.editButtons}>
+        <Link to={`/posts/${_id}/edit`}>
+          <IconButton color="primary">
+            <EditIcon />
+          </IconButton>
+        </Link>
+        <IconButton onClick={onClickRemove} color="secondary">
+          <DeleteIcon />
+        </IconButton>
+      </div>
+    )}
+{
+  imageUrl && (
+    <img
+      className={clsx(styles.image, { [styles.imageFull]: isFullPost })}
+      style={{ maxWidth: '40%' }}
+      // src={imageUrl}
+      src='images/blog5-387x320.jpg'
+      alt={title}
+    />
+
+  )
+}
+
+<div className={styles.wrapper}>
+  {/* <UserInfo {...user} additionalText={createdAt} /> */}
+  <div className={styles.indention}>
+    <span>{localDate}</span>
+    <h3 className={clsx(styles.title, { [styles.titleFull]: isFullPost })}>
+      {isFullPost ? title : <Link to={`/posts/${_id}`}>{title}</Link>}
+    </h3>
+    <ul className={styles.tags}>
+
+      {tags.map((name) => (
+
+        <li key={name}>
+          <Link to={`/tag/${name.length ? name : 'Другие'}`}>{name.length ? name : 'Другие'}</Link>
+        </li>
+      ))}
+    </ul>
+    {children && <div className={styles.content}>{children}</div>}
+    <ul className={styles.postDetails}>
+      <li>
+        <EyeIcon />
+        <span>{viewsCount}</span>
+      </li>
+      {/* <li>
               <CommentIcon />
               <span>{commentsCount}</span>
             </li> */}
-          </ul>
+    </ul>
+  </div>
+</div>
+    </div > 
+     ) : (
+      <div className="col-md-6">
+      <div className="vs-blog blog-style1">
+        <div className="blog-img">
+          <a><img loading="lazy" decoding="async" width={387} height={320} src="images/blog4-387x320.jpg" className="w-100 wp-post-image" alt="" /></a>
+          <div className="blog-content">
+            <div className="blog-meta">
+              <a><i className="far fa-calendar" /><time dateTime="2022-08-10T06:09:28+02:00">10
+                  Aug,
+                  2022</time></a><a><i className="fal fa-user" />Rodja
+                Hartmann</a>
+            </div>
+            <h3 className="blog-title">
+              <a>Latin
+                derived
+                from
+                Cicero’s
+                1st-century
+                BC</a>
+            </h3><a className="link-btn">Открыть<i className="far fa-arrow-right" /></a>
+          </div>
         </div>
       </div>
     </div>
-      // </> ) : (   
-  //   <div className="col-md-6">
-  //   <div className="vs-blog blog-style1">
-  //     <div className="blog-img">
-  //       <a><img loading="lazy" decoding="async" width={387} height={320} src="images/blog4-387x320.jpg" className="w-100 wp-post-image" alt="" /></a>
-  //       <div className="blog-content">
-  //         <div className="blog-meta">
-  //           <a><i className="far fa-calendar" /><time dateTime="2022-08-10T06:09:28+02:00">10
-  //               Aug,
-  //               2022</time></a><a><i className="fal fa-user" />Rodja
-  //             Hartmann</a>
-  //         </div>
-  //         <h3 className="blog-title">
-  //           <a>Latin
-  //             derived
-  //             from
-  //             Cicero’s
-  //             1st-century
-  //             BC</a>
-  //         </h3><a className="link-btn">Открыть<i className="far fa-arrow-right" /></a>
-  //       </div>
-  //     </div>
-  //   </div>
-  // </div>
+     ) }
+    </>
+
     // )}
     // </Container>
   );

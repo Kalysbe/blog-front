@@ -351,9 +351,9 @@ export const Header = (props) => {
                                                   </ul>
                                                 </li>
                                                 <li id="menu-item-90" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-90">
-                                                  <a>Projects</a>
+                                                  <a>Заполнению декларации</a>
                                                 </li>
-                                                <li id="menu-item-89" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-89">
+                                                {/* <li id="menu-item-89" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-89">
                                                   <a>Project
                                                     Details</a>
                                                 </li>
@@ -371,7 +371,7 @@ export const Header = (props) => {
                                                 <li id="menu-item-118" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-118">
                                                   <a>404
                                                     Page</a>
-                                                </li>
+                                                </li> */}
                                               </ul>
                                             </li>
                                             
@@ -387,10 +387,10 @@ export const Header = (props) => {
                                                 </li>
                                               </ul> */}
                                             </li>
-                                            <li id="menu-item-97" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-97">
+                                            {/* <li id="menu-item-97" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-97">
                                               <a>О
                                                 Нас</a>
-                                            </li>
+                                            </li> */}
 
                                             {/* <li id="menu-item-8919" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8919">
                                               <a href="#">Сервисы</a>
