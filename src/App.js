@@ -4,7 +4,7 @@ import Container from "@mui/material/Container";
 import Box from '@mui/material/Box';
 
 import { Header, Footer } from "./components";
-import { Home, FullPost, Registration, AddPost, Login, Blog,TaxMenu, TaxCar, TaxHome, TaxNoHome, TaxPlace } from "./pages";
+import { Home, FullPost, Registration, AddPost, Login, Blog,TaxMenu, TaxCar, TaxHome, TaxNoHome, TaxPlace , Contacts } from "./pages";
 import React, { useEffect } from 'react';
 import { fetchAuthMe, logout, selectIsAuth } from './redux/slices/auth';
 
@@ -42,6 +42,9 @@ function App() {
           <Route path='/taxhome' element={<TaxHome />} />
           <Route path='/taxnohome' element={<TaxNoHome />} />
           <Route path='/taxplace' element={<TaxPlace />} />
+          <Route path='/contacts' element={<Contacts />} />
+            {/* Страница для неверной ссылки */}
+            <Route path='*' element={<NotFound />} />
         </Routes>
       </Box>
       <Footer />
@@ -49,6 +52,10 @@ function App() {
       {/* </Container> */}
     </>
   );
+}
+
+function NotFound() {
+  return <h1>404 - Страница не найдена</h1>;
 }
 
 export default App;

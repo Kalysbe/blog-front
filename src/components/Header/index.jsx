@@ -255,30 +255,14 @@ export const Header = (props) => {
                                               <i className="fab fa-facebook-f" />
                                             </a>
                                           </span>
-                                          <span className="elementor-grid-item">
-                                            <a className="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-repeater-item-fd80941" href="http://www.twitter.com" target="_blank">
-                                              <span className="elementor-screen-only">Twitter</span>
-                                              <i className="fab fa-twitter" />
-                                            </a>
-                                          </span>
-                                          <span className="elementor-grid-item">
-                                            <a className="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-repeater-item-b6261d7" href="http://www.youtube.com" target="_blank">
-                                              <span className="elementor-screen-only">Youtube</span>
-                                              <i className="fab fa-youtube" />
-                                            </a>
-                                          </span>
+
                                           <span className="elementor-grid-item">
                                             <a className="elementor-icon elementor-social-icon elementor-social-icon-linkedin-in elementor-repeater-item-a7ac71f" href="http://www.linkedin.com" target="_blank">
                                               <span className="elementor-screen-only">Linkedin-in</span>
                                               <i className="fab fa-linkedin-in" />
                                             </a>
                                           </span>
-                                          <span className="elementor-grid-item">
-                                            <a className="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-repeater-item-69025a1" href="http://www.youtube.com" target="_blank">
-                                              <span className="elementor-screen-only">Youtube</span>
-                                              <i className="fab fa-youtube" />
-                                            </a>
-                                          </span>
+                                      
                                         </div>
                                       </div>
                                     </div>
@@ -412,7 +396,7 @@ export const Header = (props) => {
                                               </ul>
                                             </li> */}
                                             <li id="menu-item-88" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-88">
-                                              <a>Контакты</a>
+                                              <Link to='contacts'>Контакты</Link>
                                             </li>
                                           </ul>
                                         </nav>
@@ -495,8 +479,7 @@ export const Header = (props) => {
                                                   </ul>
                                                 </li>
                                                 <li id="menu-item-161" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-161">
-                                                  <a>Contact
-                                                    Us</a>
+                                                  <Link to='contacts'>Контакты</Link>
                                                 </li>
                                                 
                                               </ul>

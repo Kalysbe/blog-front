@@ -9,3 +9,4 @@ export { TaxCar } from "./Taxes/TaxCar";
 export { TaxHome } from "./Taxes/TaxHome";
 export { TaxNoHome } from "./Taxes/TaxNoHome";
 export { TaxPlace } from "./Taxes/TaxPlace";
+export { Contacts } from "./Contacts";

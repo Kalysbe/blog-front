@@ -56,9 +56,9 @@ export const Home = () => {
     <>
       <HomeComponent />
       <Container>
-        <Typography  variant={isMobile ? 'h5' : 'h4'} sx={{ mt: 4, mb: 2, fontWeight: 600,textAlign:'center' }} gutterBottom>
+        {/* <Typography  variant={isMobile ? 'h5' : 'h4'} sx={{ mt: 4, mb: 2, fontWeight: 600,textAlign:'center' }} gutterBottom>
           Последние новости
-        </Typography>
+        </Typography> */}
 
         {/* <Tabs style={{ marginBottom: 15 }} value={0} aria-label="basic tabs example">
         <Tab label="Новости компаний" />

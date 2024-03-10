@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom'
 import styles from './HomeComponent.module.scss';
 import Box from '@mui/material/Box';
 import { useEffect } from 'react';
@@ -18,6 +19,18 @@ import { useMediaQuery } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import CustomizedAccordions from '../ Questions/ Questions'
 import BasicTabs from '../Tab';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/pagination';
+
+// import './styles.css';
+
+// import required modules
+import { FreeMode, Pagination } from 'swiper/modules';
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -64,6 +77,7 @@ const responsive = {
 export const HomeComponent = (props) => {
   const dispatch = useDispatch()
   const userData = useSelector(state => state.auth.data)
+
   const { posts, tags } = useSelector(state => state.posts)
 
   const isPostsLoading = posts.status === 'loading'
@@ -166,7 +180,7 @@ export const HomeComponent = (props) => {
               <SectionFour />
               <SectionFive />
               <SectionSix />
-              <SectionSeven />
+              {/* <SectionSeven /> */}
               <SectionEight />
               <SectionNine />
 
@@ -411,32 +425,50 @@ export const HomeComponent = (props) => {
                                       <div className="elementor-element elementor-element-064086e elementor-widget elementor-widget-techbizblogpost" data-id="064086e" data-element_type="widget" data-widget_type="techbizblogpost.default">
                                         <div className="elementor-widget-container">
                                           {/* blog Area */}
+                                        
+
+
+                                         
                                           <section className="vs-blog-wrapper">
                                             <div className="container">
-                                              <div className="row vs-carousel" data-slick-arrows="true" data-slide-to-show={3}>
+                                            <Swiper
+                                            slidesPerView={3}
+                                            spaceBetween={30}
+                                            freeMode={true}
+                                       
+                                            modules={[FreeMode]}
+                                            className="mySwiper"
+                                          >
                                                 {(isPostsLoading ? [...Array(5)] : posts.items).map((obj, index) =>
-                                                  index < 3 ? (
+                                                  index < 6 ? (
                                                     isPostsLoading ? (
-                                                    <div>
+                                                      <div>
                                                         <Post key={index} isLoading={true} />
-                                                    </div>
+                                                      </div>
                                                     ) : (
-                                                      
-                                                        // <Post
-                                                        //   _id={obj._id}
-                                                        //   title={obj.title}
-                                                        //   imageUrl={obj.imageUrl ? `${process.env.REACT_APP_API_URL}${obj.imageUrl}` : ''}
-                                                        //   user={obj.user}
-                                                        //   createdAt={obj.createdAt}
-                                                        //   viewsCount={obj.viewsCount}
-                                                        //   commentsCount={3}
-                                                        //   tags={obj.tags}
-                                                        //   isEditable={userData?._id == obj.user._id}
-                                                        //   first={index == 0 ? true : false}
-                                                        // />
-                                                        <div>{obj}</div>
-                                                 
-                                                    )) : '')}
+                                                      <SwiperSlide>
+                                                        <div className="col-md-12">
+                                                          <div className="vs-blog blog-style1">
+                                                            <div className="blog-img">
+                                                              <a><img loading="lazy" decoding="async" width={387} height={320} src="images/blog4-387x320.jpg" className="w-100 wp-post-image" alt="" /></a>
+                                                              <div className="blog-content">
+                                                                <div className="blog-meta">
+                                                                  <a><i className="far fa-calendar" />{obj.createdAt}</a>
+                                                                  {/* <a>
+                                                                  <i className="fal fa-user" />
+                                                                  {obj.user}
+                                                                </a> */}
+                                                                </div>
+                                                                <h3 className="blog-title">
+                                                                  <Link to={`/posts/${obj._id}`}>{obj.title}</Link>
+                                                                </h3><a className="link-btn">Открыть<i className="far fa-arrow-right" /></a>
+
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </SwiperSlide>
+                                                    )) : '')} </Swiper>
                                                 {/* <div className="col-md-6">
                                                     <div className="vs-blog blog-style1">
                                                       <div className="blog-img">
@@ -535,7 +567,7 @@ export const HomeComponent = (props) => {
                                                       </div>
                                                     </div>
                                                   </div> */}
-                                              </div>{/* .row END */}
+                                           
                                             </div>{/* .container END */}
                                           </section>{/* blog Area end */}
                                         </div>

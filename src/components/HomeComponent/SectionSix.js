@@ -42,128 +42,39 @@ export const SectionSix = (props) => {
                                           <div className="accordion accordion-style1" id="faqVersion1">
                                             <div className="accordion-item">
                                               <h2 className="accordion-header" id="accHead1">
-                                                <button className="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#accBody1" aria-expanded="true" aria-controls="accBody1">Зачем
-                                                  нам
-                                                  нужен
-                                                  Аудит?</button>
+                                                <button className="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#accBody1" aria-expanded="true" aria-controls="accBody1">
+                                                Можете ли вы подтвердить точность нашей финансовой отчетности?</button>
                                               </h2>
                                               <div id="accBody1" className="accordion-collapse collapse show" aria-labelledby="accHead1" data-bs-parent="#faqVersion1">
                                                 <div className="accordion-body">
                                                   <p className="mb-0">
-                                                    Наша
-                                                    компания
-                                                    всегда
-                                                    в
-                                                    курсе
-                                                    последних
-                                                    изменений
-                                                    в
-                                                    налоговом
-                                                    и
-                                                    бухгалтерском
-                                                    законодательстве.
-                                                    Мы
-                                                    гарантируем,
-                                                    что
-                                                    ваш
-                                                    бизнес
-                                                    полностью
-                                                    соответствует
-                                                    всем
-                                                    требованиям
-                                                    и
-                                                    нормативам.
+                                                  Да, наши аудиторы проведут проверку и подтвердят точность вашей отчетности.
                                                   </p>
                                                 </div>
                                               </div>
                                             </div>
                                             <div className="accordion-item">
                                               <h2 className="accordion-header" id="accHead2">
-                                                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accBody2" aria-expanded="false" aria-controls="accBody2">Latin
-                                                  derived
-                                                  from
-                                                  Cicero's
-                                                  1st-century
-                                                  BC text
-                                                  De</button>
+                                                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accBody2" aria-expanded="false" aria-controls="accBody2">
+                                                Сможете ли вы убедиться, что мы соответствуем всем законодательным стандартам?</button>
                                               </h2>
                                               <div id="accBody2" className="accordion-collapse collapse " aria-labelledby="accHead2" data-bs-parent="#faqVersion1">
                                                 <div className="accordion-body">
                                                   <p className="mb-0">
-                                                    Assertively
-                                                    communicate
-                                                    multidisciplinary
-                                                    content
-                                                    through
-                                                    emerging
-                                                    skills
-                                                    for
-                                                    intermandated
-                                                    e-tailers.
-                                                    Rapidiously
-                                                    revolutionize
-                                                    emerging
-                                                    supply
-                                                    for
-                                                    interdependent
-                                                    portals.
-                                                    Monotonectally
-                                                    restore
-                                                    24/365
-                                                    leadership
-                                                    for
-                                                    high
-                                                    quality
-                                                    niche
-                                                    markets
-                                                    transform
-                                                    emerging
-                                                    mindshare...
+                                                  Да, мы гарантируем, что ваша отчетность будет соответствовать всем применимым законодательным стандартам.
                                                   </p>
                                                 </div>
                                               </div>
                                             </div>
                                             <div className="accordion-item">
                                               <h2 className="accordion-header" id="accHead3">
-                                                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accBody3" aria-expanded="false" aria-controls="accBody3">Creation
-                                                  timelines
-                                                  for the
-                                                  standard
-                                                  lorem
-                                                  passage</button>
+                                                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accBody3" aria-expanded="false" aria-controls="accBody3">
+                                                Какие у вас предложения для улучшения наших внутренних процессов и контроля?</button>
                                               </h2>
                                               <div id="accBody3" className="accordion-collapse collapse " aria-labelledby="accHead3" data-bs-parent="#faqVersion1">
                                                 <div className="accordion-body">
                                                   <p className="mb-0">
-                                                    Assertively
-                                                    communicate
-                                                    multidisciplinary
-                                                    content
-                                                    through
-                                                    emerging
-                                                    skills
-                                                    for
-                                                    intermandated
-                                                    e-tailers.
-                                                    Rapidiously
-                                                    revolutionize
-                                                    emerging
-                                                    supply
-                                                    for
-                                                    interdependent
-                                                    portals.
-                                                    Monotonectally
-                                                    restore
-                                                    24/365
-                                                    leadership
-                                                    for
-                                                    high
-                                                    quality
-                                                    niche
-                                                    markets
-                                                    transform
-                                                    emerging
-                                                    mindshare...
+                                                  Наши эксперты предоставят вам рекомендации по улучшению внутренних процессов и контроля.
                                                   </p>
                                                 </div>
                                               </div>

@@ -49,7 +49,6 @@ export const Post = ({
     <>
     {isFullPost ? (
 
-   
     <div className = { clsx(styles.root, { [styles.rootFull]: isFullPost }, first? styles.firts_post : '')
     } >
     { isEditable && (

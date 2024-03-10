@@ -3,7 +3,7 @@ import React from 'react';
 
 export const SectionEight = (props) => {
     return (
-      <section className="elementor-section elementor-top-section elementor-element elementor-element-54db21a elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="54db21a" data-element_type="section" data-settings="{' background_background':'classic'}">
+      <section style={{margin: '60px 0'}} className="elementor-section elementor-top-section elementor-element elementor-element-54db21a elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="54db21a" data-element_type="section" data-settings="{' background_background':'classic'}">
       <div className="elementor-container elementor-column-gap-no">
           <div className="elementor-row">
               <div className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-c2592df" data-id="c2592df" data-element_type="column">
