@@ -38,14 +38,16 @@ import { SectionOne } from './SectionOne';
 import { SectionTwo } from './SectionTwo';
 import { SectionThree } from './SectionThree';
 import { SectionFour } from './SectionFour';
-import { SectionFive } from './SectionFive';
-import { SectionSix } from './SectionSix';
+import { SectionFive } from './Team';
+import { Questions } from './Questions';
 import { SectionSeven } from './SectionSeven';
-import { SectionEight } from './SectionEight';
+import { Consultation } from './Consultation';
 import { SectionNine } from './SectionNine';
+import { Clients } from './Clients';
 import { Post } from '../Post';
 
 import { fetchPosts, fetchTags } from '../../redux/slices/post';
+
 
 
 const responsive = {
@@ -88,84 +90,6 @@ export const HomeComponent = (props) => {
     dispatch(fetchTags())
   }, [])
 
-
-  // useEffect(() => {
-  //   const scriptFiles = [
-  //   'index.js',
-  //   'index_1.js',
-  //   'slick.min.js',
-  //   'jquery.magnific-popup.min.js',
-  //   'bootstrap.min.js',
-  //   'imagesloaded.min.js',
-  //   'main.js',
-  //   'webpack.runtime.min.js',
-  //   'frontend-modules.min.js',
-  //   'core.min.js',
-  //   'config.js',
-  //   'frontend.min.js',
-  //   'techbiz-frontend.js'
-  //     // Добавьте остальные имена файлов скриптов
-  //   ];
-  //   const scriptElements = [];
-
-  //   const loadScripts = () => {
-  //     scriptFiles.forEach((fileName) => {
-  //       const script = document.createElement('script');
-  //       script.src = `./js/${fileName}`;
-  //       script.setAttribute('data-nscript','afterInteractive')
-  //       document.body.appendChild(script);
-  //       scriptElements.push(script);
-  //     });
-  //   };
-
-  //     loadScripts();
-
-
-
-  // }, []);
-
-
-  useEffect(() => {
-    // const scriptFiles = [
-
-    //   'init.js',
-    //   'index.js',
-    //   'index_1.js',
-    //   'slick.min.js',
-    //   'jquery.magnific-popup.min.js',
-    //   'bootstrap.min.js',
-    //   'imagesloaded.min.js',
-    //   'main.js',
-    //   'webpack.runtime.min.js',
-    //   'frontend-modules.min.js',
-    //   'core.min.js',
-    //   'swiper.min.js',
-    //   'config.js',
-    //   'frontend.min.js',
-    //   'techbiz-frontend.js'
-    //   // Add the names of the remaining script files
-    // ];
-
-    // const loadScript = (src) => {
-    //   return new Promise((resolve, reject) => {
-    //     const script = document.createElement('script');
-    //     script.src = `./js/${src}`;
-    //     script.async = true;
-    //     script.onload = resolve;
-    //     script.onerror = reject;
-    //     document.body.appendChild(script);
-    //   });
-    // };
-
-    // const loadScriptsAsync = async () => {
-    //   const scriptPromises = scriptFiles.map((fileName) => loadScript(fileName));
-    //   await Promise.all(scriptPromises);
-    // };
-
-    // loadScriptsAsync();
-  }, []);
-
-
   const isMobile = useMediaQuery('(max-width:600px)');
 
   return (
@@ -179,214 +103,12 @@ export const HomeComponent = (props) => {
               <SectionThree />
               <SectionFour />
               <SectionFive />
-              <SectionSix />
+              <Questions />
               {/* <SectionSeven /> */}
-              <SectionEight />
+              <Consultation />
               <SectionNine />
-
-              <section className="elementor-section elementor-top-section elementor-element elementor-element-209006e elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="209006e" data-element_type="section">
-                <div className="elementor-container elementor-column-gap-no">
-                  <div className="elementor-row">
-                    <div className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-c338946" data-id="c338946" data-element_type="column">
-                      <div className="elementor-column-wrap elementor-element-populated">
-                        <div className="elementor-widget-wrap">
-                          <section className="elementor-section elementor-inner-section elementor-element elementor-element-f18f4d2 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="f18f4d2" data-element_type="section">
-                            <div className="elementor-container elementor-column-gap-no">
-                              <div className="elementor-row">
-                                <div className="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-f6a1ca9" data-id="f6a1ca9" data-element_type="column">
-                                  <div className="elementor-column-wrap elementor-element-populated">
-                                    <div className="elementor-widget-wrap">
-                                      <div className="elementor-element elementor-element-10081f6 elementor-widget elementor-widget-techbiztestimonialslider" data-id="10081f6" data-element_type="widget" data-widget_type="techbiztestimonialslider.default">
-                                        <div className="elementor-widget-container">
-                                          <section className="testimonial-wrapper">
-                                            <div className="container wow fadeInUp" data-wow-delay="0.2s">
-                                              <div className="row justify-content-between">
-                                                <div className="col-lg-auto text-center text-lg-start">
-                                                  <div className="title-area">
-                                                    <span className="sec-subtitle"><i className="fas fa-bring-forward" />НАШИ
-                                                      ЛУЧШИЕ
-                                                      ОТЗЫВЫ</span>
-                                                    <h2 className="sec-title h1">
-                                                      ОТЗЫВЫ КЛИЕНТОВ
-                                                    </h2>
-                                                  </div>
-                                                </div>
-                                                <div className="col-auto d-none d-lg-block">
-                                                  <div className="sec-btns">
-                                                    <button className="vs-btn style4" data-slick-prev="#testislide1"><i className="far fa-arrow-left" />Назад</button><button className="vs-btn style4" data-slick-next="#testislide1">Вперед<i className="far fa-arrow-right" /></button>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                              <div id="testislide1" className="row vs-carousel style-one" data-slide-to-show={3}>
-                                                <div className="col-xl-4">
-                                                  <div className="testi-style1">
-                                                    <div className="testi-icon">
-                                                      <i className="fal fa-quote-right" />
-                                                    </div>
-                                                    <p className="testi-text">
-                                                      ADB Solution - надежная аудиторская компания, обеспечивающая высококачественные услуги и профессиональную поддержку своим клиентам.</p>
-                                                    <h3 className="testi-name h6">
-                                                      Рахманбердиев
-                                                      Калысбек</h3>
-                                                    <div className="testi-degi">
-                                                      Программист КФБ
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div className="col-xl-4">
-                                                  <div className="testi-style1">
-                                                    <div className="testi-icon">
-                                                      <i className="fal fa-quote-right" />
-                                                    </div>
-                                                    <p className="testi-text">
-                                                      “Engineer
-                                                      resource
-                                                      maximizing
-                                                      whereas human
-                                                      high quality
-                                                      scenarios via
-                                                      client
-                                                      incentivize next
-                                                      generatio”</p>
-                                                    <h3 className="testi-name h6">
-                                                      Vivi Marian</h3>
-                                                    <div className="testi-degi">
-                                                      Chef Leader
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div className="col-xl-4">
-                                                  <div className="testi-style1">
-                                                    <div className="testi-icon">
-                                                      <i className="fal fa-quote-right" />
-                                                    </div>
-                                                    <p className="testi-text">
-                                                      “There are many
-                                                      variations of
-                                                      passages of
-                                                      Lorem Ipsum
-                                                      available, but
-                                                      the majority
-                                                      have suffered
-                                                      alteration”</p>
-                                                    <h3 className="testi-name h6">
-                                                      Customer</h3>
-                                                    <div className="testi-degi">
-                                                      Chef Leader
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div className="col-xl-4">
-                                                  <div className="testi-style1">
-                                                    <div className="testi-icon">
-                                                      <i className="fal fa-quote-right" />
-                                                    </div>
-                                                    <p className="testi-text">
-                                                      Contrary to
-                                                      popular belief,
-                                                      Lorem Ipsum is
-                                                      not simply
-                                                      random text over
-                                                      2000 years old.
-                                                      Richard
-                                                      McClintock</p>
-                                                    <h3 className="testi-name h6">
-                                                      Jesper Karl</h3>
-                                                    <div className="testi-degi">
-                                                      SEO Customer
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </section>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </section>
-                          <section className="elementor-section elementor-inner-section elementor-element elementor-element-4be0ac1 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="4be0ac1" data-element_type="section">
-                            <div className="elementor-container elementor-column-gap-no">
-                              <div className="elementor-row">
-                                <div className="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-3c61a29" data-id="3c61a29" data-element_type="column">
-                                  <div className="elementor-column-wrap elementor-element-populated">
-                                    <div className="elementor-widget-wrap">
-                                      <div className="elementor-element elementor-element-e64f21e elementor-widget elementor-widget-text-editor" data-id="e64f21e" data-element_type="widget" data-widget_type="text-editor.default">
-                                        <div className="elementor-widget-container">
-                                          <div className="elementor-text-editor elementor-clearfix">
-                                            <div className="sec-line-wrap">
-                                              <div className="sec-line" />
-                                              <h2 className="sec-title2">Наши постоянные клиенты</h2>
-                                              <div className="sec-line" />
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </section>
-                          <section className="elementor-section elementor-inner-section elementor-element elementor-element-aa0bc2d elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="aa0bc2d" data-element_type="section">
-                            <div className="elementor-container elementor-column-gap-no">
-                              <div className="elementor-row">
-                                <div className="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-8cb0d3f" data-id="8cb0d3f" data-element_type="column">
-                                  <div className="elementor-column-wrap elementor-element-populated">
-                                    <div className="elementor-widget-wrap">
-                                      <div className="elementor-element elementor-element-146711d elementor-widget elementor-widget-image-carousel" data-id="146711d" data-element_type="widget" data-settings="{'slides_to_show':'5','slides_to_show_tablet':'3','slides_to_scroll':'1','navigation':'none','autoplay':'yes','pause_on_hover':'yes','pause_on_interaction':'yes','autoplay_speed':5000,'infinite':'yes','speed':500,'image_spacing_custom':{'unit':'px','size':20,'sizes':[]},'image_spacing_custom_tablet':{'unit':'px','size':','sizes':[]},'image_spacing_custom_mobile':{'unit':'px','size':','sizes':[]}}" data-widget_type="image-carousel.default">
-                                        <div className="elementor-widget-container">
-                                          <div className="elementor-image-carousel-wrapper swiper-container" dir="ltr">
-                                            <div className="elementor-image-carousel swiper-wrapper" aria-live="off">
-                                              <div className="swiper-slide" role="group" aria-roledescription="slide" aria-label="1 of 6">
-                                                <figure className="swiper-slide-inner">
-                                                  <img decoding="async" className="swiper-slide-image" src="images/logo-4.svg" alt="logo-4" />
-                                                </figure>
-                                              </div>
-                                              <div className="swiper-slide" role="group" aria-roledescription="slide" aria-label="2 of 6">
-                                                <figure className="swiper-slide-inner">
-                                                  <img decoding="async" className="swiper-slide-image" src="images/logo-5.svg" alt="logo-5" />
-                                                </figure>
-                                              </div>
-                                              <div className="swiper-slide" role="group" aria-roledescription="slide" aria-label="3 of 6">
-                                                <figure className="swiper-slide-inner">
-                                                  <img decoding="async" className="swiper-slide-image" src="images/logo-6.svg" alt="logo-6" />
-                                                </figure>
-                                              </div>
-                                              <div className="swiper-slide" role="group" aria-roledescription="slide" aria-label="4 of 6">
-                                                <figure className="swiper-slide-inner">
-                                                  <img decoding="async" className="swiper-slide-image" src="images/logo-1.svg" alt="logo-1" />
-                                                </figure>
-                                              </div>
-                                              <div className="swiper-slide" role="group" aria-roledescription="slide" aria-label="5 of 6">
-                                                <figure className="swiper-slide-inner">
-                                                  <img decoding="async" className="swiper-slide-image" src="images/logo-2.svg" alt="logo-2" />
-                                                </figure>
-                                              </div>
-                                              <div className="swiper-slide" role="group" aria-roledescription="slide" aria-label="6 of 6">
-                                                <figure className="swiper-slide-inner">
-                                                  <img decoding="async" className="swiper-slide-image" src="images/logo-3.svg" alt="logo-3" />
-                                                </figure>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </section>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
+               <Clients/>
+ 
               <section className="elementor-section elementor-top-section elementor-element elementor-element-9e9b957 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="9e9b957" data-element_type="section" data-settings="{' background_background':'classic'}">
                 <div className="elementor-container elementor-column-gap-no">
                   <div className="elementor-row">
@@ -425,28 +147,25 @@ export const HomeComponent = (props) => {
                                       <div className="elementor-element elementor-element-064086e elementor-widget elementor-widget-techbizblogpost" data-id="064086e" data-element_type="widget" data-widget_type="techbizblogpost.default">
                                         <div className="elementor-widget-container">
                                           {/* blog Area */}
-                                        
 
 
-                                         
+
+
                                           <section className="vs-blog-wrapper">
                                             <div className="container">
-                                            <Swiper
-                                            slidesPerView={3}
-                                            spaceBetween={30}
-                                            freeMode={true}
-                                       
-                                            modules={[FreeMode]}
-                                            className="mySwiper"
-                                          >
+                                              <Swiper
+                                                slidesPerView={3}
+                                                spaceBetween={30}
+                                                freeMode={true}
+                                                modules={[FreeMode]}
+                                                className="mySwiper"
+                                              >
                                                 {(isPostsLoading ? [...Array(5)] : posts.items).map((obj, index) =>
                                                   index < 6 ? (
                                                     isPostsLoading ? (
-                                                      <div>
                                                         <Post key={index} isLoading={true} />
-                                                      </div>
                                                     ) : (
-                                                      <SwiperSlide>
+                                                      <SwiperSlide key={index}>
                                                         <div className="col-md-12">
                                                           <div className="vs-blog blog-style1">
                                                             <div className="blog-img">
@@ -469,105 +188,6 @@ export const HomeComponent = (props) => {
                                                         </div>
                                                       </SwiperSlide>
                                                     )) : '')} </Swiper>
-                                                {/* <div className="col-md-6">
-                                                    <div className="vs-blog blog-style1">
-                                                      <div className="blog-img">
-                                                        <a><img loading="lazy" decoding="async" width={387} height={320} src="images/blog1-387x320.jpg" className="w-100 wp-post-image" alt="" /></a>
-                                                        <div className="blog-content">
-                                                          <div className="blog-meta">
-                                                            <a><i className="far fa-calendar" /><time dateTime="2022-08-10T06:12:37+02:00">10
-                                                                Aug,
-                                                                2022</time></a><a><i className="fal fa-user" />Rodja
-                                                              Hartmann</a>
-                                                          </div>
-                                                          <h3 className="blog-title">
-                                                            <a>Richard
-                                                              McClintock,
-                                                              a
-                                                              Latin
-                                                              scholar
-                                                              from</a>
-                                                          </h3><a className="link-btn">Read
-                                                            Deatils<i className="far fa-arrow-right" /></a>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                  <div className="col-md-6">
-                                                    <div className="vs-blog blog-style1">
-                                                      <div className="blog-img">
-                                                        <a><img loading="lazy" decoding="async" width={387} height={320} src="images/blog4-387x320.jpg" className="w-100 wp-post-image" alt="" /></a>
-                                                        <div className="blog-content">
-                                                          <div className="blog-meta">
-                                                            <a><i className="far fa-calendar" /><time dateTime="2022-08-10T06:09:28+02:00">10
-                                                                Aug,
-                                                                2022</time></a><a><i className="fal fa-user" />Rodja
-                                                              Hartmann</a>
-                                                          </div>
-                                                          <h3 className="blog-title">
-                                                            <a>Latin
-                                                              derived
-                                                              from
-                                                              Cicero’s
-                                                              1st-century
-                                                              BC</a>
-                                                          </h3><a className="link-btn">Read
-                                                            Deatils<i className="far fa-arrow-right" /></a>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                  <div className="col-md-6">
-                                                    <div className="vs-blog blog-style1">
-                                                      <div className="blog-img">
-                                                        <a><img loading="lazy" decoding="async" width={387} height={320} src="images/blog3-387x320.jpg" className="w-100 wp-post-image" alt="" /></a>
-                                                        <div className="blog-content">
-                                                          <div className="blog-meta">
-                                                            <a><i className="far fa-calendar" /><time dateTime="2022-08-10T06:13:33+02:00">10
-                                                                Aug,
-                                                                2022</time></a><a><i className="fal fa-user" />Rodja
-                                                              Hartmann</a>
-                                                          </div>
-                                                          <h3 className="blog-title">
-                                                            <a>Global
-                                                              Business
-                                                              Goal
-                                                              Make
-                                                              Life
-                                                              Easy
-                                                              From</a>
-                                                          </h3><a className="link-btn">Read
-                                                            Deatils<i className="far fa-arrow-right" /></a>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                  <div className="col-md-6">
-                                                    <div className="vs-blog blog-style1">
-                                                      <div className="blog-img">
-                                                        <a><img loading="lazy" decoding="async" width={387} height={320} src="images/blog5-387x320.jpg" className="w-100 wp-post-image" alt="" /></a>
-                                                        <div className="blog-content">
-                                                          <div className="blog-meta">
-                                                            <a><i className="far fa-calendar" /><time dateTime="2022-08-09T06:25:07+02:00">9
-                                                                Aug,
-                                                                2022</time></a><a><i className="fal fa-user" />Rodja
-                                                              Hartmann</a>
-                                                          </div>
-                                                          <h3 className="blog-title">
-                                                            <a>The
-                                                              passage
-                                                              experienced
-                                                              a
-                                                              surge
-                                                              in
-                                                              during</a>
-                                                          </h3><a className="link-btn">Read
-                                                            Deatils<i className="far fa-arrow-right" /></a>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                  </div> */}
-                                           
                                             </div>{/* .container END */}
                                           </section>{/* blog Area end */}
                                         </div>

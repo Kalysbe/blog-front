@@ -1,7 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
-
-export const SectionEight = (props) => {
+export const Consultation = (props) => {
     return (
       <section style={{margin: '60px 0'}} className="elementor-section elementor-top-section elementor-element elementor-element-54db21a elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="54db21a" data-element_type="section" data-settings="{' background_background':'classic'}">
       <div className="elementor-container elementor-column-gap-no">
@@ -36,7 +36,8 @@ export const SectionEight = (props) => {
                                                   <div className="elementor-element elementor-element-66911d9 elementor-widget elementor-widget-techbizbutton" data-id="66911d9" data-element_type="widget" data-widget_type="techbizbutton.default">
                                                       <div className="elementor-widget-container">
                                                           {/* Button */}
-                                                          <div className="btn-wrapper right"><a className="vs-btn" >Контакты<i className="far fa-arrow-right" /></a>
+                                                          <div className="btn-wrapper right">
+                                                            <Link className="vs-btn" to='contacts'>Контакты<i className="far fa-arrow-right" /></Link>
                                                           </div>{/* End Button */}
                                                       </div>
                                                   </div>

@@ -251,52 +251,7 @@
 
 
 
-    /*----------- 10. Magnific Popup ----------*/
-    /* magnificPopup img view */
-    $('.popup-image').magnificPopup({
-        type: 'image',
-        gallery: {
-            enabled: true
-        }
-    });
 
-    /* magnificPopup video view */
-    $('.popup-video').magnificPopup({
-        type: 'iframe'
-    });
-
-    /*----------- 11. Filter Menu ----------*/
-    $('.filter-active').imagesLoaded(function() {
-        var $filter = '.filter-active',
-            $filterItem = '.filter-item',
-            $filterMenu = '.filter-menu-active';
-
-        if ($($filter).length > 0) {
-            var $grid = $($filter).isotope({
-                itemSelector: $filterItem,
-                filter: '*',
-                masonry: {
-                    // use outer width of grid-sizer for columnWidth
-                    columnWidth: $filterItem
-                }
-            });
-
-            // filter items on button click
-            $($filterMenu).on('click', 'button', function() {
-                var filterValue = $(this).attr('data-filter');
-                $grid.isotope({
-                    filter: filterValue
-                });
-            });
-
-            // Menu Active Class
-            $($filterMenu).on('click', 'button', function(event) {
-                event.preventDefault();
-                $(this).addClass('active');
-                $(this).siblings('.active').removeClass('active');
-            });
-        };
-    });
 
     /*----------- 12. Tab Indicator ----------*/
     $.fn.indicator = function() {
@@ -367,33 +322,8 @@
         })
     }
 
-    $('.product-big-img.vs-carousel').slick({
-        dots: true,
-        infinite: true,
-        arrows: false,
-        prevArrow: '<button type="button" class="slick-prev"><i class="far fa-arrow-left"></i></button>',
-        nextArrow: '<button type="button" class="slick-next"><i class="far fa-arrow-right"></i></button>',
-        autoplay: true,
-        autoplaySpeed: 6000,
-        fade: false,
-        speed: 1000,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-    });
 
-    $('.blog-img-slider').slick({
-        dots: false,
-        infinite: true,
-        arrows: true,
-        prevArrow: '<button type="button" class="slick-prev"><i class="far fa-arrow-left"></i></button>',
-        nextArrow: '<button type="button" class="slick-next"><i class="far fa-arrow-right"></i></button>',
-        autoplay: true,
-        autoplaySpeed: 6000,
-        fade: false,
-        speed: 1000,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-    });
+
     $(document).on('click', '.quantity-plus,.quantity-minus', function(e) {
         e.preventDefault();
         // Get current quantity values
@@ -421,22 +351,7 @@
     });
 
 
-    /*----------- 10. Filter Menu ----------*/
-	$('.search-active').imagesLoaded(function() {
-		var $filter = '.search-active',
-			$filterItem = '.grid-item';
 
-		if ($($filter).length > 0) {
-			var $grid = $($filter).isotope({
-				itemSelector: $filterItem,
-				filter: '*',
-				masonry: {
-					// use outer width of grid-sizer for columnWidth
-					columnWidth: $filterItem
-				}
-			});
-		};
-	});
     
     function setPos (element) {
         var indicator = element.siblings('.indicator'),
@@ -482,40 +397,8 @@
     };
     popupSarchBox('.popup-search-box', '.searchBoxTggler', '.searchClose', 'show');
     
-    $('.product-img-slide').slick({
-        dots: true,
-        infinite: true,
-        arrows: false,
-        autoplay: true,
-        autoplaySpeed: 6000,
-        fade: true,
-        speed: 1000,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-    });
-    
-    $('.related-product-slider').slick({
-        dots: false,
-        infinite: true,
-        arrows: false,
-        autoplay: true,
-        autoplaySpeed: 6000,
-        fade: false,
-        speed: 1000,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        responsive: [{
-            breakpoint: 992,
-            settings: {
-                slidesToShow: 2
-            }
-        },{
-            breakpoint: 767,
-            settings: {
-                slidesToShow: 1
-            }
-        }]
-    });
+  
+   
     
     $('.logo-img').each(function () {
 	    var $img = jQuery(this);

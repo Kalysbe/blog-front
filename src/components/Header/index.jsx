@@ -111,20 +111,7 @@ export const Header = (props) => {
   useEffect(() => {
     const scriptFiles = [
       'init.js',
-      'index.js',
-      'index_1.js',
-      'slick.min.js',
-      'jquery.magnific-popup.min.js',
-      'bootstrap.min.js',
-      'imagesloaded.min.js',
       'main.js',
-      'webpack.runtime.min.js',
-      'frontend-modules.min.js',
-      'core.min.js',
-      'swiper.min.js',
-      'config.js',
-      'frontend.min.js',
-      'techbiz-frontend.js'
       // Add the names of the remaining script files
     ];
 
