@@ -128,9 +128,8 @@ export const Clients = (props) => {
                                                     <div className="elementor-widget-wrap">
                                                         <div className="elementor-element elementor-element-146711d elementor-widget elementor-widget-image-carousel" data-id="146711d" data-element_type="widget" data-settings="{'slides_to_show':'5','slides_to_show_tablet':'3','slides_to_scroll':'1','navigation':'none','autoplay':'yes','pause_on_hover':'yes','pause_on_interaction':'yes','autoplay_speed':5000,'infinite':'yes','speed':500,'image_spacing_custom':{'unit':'px','size':20,'sizes':[]},'image_spacing_custom_tablet':{'unit':'px','size':','sizes':[]},'image_spacing_custom_mobile':{'unit':'px','size':','sizes':[]}}" data-widget_type="image-carousel.default">
                                                             <div className="elementor-widget-container">
-                                                                <div className="elementor-image-carousel-wrapper swiper-container" dir="ltr">
                                                                     <Swiper
-                                                                        slidesPerView={2}
+                                                                        slidesPerView={3}
                                                                         spaceBetween={30}
                                                                         freeMode={true}
                                                                         modules={[FreeMode]}
@@ -144,7 +143,6 @@ export const Clients = (props) => {
                                                                             </SwiperSlide>
                                                                         ))}
                                                                     </Swiper>
-                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>

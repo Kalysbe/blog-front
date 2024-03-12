@@ -51,7 +51,7 @@ export const Blog = () => {
                 <Post key={index} isLoading={true} />
               </Grid>
             ) : (
-              <Grid sm={12} md={index == 0 ? 12 : 4} item>
+              <Grid sm={12} md={4} item>
                 <Post
                   _id={obj._id}
                   title={obj.title}

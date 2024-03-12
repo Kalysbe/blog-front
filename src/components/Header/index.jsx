@@ -280,7 +280,7 @@ export const Header = (props) => {
                                     <div className="elementor-element elementor-element-28599e5 vs-logo elementor-widget elementor-widget-techbizimage" data-id="28599e5" data-element_type="widget" data-widget_type="techbizimage.default">
                                       <div className="elementor-widget-container">
                                         {/* Advertisement Image */}
-                                        <div className="techbiz_img "><a href="/"><img src="images/logo.png" alt="logo5" /> </a></div>
+                                        <div className="techbiz_img "><a href="/"><img src="../images/logo.png" alt="logo5" /> </a></div>
                                         {/* End Advertisement Image */}
                                       </div>
                                     </div>
@@ -400,7 +400,7 @@ export const Header = (props) => {
 
                                           <div className="vs-menu-area text-center">
                                             <button className="vs-menu-toggle"><i className="fal fa-times" /></button>
-                                            <div className="mobile-logo"> <Link to='/'><img src="images/logo.png" alt="logo5" /></Link></div>
+                                            <div className="mobile-logo"> <Link to='/'><img src="../images/logo.png" alt="logo5" /></Link></div>
                                             <div className="vs-mobile-menu">
                                               <ul id="menu-mobile-menu">
                                                 <li onClick={goToHome} id="menu-item-131" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-131">
@@ -530,7 +530,7 @@ export const Header = (props) => {
                                               <div className="wp-block-group is-layout-flow wp-block-group-is-layout-flow">
                                                 <div className="wp-block-group__inner-container">
                                                   <figure className="wp-block-image size-full footer-logo">
-                                                    <img decoding="async" src="images/logo.png" alt="" className="wp-image-1902" />
+                                                    <img decoding="async" src="../images/logo.png" alt="" className="wp-image-1902" />
                                                   </figure>
                                                   <p>Исключаются новые
                                                     передовые сценарии,

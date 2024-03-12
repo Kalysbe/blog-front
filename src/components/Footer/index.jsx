@@ -187,21 +187,13 @@ export const Footer = (props) => {
                                             <div className="menu-links-container">
                                               <ul id="menu-links" className="menu">
                                                 <li id="menu-item-189" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-189">
-                                                  <a >Team</a>
+                                                  <a href="https://sti.gov.kg/" target='_blank'>Государственная налоговая служба</a>
                                                 </li>
                                                 <li id="menu-item-188" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-188">
-                                                  <a>Projects</a>
+                                                  <a href='https://cabinet.salyk.kg/' target='_blank'>Кабинет налогоплательщика</a>
                                                 </li>
                                                 <li id="menu-item-187" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-187">
-                                                  <a>Contact
-                                                    Us</a>
-                                                </li>
-                                                <li id="menu-item-190" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-190">
-                                                  <a>Service</a>
-                                                </li>
-                                                <li id="menu-item-191" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-191">
-                                                  <a>About
-                                                    Us</a>
+                                                  <a href='https://esf.salyk.kg/' target='_blank'>ESF</a>
                                                 </li>
                                               </ul>
                                             </div>
@@ -224,19 +216,9 @@ export const Footer = (props) => {
                                             <div className="menu-explore-container">
                                               <ul id="menu-explore" className="menu">
                                                 <li id="menu-item-194" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-194">
-                                                  <a >Team</a>
+                                                  <a >Заполнение декларации</a>
                                                 </li>
-                                                <li id="menu-item-195" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-195">
-                                                  <a >Pricing
-                                                    Plan</a>
-                                                </li>
-                                                <li id="menu-item-196" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-196">
-                                                  <a >Service</a>
-                                                </li>
-                                                <li id="menu-item-197" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-197">
-                                                  <a >About
-                                                    Us</a>
-                                                </li>
+                                           
                                               </ul>
                                             </div>
                                           </div>
