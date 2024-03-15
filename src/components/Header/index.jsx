@@ -280,7 +280,7 @@ export const Header = (props) => {
                                     <div className="elementor-element elementor-element-28599e5 vs-logo elementor-widget elementor-widget-techbizimage" data-id="28599e5" data-element_type="widget" data-widget_type="techbizimage.default">
                                       <div className="elementor-widget-container">
                                         {/* Advertisement Image */}
-                                        <div className="techbiz_img "><a href="/"><img src="../images/logo.png" alt="logo5" /> </a></div>
+                                        <div className="techbiz_img "><Link to="/"><img src="../images/logo.png" alt="logo5" /> </Link></div>
                                         {/* End Advertisement Image */}
                                       </div>
                                     </div>
@@ -322,7 +322,7 @@ export const Header = (props) => {
                                                   </ul>
                                                 </li>
                                                 <li id="menu-item-90" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-90">
-                                                  <a>Заполнению декларации</a>
+                                                  <a>Заполнение деклараций</a>
                                                 </li>
                                                 {/* <li id="menu-item-89" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-89">
                                                   <a>Project

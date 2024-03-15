@@ -109,7 +109,7 @@ export const AddPost = () => {
   return (
     <Container>
       <Paper style={{ padding: 30 }}>
-        <Button onClick={() => inputFileRef.current.click()} variant="outlined" size="large">
+        <Button disabled={true} onClick={() => inputFileRef.current.click()} variant="outlined" size="large">
           Загрузить превью
         </Button>
         <input ref={inputFileRef} type="file" onChange={handleChangeFile} hidden />
@@ -135,14 +135,14 @@ export const AddPost = () => {
           onChange={(e) => setTitle(e.target.value)}
           fullWidth
         />
-        <TextField
+        {/* <TextField
           value={tags}
           onChange={(e) => setTags(e.target.value)}
           classes={{ root: styles.tags }}
           variant="standard"
           placeholder="Тэги"
           fullWidth
-        />
+        /> */}
         <SimpleMDE className={styles.editor} value={text} onChange={onChange} options={options} />
         <div className={styles.buttons}>
           <Button onClick={onSubmit} size="large" variant="contained">

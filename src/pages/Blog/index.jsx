@@ -43,7 +43,7 @@ export const Blog = () => {
         <Tab label="Новости компаний" />
         <Tab label="Новости налоговой" />
       </Tabs> */}
-<TagsBlock items={tags.items} isLoading={isTagsLoading} />
+{/* <TagsBlock items={tags.items} isLoading={isTagsLoading} /> */}
         <Grid container spacing={2}>
           {(isPostsLoading ? [...Array(5)] : posts.items).map((obj, index) =>
             isPostsLoading ? (
